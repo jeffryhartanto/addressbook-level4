@@ -39,6 +39,7 @@ public class SelectCommand extends Command {
             indicateAttemptToExecuteIncorrectCommand();
             return new CommandResult(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
         }
+        EventsCenter.getInstance().post(new JumpToListRequestEvent(targetIndex - 1));
         EventsCenter.getInstance().post(new CommandBoxTextChangeRequestEvent(
         		TaskUtil.convertToTaskString(lastShownList.get(targetIndex - 1))));
         CommandHistory.setModifiedTask(lastShownList.get(targetIndex - 1));
