@@ -69,10 +69,6 @@ public interface ReadOnlyTask {
     }
     
     //@@author A0138696L
-    /**  
-     * For FindCommand to Formats the task as text,   
-     * showing all parameters details.  
-     */  
     default String getAllFieldAsText() {  
         final StringBuilder builder = new StringBuilder();  
         builder.append(getName())  

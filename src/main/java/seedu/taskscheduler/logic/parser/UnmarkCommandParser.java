@@ -21,7 +21,7 @@ public class UnmarkCommandParser extends CommandParser {
     public Command prepareCommand(String args) {
 
         Optional<Integer> index = parseIndex(args);
-        if(!index.isPresent()){
+        if (!index.isPresent()) {
             return new UnmarkCommand();
         }
         return new UnmarkCommand(index.get());

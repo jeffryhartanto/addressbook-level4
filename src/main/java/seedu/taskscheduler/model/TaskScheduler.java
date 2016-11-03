@@ -135,7 +135,7 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
 
     //@@author A0148145E
     /**
-     * Replace the tag list of a task in the task scheduler.
+     * Replaces the tag list of a task in the task scheduler.
      * Also checks the new task's tags and updates {@link #tags} with any new tags found,
      * and updates the Tag objects in the task to point to those in {@link #tags}.
      *
@@ -150,7 +150,7 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
     
     //@@author A0140007B
     /**
-     * Insert a task into another task's position in the task scheduler
+     * Inserts a task into another task's position in the task scheduler
      * Also checks the new task's tags and updates {@link #tags} with any new tags found,
      * and updates the Tag objects in the task to point to those in {@link #tags}.
      *

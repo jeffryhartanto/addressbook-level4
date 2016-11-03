@@ -29,12 +29,13 @@ public class ReplaceCommandParser extends CommandParser{
 
         // Validate arg string format
         final Matcher indexMatcher = INDEX_COMMAND_FORMAT.matcher(args);
+        final int initialValue = 0;
 
         if (!indexMatcher.matches()) {
             return generateReplaceCommand(args, Command.EMPTY_INDEX);
         } else {
             int index = Integer.parseInt(indexMatcher.group("index"));
-            assert index >= 0;
+            assert index >= initialValue;
             String newArgs = indexMatcher.group("arguments").trim();
             return generateReplaceCommand(newArgs, index);
         }

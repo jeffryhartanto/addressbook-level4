@@ -149,7 +149,7 @@ public class UniqueTaskList implements Iterable<Task> {
     
   //@@author A0148145E
     /**
-     * Replace the tag list of a task in the list.
+     * Replaces the tag list of a task in the list.
      *
      * @throws TaskNotFoundException
      */
@@ -167,7 +167,7 @@ public class UniqueTaskList implements Iterable<Task> {
     
     //@@author A0140007B
     /**
-     * Insert a task into another task's position in the list.
+     * Inserts a task into another task's position in the list.
      *
      * @throws TaskNotFoundException
      */
