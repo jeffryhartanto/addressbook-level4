@@ -96,6 +96,9 @@ public interface ReadOnlyTask {
     }
 
     //@@author A0148145E
+    /**  
+     * returns the earliest date time for comparison
+     */  
     default TaskDateTime getComparisonDateTime() {
         if (getType() == TaskType.DEADLINE) {
             return getEndDate();
