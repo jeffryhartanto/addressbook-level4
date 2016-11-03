@@ -316,11 +316,9 @@ Priority | As a ... | I want to ... | So that I can...
 `* *` | user | indicate a completed task with color code (green) | easily to track done task  
 `* *` | user | make a task recurring | duplicate a task for specific number of days  
 `* *` | user | have a ui that display useful information | manage my task list easily
-`* *` | user | have powerful search function | find tasks easily
 `* *` | user | sort my task by date/time | see the task that needs to be done first
 `*` | user | select a task | display and refer to the task's command 
 `*` | user | unmark a task | unmark the task that is accidentally marked as completed
-`*` | user | lock task scheduler(with a password) | prevent unauthorized access/modification 
 
 ## Appendix B : Use Cases
 
