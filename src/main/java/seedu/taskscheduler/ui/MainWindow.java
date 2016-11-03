@@ -145,6 +145,12 @@ public class MainWindow extends UiPart {
     public AnchorPane getTagListPlaceholder() {
         return tagListPanelPlaceholder;
     }
+    
+    //@@author A0140007B
+    public CommandBox getCommandBox() {
+        return commandBox;
+    }
+    //@@author
 
     public void hide() {
         primaryStage.hide();
