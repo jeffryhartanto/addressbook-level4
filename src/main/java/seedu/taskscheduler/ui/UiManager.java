@@ -11,6 +11,7 @@ import seedu.taskscheduler.commons.core.ComponentManager;
 import seedu.taskscheduler.commons.core.Config;
 import seedu.taskscheduler.commons.core.LogsCenter;
 import seedu.taskscheduler.commons.events.storage.DataSavingExceptionEvent;
+import seedu.taskscheduler.commons.events.ui.CommandBoxTextChangeRequestEvent;
 import seedu.taskscheduler.commons.events.ui.JumpToListRequestEvent;
 import seedu.taskscheduler.commons.events.ui.ShowHelpEvent;
 import seedu.taskscheduler.commons.events.ui.TagPanelSelectionChangedEvent;
@@ -121,6 +122,15 @@ public class UiManager extends ComponentManager implements Ui {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         mainWindow.getTaskListPanel().scrollTo(event.targetIndex);
     }
+    
+
+    //@@author A0140007B
+    @Subscribe
+    private void handleCommandBoxTextChangeRequestEvent(CommandBoxTextChangeRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        mainWindow.getCommandBox().setCommandText(event.text);
+    }
+    //@@author
 
     @Subscribe
     private void handleTagPanelSelectionChangedEvent(TagPanelSelectionChangedEvent event){
