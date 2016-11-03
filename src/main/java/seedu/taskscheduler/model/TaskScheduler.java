@@ -23,6 +23,9 @@ import java.util.stream.Collectors;
  */
 public class TaskScheduler implements ReadOnlyTaskScheduler {
 
+    private static final int EMPTY_VALUE = 0;
+    private static final int INITIAL_VALUE = 1;
+    
     private final UniqueTaskList tasks = new UniqueTaskList();
     private final UniqueTagList tags = new UniqueTagList();
     final Map<Tag, Integer> tagsCounter = new HashMap<>();
@@ -85,7 +88,7 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
      * @throws UniqueTaskList.DuplicateTaskException if an equivalent task already exists.
      */
     public void addTask(Task p) throws UniqueTaskList.DuplicateTaskException {
-        addTags(p);
+        addTagsFromTask(p);
         tasks.add(p);
     }
     
@@ -100,8 +103,8 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
     public void replaceTask(Task oldTask, Task newTask) 
             throws UniqueTaskList.DuplicateTaskException, UniqueTaskList.TaskNotFoundException {
         tasks.replace(oldTask, newTask);   
-        addTags(newTask);
-        removeTags(oldTask);
+        addTagsFromTask(newTask);
+        removeTagsFromTask(oldTask);
     }
 
     //@@author A0148145E
@@ -143,9 +146,9 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
      */
     public void tagTask(Task task, UniqueTagList tagList) 
             throws UniqueTaskList.TaskNotFoundException {
-        removeTags(task);
+        removeTagsFromTask(task);
         tasks.tagTask(task, tagList);   
-        addTags(task);
+        addTagsFromTask(task);
     }
     
     //@@author A0140007B
@@ -163,54 +166,66 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
     }
     //@@author
     
+    //@@author A0138696L
     /**
      * Ensures that every tag in this task:
-     *  - exists in the master list {@link #tags}
-     *  - points to a Tag object in the master list
+     *  - exists in the master list 
+     *  - tag list only contains tags above empty value
      */
     private void syncTagsWithMasterList(Task task) {
         final UniqueTagList taskTags = task.getTags();
         tagsMasterList.mergeFrom(taskTags);
 
-        // Create map with values = tag object references in the master list
-        final Map<Tag, Tag> masterTagObjects = new HashMap<>();
         for (Tag tag : tagsMasterList) {
-            if (tagsCounter.get(tag) <= 0) {
-                if (tags.contains(tag)) {
-                    tags.remove(tag);
-                }
+            if (tagsCounter.get(tag) <= EMPTY_VALUE) {
+                removeTagIfContains(tag);
             } else {
-                if (!tags.contains(tag)) {
-                    try {
-                        tags.add(tag);
-                    } catch (DuplicateTagException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
-                }
+                addTagIfNotContains(tag);
             }
         }
     }
-    
-    private void addTags(Task task) {
-        final UniqueTagList taskTags = task.getTags();
-        for (Tag tag : taskTags) {
-            tagsCounter.put(tag, tagsCounter.get(tag) == null ? 1 : tagsCounter.get(tag) + 1);
+
+    //@@author A0138696L
+    private void removeTagIfContains(Tag tag) {
+        if (tags.contains(tag)) {
+            tags.remove(tag);
         }
-        syncTagsWithMasterList(task);
     }
-    
-    private void removeTags(Task task) {
+
+    //@@author A0138696L
+    private void addTagIfNotContains(Tag tag) {
+        if (!tags.contains(tag)) {
+            try {
+                tags.add(tag);
+            } catch (DuplicateTagException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+
+    //@@author A0138696L
+    private void addTagsFromTask(Task task) {
         final UniqueTagList taskTags = task.getTags();
         for (Tag tag : taskTags) {
-            tagsCounter.put(tag, tagsCounter.get(tag) == null ? 0 : tagsCounter.get(tag) - 1);
+            tagsCounter.put(tag, tagsCounter.get(tag) == null ? INITIAL_VALUE : tagsCounter.get(tag) + 1);
         }
         syncTagsWithMasterList(task);
     }
 
+    //@@author A0138696L
+    private void removeTagsFromTask(Task task) {
+        final UniqueTagList taskTags = task.getTags();
+        for (Tag tag : taskTags) {
+            tagsCounter.put(tag, tagsCounter.get(tag) == null ? EMPTY_VALUE : tagsCounter.get(tag) - 1);
+        }
+        syncTagsWithMasterList(task);
+    }
+    //@@author
+
     public boolean removeTask(ReadOnlyTask key) throws UniqueTaskList.TaskNotFoundException {
         if (tasks.remove(key)) {
-            removeTags((Task) key);
+            removeTagsFromTask((Task) key);
             return true;
         } else {
             throw new UniqueTaskList.TaskNotFoundException();

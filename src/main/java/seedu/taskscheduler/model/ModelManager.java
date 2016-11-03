@@ -15,7 +15,6 @@ import seedu.taskscheduler.model.task.Task;
 import seedu.taskscheduler.model.task.UniqueTaskList;
 import seedu.taskscheduler.model.task.UniqueTaskList.TaskNotFoundException;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.logging.Logger;
 
