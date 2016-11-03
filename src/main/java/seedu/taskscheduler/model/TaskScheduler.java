@@ -12,11 +12,9 @@ import seedu.taskscheduler.model.task.UniqueTaskList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -27,6 +25,8 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
 
     private final UniqueTaskList tasks = new UniqueTaskList();
     private final UniqueTagList tags = new UniqueTagList();
+    final Map<Tag, Integer> tagsCounter = new HashMap<>();
+    private final UniqueTagList tagsMasterList = new UniqueTagList();
 
     public TaskScheduler() {}
 
@@ -85,7 +85,7 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
      * @throws UniqueTaskList.DuplicateTaskException if an equivalent task already exists.
      */
     public void addTask(Task p) throws UniqueTaskList.DuplicateTaskException {
-        syncTagsWithMasterList(p);
+        addTags(p);
         tasks.add(p);
     }
     
@@ -99,8 +99,9 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
      */
     public void replaceTask(Task oldTask, Task newTask) 
             throws UniqueTaskList.DuplicateTaskException, UniqueTaskList.TaskNotFoundException {
-        tasks.replace(oldTask, newTask);        
-        syncTagsWithMasterList(newTask);
+        tasks.replace(oldTask, newTask);   
+        addTags(newTask);
+        removeTags(oldTask);
     }
 
     //@@author A0148145E
@@ -142,8 +143,9 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
      */
     public void tagTask(Task task, UniqueTagList tagList) 
             throws UniqueTaskList.TaskNotFoundException {
+        removeTags(task);
         tasks.tagTask(task, tagList);   
-        syncTagsWithMasterList(task);
+        addTags(task);
     }
     
     //@@author A0140007B
@@ -168,24 +170,47 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
      */
     private void syncTagsWithMasterList(Task task) {
         final UniqueTagList taskTags = task.getTags();
-        tags.mergeFrom(taskTags);
+        tagsMasterList.mergeFrom(taskTags);
 
         // Create map with values = tag object references in the master list
         final Map<Tag, Tag> masterTagObjects = new HashMap<>();
-        for (Tag tag : tags) {
-            masterTagObjects.put(tag, tag);
+        for (Tag tag : tagsMasterList) {
+            if (tagsCounter.get(tag) <= 0) {
+                if (tags.contains(tag)) {
+                    tags.remove(tag);
+                }
+            } else {
+                if (!tags.contains(tag)) {
+                    try {
+                        tags.add(tag);
+                    } catch (DuplicateTagException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
-
-        // Rebuild the list of task tags using references from the master list
-        final Set<Tag> commonTagReferences = new HashSet<>();
+    }
+    
+    private void addTags(Task task) {
+        final UniqueTagList taskTags = task.getTags();
         for (Tag tag : taskTags) {
-            commonTagReferences.add(masterTagObjects.get(tag));
+            tagsCounter.put(tag, tagsCounter.get(tag) == null ? 1 : tagsCounter.get(tag) + 1);
         }
-        task.setTags(new UniqueTagList(commonTagReferences));
+        syncTagsWithMasterList(task);
+    }
+    
+    private void removeTags(Task task) {
+        final UniqueTagList taskTags = task.getTags();
+        for (Tag tag : taskTags) {
+            tagsCounter.put(tag, tagsCounter.get(tag) == null ? 0 : tagsCounter.get(tag) - 1);
+        }
+        syncTagsWithMasterList(task);
     }
 
     public boolean removeTask(ReadOnlyTask key) throws UniqueTaskList.TaskNotFoundException {
         if (tasks.remove(key)) {
+            removeTags((Task) key);
             return true;
         } else {
             throw new UniqueTaskList.TaskNotFoundException();
