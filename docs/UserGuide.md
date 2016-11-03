@@ -17,6 +17,7 @@
  * [Unmark](#how-to-unmark-a-task--ummark)
  * [Recur](#how-to-recur-a-task--recur)
  * [Set Path](#how-to-set-a-storage-path--setpath)
+ * [Select](#how-to-select-a-task--select)
  * [Exit](#how-to-exit-the-program--exit)
  * [Redo](#how-to-redo-a-task)
  * [Identify task](#how-to-identify-overdue-and-completed-task)
@@ -229,6 +230,18 @@ Examples:<br>
 * **`setpath`**`c:/user/<name>/desktop/taskData`<br>
   Filename taskData will be created at user desktop.<br>
 
+#### How to select a task : `select`
+The `select` command allows you to display any existing task's command from the MustDoList by index. <br>
+
+Select format: **`select`**`INDEX`
+
+> The Index in the command format refers to the index number shown in the most recent listing.<br>
+
+Examples:<br>
+* `list`<br>
+  **`select`**`2`<br>
+  Select the 2nd task in the MustDoList to display the command.
+  
 #### How to exit the program : `exit`
 The `exit` command allows you to exits the program.<br>
 
@@ -271,9 +284,6 @@ e.g. **`add`**`CS2103 Tutorial from 8am today to 9am tomorrow at NUS COM1-B103`
 * Find: **`find`**`KEYWORD`<br>
 e.g. **`find`**`CS2103`
 
-* Select: **`select`**`INDEX`<br>
-e.g. **`select`**`1`
-
 * Delete: **`delete`**`INDEX`<br>
 e.g. **`delete`**`1`
 
@@ -300,6 +310,9 @@ e.g. **`recur`**`every 2 days until 19-Oct-2016`
 
 * SetPath: **`setpath`**`FILENAME`<br>
 e.g. **`setpath`**`taskData`
+
+* Select: **`select`**`INDEX`<br>
+e.g. **`select`**`1`
 
 * Exit: `exit`
 
