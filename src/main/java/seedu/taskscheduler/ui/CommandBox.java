@@ -115,6 +115,16 @@ public class CommandBox extends UiPart {
         restoreCommandText();
     }
 
+    //@@author A0140007B
+    /**
+     * Sets the command box text 
+     */
+    public void setCommandText(String text) {
+        commandTextField.setText(text);
+    }
+    //@@author
+
+    
     /**
      * Restores the command box text to the previously entered command
      */

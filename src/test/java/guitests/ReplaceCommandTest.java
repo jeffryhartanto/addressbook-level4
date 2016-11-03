@@ -20,31 +20,49 @@ public class ReplaceCommandTest extends TaskSchedulerGuiTest {
     public void replace() {
         
         TestTask[] currentList = td.getTypicalTasks();
-        int indexToReplace; 
-        TestTask taskToCopy;
         
         //invalid command
-        commandBox.runCommand("replace eee " + td.ida.getTaskString());
-        assertResultMessage(Messages.MESSAGE_PREV_TASK_NOT_FOUND);
+        replace_invalidCommand_messageTaskNotFound();
         
         //replace with a deadline task
-        indexToReplace = 2;
-        taskToCopy = td.deadline;
-        taskToCopy.setEndDate(currentList[indexToReplace - 1].getEndDate());
-        assertReplaceSuccess(indexToReplace, taskToCopy, currentList);
-        currentList[indexToReplace - 1] = taskToCopy;
-        currentList = TestUtil.addTasksToList(currentList);
+        currentList = replace_deadlineTask_success(currentList, 2, td.deadline);
 
         //replace with a floating task
-        indexToReplace = currentList.length;
-        taskToCopy = td.floating;
-        assertReplaceSuccess(indexToReplace, taskToCopy, currentList);
-        currentList[indexToReplace - 1] = taskToCopy;
-        currentList = TestUtil.addTasksToList(currentList);
+        currentList = replace_floatingTask_success(currentList, currentList.length, td.floating);
         
         //replace with overdue task
-        taskToCopy = td.overdue;
-        indexToReplace = 1;
+        currentList = replace_overdueTask_success(currentList, 1, td.overdue);
+
+        //replace with an event task
+        currentList = replace_eventTask_success(currentList, 1, td.event);
+        
+        //replace with a duplicate task
+        replace_duplicateTask_messageDuplicateError(currentList, 5, td.event);
+
+        //replace in empty list
+        replace_emptyList_messageInvalidIndex(5, td.event);
+
+    }
+
+    private void replace_emptyList_messageInvalidIndex(int indexToReplace, TestTask taskToCopy) {
+        commandBox.runCommand("clear");
+        commandBox.runCommand("replace " + indexToReplace + " " + taskToCopy.getTaskString());
+        assertResultMessage(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+    }
+
+    private void replace_duplicateTask_messageDuplicateError(TestTask[] currentList, int indexToReplace, TestTask taskToCopy) {
+        commandBox.runCommand("replace " + indexToReplace + " " + taskToCopy.getTaskString());
+        assertResultMessage(Command.MESSAGE_DUPLICATE_TASK);
+        assertTrue(taskListPanel.isListMatching(currentList));
+    }
+
+    private TestTask[] replace_eventTask_success(TestTask[] currentList, int indexToReplace, TestTask taskToCopy) {
+        taskToCopy.setStartDate(currentList[indexToReplace - 1].getStartDate());
+        currentList = replace_floatingTask_success(currentList, indexToReplace, taskToCopy);
+        return currentList;
+    }
+
+    private TestTask[] replace_overdueTask_success(TestTask[] currentList, int indexToReplace, TestTask taskToCopy) {
         assertReplaceSuccess(indexToReplace, taskToCopy, currentList);        
         //assert that overdue task is red
         assertTrue(taskListPanel.navigateToTask(indexToReplace - 1).getPaintFromShape().equals(TaskCard.OVERDUE_INDICATION));
@@ -52,26 +70,25 @@ public class ReplaceCommandTest extends TaskSchedulerGuiTest {
         
         currentList[indexToReplace - 1] = taskToCopy;
         currentList = TestUtil.addTasksToList(currentList);
+        return currentList;
+    }
 
-        //replace with an event task
-        indexToReplace = 1;
-        taskToCopy = td.event;
-        taskToCopy.setStartDate(currentList[indexToReplace - 1].getStartDate());
+    private TestTask[] replace_floatingTask_success(TestTask[] currentList, int indexToReplace, TestTask taskToCopy) {
         assertReplaceSuccess(indexToReplace, taskToCopy, currentList);
         currentList[indexToReplace - 1] = taskToCopy;
         currentList = TestUtil.addTasksToList(currentList);
-        
-        //replace with a duplicate task
-        indexToReplace = 5;
-        commandBox.runCommand("replace " + indexToReplace + " " + td.event.getTaskString());
-        assertResultMessage(Command.MESSAGE_DUPLICATE_TASK);
-        assertTrue(taskListPanel.isListMatching(currentList));
+        return currentList;
+    }
 
-        //replace in empty list
-        commandBox.runCommand("clear");
-        commandBox.runCommand("replace " + indexToReplace + " " + td.event.getTaskString());
-        assertResultMessage(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+    private TestTask[] replace_deadlineTask_success(TestTask[] currentList, int indexToReplace, TestTask taskToCopy) {
+        taskToCopy.setEndDate(currentList[indexToReplace - 1].getEndDate());
+        currentList = replace_floatingTask_success(currentList, indexToReplace, taskToCopy);
+        return currentList;
+    }
 
+    private void replace_invalidCommand_messageTaskNotFound() {
+        commandBox.runCommand("replace eee " + td.ida.getTaskString());
+        assertResultMessage(Messages.MESSAGE_PREV_TASK_NOT_FOUND);
     }
 
     private void assertReplaceSuccess(int indexToReplace, TestTask taskToCopy, TestTask... currentList) {

@@ -33,23 +33,27 @@ public class AddCommandTest extends TaskSchedulerGuiTest {
         currentList = TestUtil.addTasksToList(currentList, taskToAdd);
 
         //add duplicate tasks
-        commandBox.runCommand(td.event.getAddCommand());
-        assertResultMessage(AddCommand.MESSAGE_DUPLICATE_TASK);
-        assertTrue(taskListPanel.listContainsAll(currentList));
-        commandBox.runCommand(td.deadline.getAddCommand());
-        assertResultMessage(AddCommand.MESSAGE_DUPLICATE_TASK);
-        assertTrue(taskListPanel.listContainsAll(currentList));
-        commandBox.runCommand(td.floating.getAddCommand());
-        assertResultMessage(AddCommand.MESSAGE_DUPLICATE_TASK);
-        assertTrue(taskListPanel.listContainsAll(currentList));
+        add_duplicateTasks_messageDuplicateTask(currentList, td.floating, td.deadline, td.event);
 
         //add to empty list
         commandBox.runCommand("clear");
         assertAddSuccess(td.alice);
 
         //invalid command
+        add_invalidCommand_messageUnknownCommand();
+    }
+
+    private void add_invalidCommand_messageUnknownCommand() {
         commandBox.runCommand("adds Johnny");
         assertResultMessage(Messages.MESSAGE_UNKNOWN_COMMAND);
+    }
+
+    private void add_duplicateTasks_messageDuplicateTask(TestTask[] currentList, TestTask...tasks) {
+        for (TestTask task : tasks) {
+            commandBox.runCommand(task.getAddCommand());
+            assertResultMessage(AddCommand.MESSAGE_DUPLICATE_TASK);
+            assertTrue(taskListPanel.listContainsAll(currentList));
+        }
     }
 
     private void assertAddSuccess(TestTask taskToAdd, TestTask... currentList) {

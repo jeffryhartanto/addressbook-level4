@@ -30,24 +30,24 @@ public class FindCommandTest extends TaskSchedulerGuiTest {
     }
     
     @Test
-    public void find_Date() {
+    public void find_date_success() {
         assertFindResult("find 14-Oct-2016", td.benson, td.carl);
     }
     
     @Test
-    public void find_address() {
+    public void find_address_success() {
         assertFindResult("find hall", td.daniel, td.elle);
     }
     
     @Test
-    public void find_completed() {
+    public void find_completed_success() {
         commandBox.runCommand("mark 1");
         commandBox.runCommand("mark 4");
         assertFindResult("find Completed", td.alice, td.daniel);
     }
 
     @Test
-    public void find_emptyList(){
+    public void find_emptyList_noResults(){
         commandBox.runCommand("clear");
         assertFindResult("find Jean"); //no results
     }
