@@ -7,7 +7,6 @@ import seedu.taskscheduler.commons.events.ui.CommandBoxTextChangeRequestEvent;
 import seedu.taskscheduler.commons.events.ui.JumpToListRequestEvent;
 import seedu.taskscheduler.commons.util.TaskUtil;
 import seedu.taskscheduler.model.task.ReadOnlyTask;
-import seedu.taskscheduler.ui.CommandBox;
 
 //@@author A0140007B
 /**
