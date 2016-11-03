@@ -25,7 +25,7 @@ public class SetpathCommandParser extends CommandParser {
     @Override
     public Command prepareCommand(String args) {
         Matcher matcher = SETPATH_DATA_ARGS_FORMAT.matcher(args);
-        // Validate arg string format
+
         if (matcher.matches()) {
             String path = matcher.group("name").trim().replaceAll("/$","") +".xml";
             return new SetpathCommand(path); 
