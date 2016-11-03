@@ -19,7 +19,7 @@ Role: Team lead <br>
 	* [Indicate overdue and completed task] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-identify-overdue-and-completed-task)
 * Code written: [[functional code](../collated/main/A0148145E.md)][[test code](../collated/test/A0148145E.md)][[docs](../collated/docs/A0148145E.md)]
 * Other major contributions:
-	* Did initial refactoring from AddressBook to MustDoList
+	* Do initial refactoring from AddressBook to MustDoList
 	* Set up Travis, Coveralls and Codacy
 	* Managing the team planning.
 
@@ -37,7 +37,7 @@ Role: Project Manager <br>
 * Other major contributions:
 	* Implemented Undo command initially
 	* In-charge of maintaining the documentation
-	* Managing the team progress.
+	* Managing the team progress
 
 -----
 
@@ -52,8 +52,9 @@ Role: Editor <br>
 	* [Unmark] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-unmark-a-task--ummark)
 * Code written: [[functional code](../collated/main/A0138696L.md)][[test code](../collated/test/A0138696L.md)][[docs](../collated/docs/A0138696L.md)]
 * Other major contributions:
-	*
-	*
+	* Ensure that code is running as expected 
+	* In-charge of storage
+	* Managing team spirit
 	
 -----
 
