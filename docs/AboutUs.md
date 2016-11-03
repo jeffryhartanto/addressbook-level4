@@ -16,7 +16,7 @@ Role: Team lead <br>
 	* [edit] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-edit-a-task--edit)
 	* [mark] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-mark-a-task--mark)
 	* [recur] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-recur-a-task--recur)
-	* [Indicate overdue and completed task] (Indicate overdue and completed task)
+	* [Indicate overdue and completed task] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-identify-overdue-and-completed-task)
 * Code written: [[functional code](../collated/main/A0148145E.md)][[test code](../collated/test/A0148145E.md)][[docs](../collated/docs/A0148145E.md)]
 * Other major contributions:
 	* Did initial refactoring from AddressBook to MustDoList
