@@ -16,7 +16,7 @@
  * [Mark](#how-to-mark-a-task--mark)
  * [Unmark](#how-to-unmark-a-task--ummark)
  * [Recur](#how-to-recur-a-task--recur)
- * [Set Path](#how-to-set-a-storage-path--setpath)
+ * [Setpath](#how-to-set-a-storage-path--setpath)
  * [Select](#how-to-select-a-task--select)
  * [Exit](#how-to-exit-the-program--exit)
  * [Redo](#how-to-redo-a-task)
