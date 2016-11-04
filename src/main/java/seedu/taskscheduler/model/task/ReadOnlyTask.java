@@ -80,7 +80,7 @@ public interface ReadOnlyTask {
             .append(getLocation())  
             .append(" ");  
         getTags().forEach(b -> builder.append(b.tagName + " ")); 
-        builder.append(isCompleted() ? " completed" : " incomplete");
+        builder.append(isCompleted() ? " completed" : " pending");
         builder.append(" " + getType());
         return builder.toString();  
     }  

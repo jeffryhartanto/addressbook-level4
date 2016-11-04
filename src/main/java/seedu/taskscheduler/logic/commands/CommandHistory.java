@@ -3,9 +3,7 @@ package seedu.taskscheduler.logic.commands;
 import java.util.EmptyStackException;
 import java.util.Set;
 import java.util.Stack;
-import java.util.logging.Logger;
 
-import seedu.taskscheduler.commons.core.LogsCenter;
 import seedu.taskscheduler.commons.core.Messages;
 import seedu.taskscheduler.model.task.ReadOnlyTask;
 import seedu.taskscheduler.model.task.UniqueTaskList.TaskNotFoundException;
@@ -16,9 +14,8 @@ import seedu.taskscheduler.model.task.UniqueTaskList.TaskNotFoundException;
  */
 public class CommandHistory {
     
-    private static final Logger logger = LogsCenter.getLogger(CommandHistory.class);
-	private static final int initialValue = 0;
-	private static final int firstValue = 1;
+	private static final int EMPTY_VALUE = 0;
+	private static final int FIRST_VALUE = 1;
 	
 	private static Stack<String> prevCommand = new Stack<String>();
 	private static Stack<String> nextCommand = new Stack<String>();
@@ -43,8 +40,8 @@ public class CommandHistory {
 	
 	public static String getPrevCommand() {
 		String result = "";
-		if (prevCommand.size() > initialValue) {
-			if (prevCommand.size() == firstValue) {
+		if (prevCommand.size() > EMPTY_VALUE) {
+			if (prevCommand.size() == FIRST_VALUE) {
 				result = prevCommand.peek();
 			} else {
 				result = prevCommand.pop();
@@ -72,7 +69,7 @@ public class CommandHistory {
     }
 	
 	public static Command getExecutedCommand() throws EmptyStackException{
-		if (executedCommands.size() > initialValue) {
+		if (executedCommands.size() > EMPTY_VALUE) {
 			return executedCommands.pop();
 		} else {
 			throw new EmptyStackException();
@@ -80,7 +77,7 @@ public class CommandHistory {
 	}
 
     public static Command getRevertedCommand() throws EmptyStackException{
-        if (revertedCommands.size() > initialValue) {
+        if (revertedCommands.size() > EMPTY_VALUE) {
             return revertedCommands.pop();
         } else {
             throw new EmptyStackException();

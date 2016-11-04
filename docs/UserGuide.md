@@ -92,7 +92,7 @@ The `find` command allows you to find existing tasks in the MustDoList by keywor
 
 Find format: **`find`**`KEYWORD`
 
-> The KEYWORD in the command format refers to parameters that you want to search for. Some examples of KEYWORD are task name, location, date, time, completed and incomplete tasks.<br> 
+> The KEYWORD in the command format refers to parameters that you want to search for. Some examples of KEYWORD are task name, location, date, time, completed and pending tasks.<br> 
 > The command format requires the following date and time format.<br>
 > Date Format: DD-MMM-YYYY<br>
 where `DD` refers to the day, `MMM` refers to the first 3 letters of the month and `YYYY` refers to the year.<br>

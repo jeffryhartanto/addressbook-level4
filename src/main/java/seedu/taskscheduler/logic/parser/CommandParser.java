@@ -66,7 +66,7 @@ public abstract class CommandParser {
         }
 
         String index = matcher.group("targetIndex");
-        if(!StringUtil.isUnsignedInteger(index)) {
+        if (!StringUtil.isUnsignedInteger(index)) {
             return Optional.empty();
         }
         return Optional.of(Integer.parseInt(index));
