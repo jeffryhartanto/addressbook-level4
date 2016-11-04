@@ -66,7 +66,7 @@ public class PriorityListPanel extends UiPart {
 
     private void setConnections(ObservableList<ReadOnlyTask> taskList) {
         originalList = taskList;
-        priorityListView.setItems(taskList.filtered(b -> !b.isCompleted()));
+        priorityListView.setItems(taskList.filtered(b -> !b.hasCompleted()));
         priorityListView.setCellFactory(listView -> new TaskListViewCell());
         setEventHandlerForSelectionChangeEvent();
     }
@@ -102,7 +102,7 @@ public class PriorityListPanel extends UiPart {
         protected void updateItem(ReadOnlyTask task, boolean empty) {
             super.updateItem(task, empty);
 
-            if (empty || task == null || task.isCompleted()) {
+            if (empty || task == null || task.hasCompleted()) {
                 setGraphic(null);
                 setText(null);
                 setManaged(false);

@@ -90,7 +90,7 @@ public class TaskCard extends UiPart{
     //@@author A0148145E
     public void indicatingColourByCondition(ReadOnlyTask task) {
         
-        if (task.isCompleted()) {
+        if (task.hasCompleted()) {
             completeStatus.setFill(COMPLETED_INDICATION);
         } else if (task.getEndDate().getDate() != null && task.getEndDate().getDate().before(new Date())) {
             completeStatus.setFill(OVERDUE_INDICATION);
