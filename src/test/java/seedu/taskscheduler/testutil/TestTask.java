@@ -130,7 +130,7 @@ public class TestTask implements ReadOnlyTask {
     }
     
     @Override
-    public boolean isCompleted() {
+    public boolean hasCompleted() {
         return completeStatus;
     }
     

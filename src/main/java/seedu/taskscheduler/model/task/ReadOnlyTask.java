@@ -14,7 +14,7 @@ public interface ReadOnlyTask {
     TaskDateTime getEndDate();
     Location getLocation();
     ReadOnlyTask copy();
-    boolean isCompleted();
+    boolean hasCompleted();
     TaskType getType();
     
     public enum TaskType {
@@ -38,8 +38,7 @@ public interface ReadOnlyTask {
                 && other.getName().equals(this.getName()) // state checks here onwards
                 && other.getStartDate().equals(this.getStartDate())
                 && other.getEndDate().equals(this.getEndDate())
-                && other.getLocation().equals(this.getLocation())
-                && other.getTags().equals(this.getTags()));
+                && other.getLocation().equals(this.getLocation()));
     }
 
     /**
@@ -71,6 +70,7 @@ public interface ReadOnlyTask {
     //@@author A0138696L
     default String getAllFieldAsText() {  
         final StringBuilder builder = new StringBuilder();  
+        
         builder.append(getName())  
             .append(" ")  
             .append(getStartDate().getDisplayString())  
@@ -80,10 +80,14 @@ public interface ReadOnlyTask {
             .append(getLocation())  
             .append(" ");  
         getTags().forEach(b -> builder.append(b.tagName + " ")); 
-        builder.append(isCompleted() ? " completed" : " pending");
-        builder.append(" " + getType());
+        
+        builder.append(hasCompleted() ? "completed" : isOverdue() ? "overdue" : "pending")
+            .append(" ")
+            .append(getType());
+        
         return builder.toString();  
     }  
+    
     //@@author
     
     

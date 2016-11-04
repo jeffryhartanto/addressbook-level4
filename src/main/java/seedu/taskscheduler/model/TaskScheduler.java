@@ -28,7 +28,7 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
     
     private final UniqueTaskList tasks = new UniqueTaskList();
     private final UniqueTagList tags = new UniqueTagList();
-    final Map<Tag, Integer> tagsCounter = new HashMap<>();
+    private final Map<Tag, Integer> tagsCounter = new HashMap<>();
     private final UniqueTagList tagsMasterList = new UniqueTagList();
 
     public TaskScheduler() {}
@@ -37,14 +37,14 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
      * Tasks and Tags are copied into this task scheduler
      */
     public TaskScheduler(ReadOnlyTaskScheduler toBeCopied) {
-        this(toBeCopied.getUniqueTaskList(), toBeCopied.getUniqueTagList());
+        this(toBeCopied.getUniqueTaskList(), toBeCopied.getUniqueTagList(), toBeCopied.getTagsCounter());
     }
 
     /**
      * Tasks and Tags are copied into this task scheduler
      */
-    public TaskScheduler(UniqueTaskList tasks, UniqueTagList tags) {
-        resetData(tasks.getInternalList(), tags.getInternalList());
+    public TaskScheduler(UniqueTaskList tasks, UniqueTagList tags, Map<Tag, Integer> tagsCounter) {
+        resetData(tasks.getInternalList(), tags.getInternalList(), tagsCounter);
     }
 
     public static ReadOnlyTaskScheduler getEmptyTaskScheduler() {
@@ -68,14 +68,19 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
     public void setTags(Collection<Tag> tags) {
         this.tags.getInternalList().setAll(tags);
     }
+   
+    public void setTagsCounter(Map<Tag, Integer> tagsCounter) {
+        this.tagsCounter.putAll(tagsCounter);
+    }
 
-    public void resetData(Collection<? extends ReadOnlyTask> newTasks, Collection<Tag> newTags) {
+    public void resetData(Collection<? extends ReadOnlyTask> newTasks, Collection<Tag> newTags, Map<Tag, Integer> tagsCounter) {
         setTasks(newTasks.stream().map(Task::new).collect(Collectors.toList()));
         setTags(newTags);
+        setTagsCounter(tagsCounter);
     }
 
     public void resetData(ReadOnlyTaskScheduler newData) {
-        resetData(newData.getTaskList(), newData.getTagList());
+        resetData(newData.getTaskList(), newData.getTagList(), newData.getTagsCounter());
     }
 
 //// task-level operations
@@ -279,5 +284,10 @@ public class TaskScheduler implements ReadOnlyTaskScheduler {
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
         return Objects.hash(tasks, tags);
+    }
+
+    @Override
+    public Map<Tag, Integer> getTagsCounter() {
+        return tagsCounter;
     }
 }

@@ -1,6 +1,7 @@
 package seedu.taskscheduler.ui;
 
 import javafx.application.Platform;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -10,7 +11,6 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import seedu.taskscheduler.commons.core.EventsCenter;
 import seedu.taskscheduler.commons.core.LogsCenter;
 import seedu.taskscheduler.commons.events.ui.TaskPanelItemChangedEvent;
 import seedu.taskscheduler.commons.events.ui.TaskPanelSelectionChangedEvent;
@@ -66,17 +66,28 @@ public class TaskListPanel extends UiPart {
         taskListView.setItems(taskList);
         taskListView.setCellFactory(listView -> new TaskListViewCell());
         setEventHandlerForSelectionChangeEvent();
+        setEventHandlerForItemsChangeEvent();
     }
 
     private void addToPlaceholder() {
         SplitPane.setResizableWithParent(placeHolderPane, false);
         placeHolderPane.getChildren().add(panel);
     }
+    
+    //@@author A0148145E
+    private void setEventHandlerForItemsChangeEvent() {
+        taskListView.getItems().addListener(new ListChangeListener() {
+            @Override
+            public void onChanged(ListChangeListener.Change change) {
+                raise(new TaskPanelItemChangedEvent(taskListView.getItems()));
+            }
+        });
+    }
+    //@@author
 
     private void setEventHandlerForSelectionChangeEvent() {
         taskListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                EventsCenter.getInstance().post(new TaskPanelItemChangedEvent(taskListView.getItems()));
                 logger.fine("Selection in person list panel changed to : '" + newValue + "'");
                 raise(new TaskPanelSelectionChangedEvent(newValue));
             }
