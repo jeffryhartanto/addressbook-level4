@@ -11,7 +11,9 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -24,10 +26,13 @@ public class XmlSerializableTaskScheduler implements ReadOnlyTaskScheduler {
     private List<XmlAdaptedTask> tasks;
     @XmlElement
     private List<Tag> tags;
+    @XmlElement
+    private Map<Tag, Integer> tagsCounter;
 
     {
         tasks = new ArrayList<>();
         tags = new ArrayList<>();
+        tagsCounter = new HashMap<>();
     }
 
     /**
@@ -41,6 +46,7 @@ public class XmlSerializableTaskScheduler implements ReadOnlyTaskScheduler {
     public XmlSerializableTaskScheduler(ReadOnlyTaskScheduler src) {
         tasks.addAll(src.getTaskList().stream().map(XmlAdaptedTask::new).collect(Collectors.toList()));
         tags = src.getTagList();
+        tagsCounter = src.getTagsCounter();
     }
 
     @Override
@@ -81,6 +87,11 @@ public class XmlSerializableTaskScheduler implements ReadOnlyTaskScheduler {
     @Override
     public List<Tag> getTagList() {
         return Collections.unmodifiableList(tags);
+    }
+
+    @Override
+    public Map<Tag, Integer> getTagsCounter() {
+        return tagsCounter;
     }
 
 }
