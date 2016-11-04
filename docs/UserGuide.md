@@ -92,7 +92,7 @@ The `find` command allows you to find existing tasks in the MustDoList by keywor
 
 Find format: **`find`**`KEYWORD`
 
-> The KEYWORD in the command format refers to parameters that you want to search for. Some examples of KEYWORD are task name, location, date, time, completed and incomplete tasks.<br> 
+> The KEYWORD in the command format refers to parameters that you want to search for. Some examples of KEYWORD are task name, location, date, time, event, deadline, floating, completed, overdue and pending tasks.<br> 
 > The command format requires the following date and time format.<br>
 > Date Format: DD-MMM-YYYY<br>
 where `DD` refers to the day, `MMM` refers to the first 3 letters of the month and `YYYY` refers to the year.<br>
@@ -110,9 +110,10 @@ Examples:<br>
 #### How to delete a task : `delete`
 The `delete` command allows you to delete any existing task from the MustDoList by index. <br>
 
-Delete format: **`delete`**`INDEX`
+Delete format: **`delete`**`[INDEX]`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -127,7 +128,7 @@ Clear format: `clear`
 #### How to edit a task : `edit`
 The `edit` command allows you to edit a specific task's parameter from the MustDoList by the task's index.<br>
 
-Edit format: **`edit`**`INDEX [TASK_NAME][from START_TIME_DATE to END_TIME_DATE][at LOCATION]`
+Edit format: **`edit`**`[INDEX] [TASK_NAME][from START_TIME_DATE to END_TIME_DATE][at LOCATION]`
 
 Examples:<br>
 * **`edit`**`1 Must Do CS2103 Pretut`<br>
@@ -142,11 +143,13 @@ Examples:<br>
 where `DD` refers to the day, `MMM` refers to the first 3 letters of the month and `YYYY` refers to the year.<br>
 > Time Format: HH:MM am/pm<br>
 where `HH` refers to hours and `MM` refers to minutes.<br> 
+> The Index in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
 
 #### How to replace a task : `replace`
 The `replace` command allows you to replace the entire task's parameter from the MustDoList by task's index.<br>
 
-Replace format: **`replace`**`INDEX TASK_NAME from START_TIME_DATE to END_TIME_DATE at LOCATION`
+Replace format: **`replace`**`[INDEX] TASK_NAME from START_TIME_DATE to END_TIME_DATE at LOCATION`
 
 Examples:<br>
 * `list`<br>
@@ -161,6 +164,8 @@ Examples:<br>
 where `DD` refers to the day, `MMM` refers to the first 3 letters of the month and `YYYY` refers to the year.<br>
 > Time Format: HH:MM am/pm<br>
 where `HH` refers to hours and `MM` refers to minutes.<br> 
+> The Index in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
 
 #### How to undo a task : `undo`
 The `undo` command allows you to undo the previous entered commands into the MustdoList.<br>
@@ -170,9 +175,10 @@ Undo format: `undo`
 #### How to mark a task : `mark`
 The `mark` command allows you to mark a completed task by the task's index.<br>
 
-Mark format: **`mark`**`INDEX`
+Mark format: **`mark`**`[INDEX]`
 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -185,9 +191,10 @@ Examples:<br>
 #### How to unmark a task : `ummark`
 The `unmark` command allows you to unmark a task by the task's index.<br>
 
-Unmark format: **`unmark`**`INDEX`
+Unmark format: **`unmark`**`[INDEX]`
 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -200,11 +207,11 @@ Examples:<br>
 #### How to recur a task : `recur`
 The `recur` command allows you to recur a task for a specific numbers of days.<br>
 
-Recur previous format: **`recur`**`every INTERVAL until END_DATE`<br>
-Recur index format: **`recur`**`INDEX every INTERVAL until END_DATE`<br>
+Recur index format: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 
 > The INTERVAL in the command format refers to the number of days you want to recur.<br> 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
 > The command format requires the following date format.<br>
 > Date Format: DD-MMM-YYYY<br>
 where `DD` refers to the day, `MMM` refers to the first 3 letters of the month and `YYYY` refers to the year.<br>
@@ -233,9 +240,10 @@ Examples:<br>
 #### How to select a task : `select`
 The `select` command allows you to display any existing task's command from the MustDoList by index. <br>
 
-Select format: **`select`**`INDEX`
+Select format: **`select`**`[INDEX]`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -284,34 +292,34 @@ e.g. **`add`**`CS2103 Tutorial from 8am today to 9am tomorrow at NUS COM1-B103`
 * Find: **`find`**`KEYWORD`<br>
 e.g. **`find`**`CS2103`
 
-* Delete: **`delete`**`INDEX`<br>
+* Delete: **`delete`**`[INDEX]`<br>
 e.g. **`delete`**`1`
 
 * Clear: `clear`
 
-* Edit: **`edit`**`[INDEX EVENT_NAME][from START_TIME_DATE to END_TIME_DATE][at LOCATION]`<br>
+* Edit: **`edit`**`[INDEX] [EVENT_NAME][from START_TIME_DATE to END_TIME_DATE][at LOCATION]`<br>
 e.g. **`edit`**`1 Must Do CS2103 Pretut`<br>
 e.g. **`edit`**`2 at NUS COM1-B103`<br>
 e.g. **`edit`**`1 from 8am 11-Oct-2016 to 9am 11-Oct-2016`
 
-* Replace: **`replace`**`INDEX EVENT_NAME from START_TIME_DATE to END_TIME_DATE at LOCATION`<br>
+* Replace: **`replace`**`[INDEX] EVENT_NAME from START_TIME_DATE to END_TIME_DATE at LOCATION`<br>
 e.g. **`replace`**`2 new task name from 8am 10-Oct-2016 to 9am 10-Oct-2016 at NUS`<br>
 
 * Undo: `undo`
 
-* Mark: **`mark`**`INDEX`<br>
+* Mark: **`mark`**`[INDEX]`<br>
 e.g. **`mark`**`1`
 
-* Unmark: **`unmark`**`INDEX`<br>
+* Unmark: **`unmark`**`[INDEX]`<br>
 e.g. **`ummark`**`1`
 
-* Recur: **`recur`**`INDEX every INTERVAL until END_DATE`<br>
+* Recur: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 e.g. **`recur`**`every 2 days until 19-Oct-2016`
 
 * SetPath: **`setpath`**`FILENAME`<br>
 e.g. **`setpath`**`taskData`
 
-* Select: **`select`**`INDEX`<br>
+* Select: **`select`**`[INDEX]`<br>
 e.g. **`select`**`1`
 
 * Exit: `exit`
