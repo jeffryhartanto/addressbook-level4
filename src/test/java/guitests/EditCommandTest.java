@@ -22,9 +22,15 @@ public class EditCommandTest extends TaskSchedulerGuiTest {
     }
 
     private void edit_noIndex_success(int prevIndex) {
+        //edit name without index
         String changedName = "new name";
         commandBox.runCommand("edit " + changedName);
         assertEquals(taskListPanel.navigateToTask(prevIndex - 1).getFullName(), changedName);
+
+        //edit end date without index
+        String deadline = "25-Oct-2016, Tue";
+        commandBox.runCommand("edit by " + deadline);
+        assertEquals(taskListPanel.navigateToTask(prevIndex - 1).getEndDate(), deadline);
     }
     
     private void edit_period_success(int indexToEdit, String changedStartDate, String changedEndDate) {
