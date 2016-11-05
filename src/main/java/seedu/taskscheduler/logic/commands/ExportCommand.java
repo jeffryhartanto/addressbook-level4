@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import java.io.OutputStream;
-import java.nio.file.Files;
 
 import seedu.taskscheduler.commons.core.Messages;
 import seedu.taskscheduler.commons.util.FileUtil;

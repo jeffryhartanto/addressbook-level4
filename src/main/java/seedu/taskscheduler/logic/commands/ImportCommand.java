@@ -1,7 +1,5 @@
 package seedu.taskscheduler.logic.commands;
 
-import static seedu.taskscheduler.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-
 import java.io.File;
 
 import seedu.taskscheduler.commons.core.EventsCenter;
