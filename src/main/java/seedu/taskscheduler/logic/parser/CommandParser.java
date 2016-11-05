@@ -55,7 +55,7 @@ public abstract class CommandParser {
     protected static final Pattern SETPATH_DATA_ARGS_FORMAT =
             Pattern.compile("(?<name>[\\p{Alnum}|/|:|\\\\|\\s+]+)"); 
     
-    protected static final Pattern SETEXPORT_DATA_ARGS_FORMAT =
+    protected static final Pattern SETEXPORTIMPORT_DATA_ARGS_FORMAT =
             Pattern.compile("(?<name>[\\p{Alnum}|/|.|:|\\\\|\\s+]+)"); 
     
     /**

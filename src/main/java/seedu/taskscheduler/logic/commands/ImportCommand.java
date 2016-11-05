@@ -37,7 +37,7 @@ public class ImportCommand extends Command {
 
     @Override
     public CommandResult execute() {
-        if (FileUtil.isFileExists(new File(filePath))) {
+        if (FileUtil.isFileExists(new File(filePath)) && filePath.endsWith(".xml")) {
             restartapp();
             EventsCenter.getInstance().post(new ImportFilePathEvent(filePath));
             return new CommandResult(String.format(MESSAGE_SUCCESS, filePath));
