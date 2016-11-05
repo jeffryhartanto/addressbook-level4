@@ -16,16 +16,19 @@ Role: Team lead <br>
 	* [edit] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-edit-a-task--edit)
 	* [mark] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-mark-a-task--mark)
 	* [recur] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-recur-a-task--recur)
+	* [replace] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-replace-a-task--replace)
+	* [tag] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-tag-a-task--tag)
 	* [Indicate overdue and completed task] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-identify-overdue-and-completed-task)
 * Code written: [[functional code](../collated/main/A0148145E.md)][[test code](../collated/test/A0148145E.md)][[docs](../collated/docs/A0148145E.md)]
 * Other major contributions:
 	* Do initial refactoring from AddressBook to MustDoList
-	* Set up Travis, Coveralls and Codacy
+	* Github management, version control and release
+	* Set up Travis, Coveralls, Codacy and Collated
 	* Managing the team planning.
 
 -----
 
-#### [Tan Suan Zhi](https://github.com/e0003892)
+#### [Tan Suan Zhi](https://github.com/suanzhi)
 <img src="images/TSZ.jpg" width="150"><br>
 Role: Project Manager <br>  
 * Components in charge of: [UI](https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/DeveloperGuide.md#ui-component)
