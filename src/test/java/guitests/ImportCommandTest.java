@@ -14,8 +14,26 @@ public class ImportCommandTest extends TaskSchedulerGuiTest {
     public void importFilePath() {
         
         // Checking for invalid importing filepath before executing import command
-        String importingPath = "datatest/testing";
+        String importingPath = "datatest/testing.xml";
         commandBox.runCommand("import " + importingPath);
-        assertResultMessage(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ImportCommand.MESSAGE_USAGE_INVALID));
+        assertResultMessage(ImportCommand.MESSAGE_UNSUCCESS + importingPath + "\n" + ImportCommand.MESSAGE_USAGE_INVALID);
+        
+        // Checking for invalid importing file format
+        importingPath = "datatest/testing.txt";
+        commandBox.runCommand("import " + importingPath);
+        assertResultMessage(ImportCommand.MESSAGE_UNSUCCESS + importingPath + "\n" + ImportCommand.MESSAGE_USAGE_INVALID);
+        
+        importingPath = "datatest/testing.asdasd";
+ 
+        commandBox.runCommand("import " + importingPath);
+        assertResultMessage(ImportCommand.MESSAGE_UNSUCCESS + importingPath + "\n" + ImportCommand.MESSAGE_USAGE_INVALID);
+        
+        importingPath = "datatest/-testing-.xml";
+        commandBox.runCommand("import " + importingPath);
+        assertResultMessage(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ImportCommand.MESSAGE_USAGE));
+        
+        importingPath = "datatest/@testing.xml";
+        commandBox.runCommand("import " + importingPath);
+        assertResultMessage(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ImportCommand.MESSAGE_USAGE));
     }
 }

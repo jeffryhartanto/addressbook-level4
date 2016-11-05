@@ -43,7 +43,7 @@ public class ImportCommand extends Command {
             return new CommandResult(String.format(MESSAGE_SUCCESS, filePath));
             
         }
-        return new CommandResult(MESSAGE_UNSUCCESS + filePath + "\n" +MESSAGE_USAGE_INVALID); 
+        return new CommandResult(MESSAGE_UNSUCCESS + filePath + "\n" + MESSAGE_USAGE_INVALID); 
     }
 
     @Override
