@@ -186,7 +186,7 @@ public class MainApp extends Application {
     
     //@@author A0138696L
     @Subscribe
-    public void changeFilePathRequestEvent(FilePathChangedEvent event) {
+    public void handleChangeFilePathRequestEvent(FilePathChangedEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         config.setTaskSchedulerFilePath(event.toString());
         try {
@@ -195,6 +195,7 @@ public class MainApp extends Application {
             logger.warning("Failed to save config file : " + StringUtil.getDetails(e));
         }
     }
+
     @Subscribe
     public void handleImportFilePathEvent(ImportFilePathEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));

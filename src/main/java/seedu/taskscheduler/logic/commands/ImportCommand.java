@@ -21,13 +21,14 @@ public class ImportCommand extends Command {
             + "Parameters: <filename>\n"
             + "Example: " + COMMAND_WORD
             + " TaskSchedulerData\n";
-    public static final String MESSAGE_USAGE_INVALID = COMMAND_WORD + ": Import valid file to Task Scheduler. "
+    public static final String MESSAGE_USAGE_INVALID = COMMAND_WORD + ": valid file to Task Scheduler. "
             + "Parameters: <filename>\n"
             + "Example: " + COMMAND_WORD
             + " TaskSchedulerData\n";
 
     public static final String MESSAGE_SUCCESS = "File path changed: %s";
-    
+    public static final String MESSAGE_UNSUCCESS = "File not found: ";
+
     private String filePath;
     
     public ImportCommand(String arguments) {
@@ -40,7 +41,7 @@ public class ImportCommand extends Command {
             EventsCenter.getInstance().post(new ImportFilePathEvent(filePath));
             return new CommandResult(String.format(MESSAGE_SUCCESS, filePath));
         }
-        return new CommandResult(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MESSAGE_USAGE_INVALID)); 
+        return new CommandResult(MESSAGE_UNSUCCESS + filePath + "\n" +MESSAGE_USAGE_INVALID); 
     }
 
     @Override

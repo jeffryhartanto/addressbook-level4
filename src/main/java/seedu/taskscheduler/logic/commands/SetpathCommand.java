@@ -6,7 +6,7 @@ import seedu.taskscheduler.commons.events.storage.FilePathChangedEvent;
 //@@author A0138696L
 
 /**
- * Changing working file path of taskScheduler.
+ * Set the working path of the Task Scheduler.
  */
 public class SetpathCommand extends Command {
 
