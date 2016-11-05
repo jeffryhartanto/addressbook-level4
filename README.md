@@ -4,7 +4,7 @@
 
 # Task Scheduler
 
-<img src="docs/images/Mock UI.png" width="600"><br>
+<img src="docs/images/Ui.png" width="900"><br>
 
 * This is a desktop Task Scheduler application. It has a GUI but most of the user interactions happen using 
   a CLI (Command Line Interface).
