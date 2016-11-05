@@ -426,7 +426,7 @@ e.g. **`setpath`**`taskData`
 e.g. **`select`**`1`
 
 * Tag: **`tag`**`[INDEX] TAG_NAME...`<br>
-e.g. **`tag`**`1`
+e.g. **`tag`**`1 project priority`
 
 * Exit: `exit`
 
