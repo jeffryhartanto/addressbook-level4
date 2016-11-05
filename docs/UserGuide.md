@@ -240,7 +240,7 @@ Examples:<br>
 #### How to select a task : `select`
 The `select` command allows you to display any existing task's command from the MustDoList by index. <br>
 
-Select format: **`select`**`[INDEX]`
+Select format: **`select`**`INDEX`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
 > Index are optional provided that there is previous modified task.<br>
@@ -249,6 +249,20 @@ Examples:<br>
 * `list`<br>
   **`select`**`2`<br>
   Select the 2nd task in the MustDoList to display the command.
+  
+ #### How to tag a task : `tag`
+The `tag` command allows you to tag any existing task with tags. <br>
+
+Select format: **`tag`**`INDEX`
+
+> The Index in the command format refers to the index number shown in the most recent listing.<br>
+> Index are optional provided that there is previous modified task.<br>
+
+Examples:<br>
+* `list`<br>
+  **`tag`**`2`**`school`<br>
+  Tag the 2nd task in the MustDoList with the tag [school]
+  
   
 #### How to exit the program : `exit`
 The `exit` command allows you to exits the program.<br>
@@ -319,7 +333,10 @@ e.g. **`recur`**`every 2 days until 19-Oct-2016`
 * SetPath: **`setpath`**`FILENAME`<br>
 e.g. **`setpath`**`taskData`
 
-* Select: **`select`**`[INDEX]`<br>
+* Select: **`select`**`INDEX`<br>
+e.g. **`select`**`1`
+
+* Tag: **`tag`**`[INDEX] TAG_NAME...`<br>
 e.g. **`select`**`1`
 
 * Exit: `exit`
