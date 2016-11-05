@@ -2,6 +2,7 @@ package seedu.taskscheduler.logic.commands;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,6 +27,7 @@ public static final String COMMAND_WORD = "export";
 
     public static final String MESSAGE_SUCCESS = "Successfully Exported data to: %s";
     public static final String MESSAGE_UNSUCCESS = "Unsuccessfully in exporting data to: %s";
+    public static final String MESSAGE_INVALID_FILENAME = "Invalid file name: %s";
     
     private String PathLink;
     
@@ -35,8 +37,13 @@ public static final String COMMAND_WORD = "export";
 
     @Override
     public CommandResult execute() {
+        
+        File file = new File(PathLink);
+        
         try {
-            exportData();
+            exportData(file);
+        } catch (FileNotFoundException e) {
+            return new CommandResult(String.format(MESSAGE_INVALID_FILENAME, PathLink));
         } catch (IOException e) {
             return new CommandResult(String.format(MESSAGE_UNSUCCESS, PathLink));
         }
@@ -51,25 +58,24 @@ public static final String COMMAND_WORD = "export";
         return null;
     }
     
-    private void exportData() throws IOException {
+    private void exportData(File file) throws IOException {
         InputStream is = null;
         OutputStream os = null;
-        
-        File file = new File(PathLink);
-        FileUtil.createIfMissing(file);
         
         try {
             is = new FileInputStream(CommandHistory.readPreviousStorageFilePath());
             os = new FileOutputStream(file);
 
+            FileUtil.createIfMissing(file);
             byte[] buffer = new byte[1024];
             int length;
             while ((length = is.read(buffer)) > 0) {
                 os.write(buffer, 0, length);
             }
-        } finally {
             is.close();
             os.close();
-        }
+        } catch (FileNotFoundException fnfe) {
+            throw new FileNotFoundException();
+        }   
     }
 }
