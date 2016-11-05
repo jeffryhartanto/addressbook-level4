@@ -31,6 +31,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
 import java.util.stream.Collectors;
@@ -129,7 +130,7 @@ public class TestUtil {
     }
 
     public static TaskScheduler generateEmptyTaskScheduler() {
-        return new TaskScheduler(new UniqueTaskList(), new UniqueTagList());
+        return new TaskScheduler(new UniqueTaskList(), new UniqueTagList(), new HashMap<>());
     }
 
     public static XmlSerializableTaskScheduler generateSampleStorageTaskScheduler() {

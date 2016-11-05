@@ -27,6 +27,8 @@ public class PriorityListPanel extends UiPart {
     private VBox panel;
     private AnchorPane placeHolderPane;
 
+    private ObservableList<ReadOnlyTask> originalList;
+    
     @FXML
     private ListView<ReadOnlyTask> priorityListView;
 
@@ -63,7 +65,8 @@ public class PriorityListPanel extends UiPart {
     }
 
     private void setConnections(ObservableList<ReadOnlyTask> taskList) {
-        priorityListView.setItems(taskList);
+        originalList = taskList;
+        priorityListView.setItems(taskList.filtered(b -> !b.hasCompleted()));
         priorityListView.setCellFactory(listView -> new TaskListViewCell());
         setEventHandlerForSelectionChangeEvent();
     }
@@ -99,12 +102,12 @@ public class PriorityListPanel extends UiPart {
         protected void updateItem(ReadOnlyTask task, boolean empty) {
             super.updateItem(task, empty);
 
-            if (empty || task == null || task.isCompleted()) {
+            if (empty || task == null || task.hasCompleted()) {
                 setGraphic(null);
                 setText(null);
-                setHeight(0);
+                setManaged(false);
             } else {
-                setGraphic(TaskCard.load(task, getIndex() + 1).getLayout());
+                setGraphic(TaskCard.load(task, originalList.indexOf(task) + 1).getLayout());
             }
         }
     }

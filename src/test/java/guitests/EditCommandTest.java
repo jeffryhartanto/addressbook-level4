@@ -12,22 +12,28 @@ public class EditCommandTest extends TaskSchedulerGuiTest {
     public void edit() {
 
         int indexToEdit = 1;
-        assertNameChangeSuccess(indexToEdit, "change name");
+        edit_name_success(indexToEdit, "change name");
 
-        assertAddressChangeSuccess(indexToEdit, "a changed location");
+        edit_address_success(indexToEdit, "a changed location");
 
-        assertDateChangeSuccess(indexToEdit, "05-Oct-2016", "15-Nov-2016");
+        edit_period_success(indexToEdit, "05-Oct-2016", "15-Nov-2016");
 
-        assertEditWithoutIndex(indexToEdit);
+        edit_noIndex_success(indexToEdit);
     }
 
-    private void assertEditWithoutIndex(int prevIndex) {
+    private void edit_noIndex_success(int prevIndex) {
+        //edit name without index
         String changedName = "new name";
         commandBox.runCommand("edit " + changedName);
         assertEquals(taskListPanel.navigateToTask(prevIndex - 1).getFullName(), changedName);
+
+        //edit end date without index
+        String deadline = "25-Oct-2016, Tue";
+        commandBox.runCommand("edit by " + deadline);
+        assertEquals(taskListPanel.navigateToTask(prevIndex - 1).getEndDate(), deadline);
     }
     
-    private void assertDateChangeSuccess(int indexToEdit, String changedStartDate, String changedEndDate) {
+    private void edit_period_success(int indexToEdit, String changedStartDate, String changedEndDate) {
         //edit the date
         commandBox.runCommand("edit " + indexToEdit + " from " + changedStartDate + " to " + changedEndDate);
         
@@ -36,7 +42,7 @@ public class EditCommandTest extends TaskSchedulerGuiTest {
         assertTrue(taskListPanel.navigateToTask(indexToEdit - 1).getEndDate().contains(changedEndDate));
     }
 
-    private void assertAddressChangeSuccess(int indexToEdit, String changedAddress) {
+    private void edit_address_success(int indexToEdit, String changedAddress) {
         //edit the address
         commandBox.runCommand("edit " + indexToEdit + " at " + changedAddress);
         
@@ -44,7 +50,7 @@ public class EditCommandTest extends TaskSchedulerGuiTest {
         assertEquals(taskListPanel.navigateToTask(indexToEdit - 1).getLocation(), changedAddress);
     }
 
-    private void assertNameChangeSuccess(int indexToEdit, String changedName) {
+    private void edit_name_success(int indexToEdit, String changedName) {
         //edit the name
         commandBox.runCommand("edit " + indexToEdit + " " + changedName);
         

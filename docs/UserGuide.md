@@ -47,6 +47,8 @@
    * **`exit`** : exits the app
 6. Refer to the [Features](#features) section below for details of each command.<br>
 
+[[Return to Top]](#user-guide)
+
 ## Features
 
 > Command Format
@@ -54,6 +56,8 @@
 * Items in `SQUARE_BRACKETS` are optional.<br>
 * Items in `...` after them can have multiple instances.<br>
 * Parameters can be in any order.<br>
+
+[[Return to Top]](#user-guide)
 
 #### Getting help : `help`
 The `help` command provides the user guide to guide the user through the application.
@@ -83,10 +87,14 @@ Examples:<br>
 * **`add`**`CS2103 Tutorial from 8am today to 9am tomorrow at NUS COM1-B103`<br>
 	Adding an event.	
 
+[[Return to Top]](#user-guide)
+
 #### How to list tasks : `list`
 The `list` command allows you to show a list of all the tasks that are present in the MustDoList.<br>
 
 Format: `list`
+
+[[Return to Top]](#user-guide)
 
 #### How to find a task : `find`
 The `find` command allows you to find existing tasks in the MustDoList by keywords.<br>
@@ -108,6 +116,8 @@ Examples:<br>
 * **`find`**`completed`<br>
   Returns Any task(s) are marked as completed<br>
 
+[[Return to Top]](#user-guide)
+
 #### How to delete a task : `delete`
 The `delete` command allows you to delete any existing task from the MustDoList by index. <br>
 
@@ -121,10 +131,14 @@ Examples:<br>
   **`delete`**`2`<br>
   Deletes the 2nd task in the MustDoList.
 
+[[Return to Top]](#user-guide)
+
 #### How to clear all entries : `clear`
 The `clear` command allows you to clear all entries present in the MustDoList.<br>
 
 Clear format: `clear`  
+
+[[Return to Top]](#user-guide)
 
 #### How to edit a task : `edit`
 The `edit` command allows you to edit a specific task's parameter from the MustDoList by the task's index.<br>
@@ -147,6 +161,8 @@ where `HH` refers to hours and `MM` refers to minutes.<br>
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
 > Index are optional provided that there is previous modified task.<br>
 
+[[Return to Top]](#user-guide)
+
 #### How to replace a task : `replace`
 The `replace` command allows you to replace the entire task's parameter from the MustDoList by task's index.<br>
 
@@ -168,10 +184,14 @@ where `HH` refers to hours and `MM` refers to minutes.<br>
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
 > Index are optional provided that there is previous modified task.<br>
 
+[[Return to Top]](#user-guide)
+
 #### How to undo a task : `undo`
 The `undo` command allows you to undo the previous entered commands into the MustdoList.<br>
 
 Undo format: `undo`
+
+[[Return to Top]](#user-guide)
 
 #### How to mark a task : `mark`
 The `mark` command allows you to mark a completed task by the task's index.<br>
@@ -189,6 +209,8 @@ Examples:<br>
   **`mark`**`1`<br>
   Marks the 1st task in the results of the `find` command as completed.  
   
+[[Return to Top]](#user-guide)
+
 #### How to unmark a task : `ummark`
 The `unmark` command allows you to unmark a task by the task's index.<br>
 
@@ -205,6 +227,8 @@ Examples:<br>
   **`unmark`**`1`<br>
   Unmarks the 1st task in the results of the `find` command as completed. 
   
+[[Return to Top]](#user-guide)
+
 #### How to recur a task : `recur`
 The `recur` command allows you to recur a task for a specific numbers of days.<br>
 
@@ -223,6 +247,8 @@ Examples:<br>
 * **`recur`**`1 every 2 months until 1 year later`<br>
   Recur the task with index 1 for 2 months until 1 year from current date in the MustDoList.
 
+[[Return to Top]](#user-guide)
+
 #### How to set a storage path : `setpath`
 The `setpath` command allows you to save your file to your desire set path.<br>
 
@@ -238,6 +264,8 @@ Examples:<br>
 * **`setpath`**`c:/user/<name>/desktop/taskData`<br>
   Filename taskData will be created at user desktop.<br>
 
+[[Return to Top]](#user-guide)
+
 #### How to select a task : `select`
 The `select` command allows you to display any existing task's command from the MustDoList by index. <br>
 
@@ -251,7 +279,9 @@ Examples:<br>
   **`select`**`2`<br>
   Select the 2nd task in the MustDoList to display the command.
   
- #### How to tag a task : `tag`
+[[Return to Top]](#user-guide)
+
+#### How to tag a task : `tag`
 The `tag` command allows you to tag any existing task with tags. <br>
 
 Tag format: **`tag`**`INDEX`
@@ -265,13 +295,19 @@ Examples:<br>
   Tag the 2nd task in the MustDoList with the tag [school]
   
   
+[[Return to Top]](#user-guide)
+
 #### How to exit the program : `exit`
 The `exit` command allows you to exits the program.<br>
 
 Exit format: `exit` 
 
+[[Return to Top]](#user-guide)
+
 #### How to redo a task
 The <kbd>Up</kbd> <kbd>Down</kbd> allows you to select and display previous typed command in the command box.<br>
+
+[[Return to Top]](#user-guide)
 
 #### How to identify overdue and completed task
 Overdue and completed tasks can be identified by the color codes.<br>
@@ -282,15 +318,21 @@ Completed Task: Green Color Code<br>
 > Overdue Task refers to task that has date and time that passes the current date and time.<br>
 Completed Task refers to task that are marked as "completed".
 
+[[Return to Top]](#user-guide)
+
 #### How to save the data 
 MustDoList data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.
+
+[[Return to Top]](#user-guide)
 
 ## FAQ
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous MustDoList.
-       
+   
+[[Return to Top]](#user-guide)
+    
 ## Command Summary
 
 * Help: `help`
@@ -347,3 +389,5 @@ e.g. **`select`**`1`
 * ColorCode: system indicate overdue(red) and completed(green) task by color code
 
 * Save: system save automatically
+
+[[Return to Top]](#user-guide)

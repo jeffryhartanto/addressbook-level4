@@ -86,9 +86,9 @@ public class TestTask implements ReadOnlyTask {
     }
     
     public String getTaskString() {
-        if (this.getEndDate().toString().isEmpty()) {
+        if (this.getType() == TaskType.FLOATING) {
             return getFloatingString();
-        } else if (this.getStartDate().toString().isEmpty()) {
+        } else if (this.getType() == TaskType.DEADLINE) {
             return getDeadlineString();
         } else {
             return getEventString();
@@ -130,7 +130,7 @@ public class TestTask implements ReadOnlyTask {
     }
     
     @Override
-    public boolean isCompleted() {
+    public boolean hasCompleted() {
         return completeStatus;
     }
     

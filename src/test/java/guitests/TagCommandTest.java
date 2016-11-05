@@ -3,6 +3,9 @@ package guitests;
 import org.junit.Test;
 
 import seedu.taskscheduler.commons.core.Messages;
+import seedu.taskscheduler.logic.commands.Command;
+import seedu.taskscheduler.logic.commands.TagCommand;
+import seedu.taskscheduler.model.task.ReadOnlyTask;
 import seedu.taskscheduler.testutil.TestTask;
 
 import static org.junit.Assert.assertTrue;
@@ -15,20 +18,38 @@ public class TagCommandTest extends TaskSchedulerGuiTest {
     @Test
     public void tag() {
 
-        //put a single tag
+        String singleTagArg = "Priority";
+        String multiTagsArg = "School Urgent";
         TestTask[] currentList = td.getTypicalTasks();
         int targetIndex = 1;
-        String tagArgs = "Priority";
-        assertTagSuccess(targetIndex, tagArgs, currentList);
+        
+        //put a single tag
+        assertTagSuccess(targetIndex, singleTagArg, currentList);
 
         //replace with multiple tags
-        tagArgs = "School Urgent";
-        assertTagSuccess(targetIndex, tagArgs, currentList);
+        assertTagSuccess(targetIndex, multiTagsArg, currentList);
 
         //invalid index
+        tag_indexOutOfBound_messageInvalidIndex(currentList);
+
+        undo_tagCommand_success(currentList, targetIndex, singleTagArg);
+    }
+
+    private void tag_indexOutOfBound_messageInvalidIndex(TestTask[] currentList) {
         commandBox.runCommand("tag " + currentList.length + 1);
         assertResultMessage(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
+    }
 
+    private void undo_tagCommand_success(TestTask[] currentList, int targetIndexOneIndexed, String tagArgs) {
+        
+        ReadOnlyTask task = taskListPanel.getTask(targetIndexOneIndexed - 1);
+        
+        commandBox.runCommand("undo");
+        
+        assertTrue(taskListPanel.navigateToTask(targetIndexOneIndexed - 1).getTags()
+                .equals(convertArgsToTagString(tagArgs)));
+
+        assertResultMessage(String.format(Command.MESSAGE_REVERT_COMMAND, TagCommand.COMMAND_WORD, "\n" + task));
     }
 
     /**
@@ -40,9 +61,8 @@ public class TagCommandTest extends TaskSchedulerGuiTest {
         TestTask taskToTag = currentList[targetIndexOneIndexed-1]; //-1 because array uses zero indexing
 
         commandBox.runCommand("tag " + targetIndexOneIndexed + " " + tagArgs);
-
-        System.out.println(taskListPanel.navigateToTask(targetIndexOneIndexed - 1).getTags());
-        System.out.println(convertArgsToTagString(tagArgs));
+        
+        
         assertTrue(taskListPanel.navigateToTask(targetIndexOneIndexed - 1).getTags()
                 .equals(convertArgsToTagString(tagArgs)));
 
@@ -50,6 +70,11 @@ public class TagCommandTest extends TaskSchedulerGuiTest {
         assertResultMessage(String.format(MESSAGE_SUCCESS, taskToTag));
     }
     
+    /**
+     * Convert tags param string to task card display string
+     * @param tagArgs tags string that use in tag command
+     * @return tags string in task card display
+     */
     private String convertArgsToTagString(String tagArgs) {
         final StringBuffer buffer = new StringBuffer();
         final String separator = ", ";

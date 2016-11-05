@@ -8,7 +8,6 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
 import seedu.taskscheduler.commons.core.EventsCenter;
-import seedu.taskscheduler.commons.core.Messages;
 import seedu.taskscheduler.commons.events.model.TaskSchedulerChangedEvent;
 import seedu.taskscheduler.commons.events.ui.JumpToListRequestEvent;
 import seedu.taskscheduler.commons.events.ui.ShowHelpEvent;
@@ -156,20 +155,18 @@ public class LogicManagerTest {
     public void execute_add_invalidArgsFormat() throws Exception {
         String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE);
         assertCommandBehavior(
-                "add ^wrong args wrong args^", expectedMessage);
+                "add ", expectedMessage);
         assertCommandBehavior(
                 "add Valid Name from 12345 e/ today at valid, address", expectedMessage);
         assertCommandBehavior(
                 "add Valid Name s/ today to yesterday at address", expectedMessage);
         assertCommandBehavior(
-                "add Valid Name s/today e/yesterday valid, address at no address prefix", expectedMessage);
+                "add from 090909 to 090909 at valid, address", expectedMessage);
     }
 
     @Test
     public void execute_add_invalidPersonData() throws Exception {
         String invalidDate = "not_numbers";
-        assertCommandBehavior(
-                "add []\\[;] from 090909 to 090909 at valid, address", Name.MESSAGE_NAME_CONSTRAINTS);
         assertCommandBehavior(
                 "add Valid Name from " + invalidDate + " to 010116 at valid, address", 
                 String.format(MESSAGE_INVALID_DATE_FORMAT,invalidDate));

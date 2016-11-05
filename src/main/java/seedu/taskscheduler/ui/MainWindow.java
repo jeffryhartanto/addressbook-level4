@@ -173,6 +173,12 @@ public class MainWindow extends UiPart {
     public AnchorPane getTagListPlaceholder() {
         return tagListPanelPlaceholder;
     }
+    
+    //@@author A0140007B
+    public CommandBox getCommandBox() {
+        return commandBox;
+    }
+    //@@author
 
     public void hide() {
         primaryStage.hide();
@@ -254,7 +260,7 @@ public class MainWindow extends UiPart {
     
     //@@author A0148145E
     public void updateLabels(ObservableList<ReadOnlyTask> list){
-        long pendingCount = list.stream().filter(b -> !b.isCompleted()).count();
+        long pendingCount = list.stream().filter(b -> !b.hasCompleted()).count();
         long completedCount = list.size() - pendingCount;
         long overdueCount = list.stream().filter(b -> b.isOverdue()).count();
         pendingCounter.set(String.valueOf(pendingCount));

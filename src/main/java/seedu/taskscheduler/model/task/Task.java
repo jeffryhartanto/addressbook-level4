@@ -18,7 +18,7 @@ public class Task implements ReadOnlyTask {
     private TaskDateTime startDateTime;
     private TaskDateTime endDateTime;
     private Location address;
-    private boolean completeStatus;
+    private boolean isComplete;
     private TaskType type;
     
     private UniqueTagList tags;
@@ -38,7 +38,7 @@ public class Task implements ReadOnlyTask {
         this.address = address;
         this.tags = tags;
         this.type = type;
-        this.completeStatus = status;
+        this.isComplete = status;
     }
 
     /**
@@ -46,7 +46,7 @@ public class Task implements ReadOnlyTask {
      */
     public Task(ReadOnlyTask source) {
         this(source.getName(), source.getStartDate(), source.getEndDate(), source.getLocation(), source.getType(), source.getTags());
-        this.completeStatus = source.isCompleted();
+        this.isComplete = source.hasCompleted();
     }
 
     @Override
@@ -70,8 +70,8 @@ public class Task implements ReadOnlyTask {
     }
     
     @Override
-    public boolean isCompleted() {
-        return completeStatus;
+    public boolean hasCompleted() {
+        return isComplete;
     }
 
     @Override
@@ -80,7 +80,7 @@ public class Task implements ReadOnlyTask {
         if (getType() != TaskType.FLOATING) {
             overdue = endDateTime.getDate().before(new Date());
         }
-        return !completeStatus && overdue;
+        return !isComplete && overdue;
     }
     
     public void setName(Name name) {
@@ -111,10 +111,10 @@ public class Task implements ReadOnlyTask {
      * @throws IllegalValueException if already done
      */
     public void markComplete() throws IllegalValueException {
-        if (completeStatus) {
+        if (isComplete) {
             throw new IllegalValueException("");
         } else {
-            completeStatus = true;
+            isComplete = true;
         }
     }
 
@@ -123,10 +123,10 @@ public class Task implements ReadOnlyTask {
      * @throws IllegalValueException if already undone
      */
     public void unmarkComplete() throws IllegalValueException {
-        if (!completeStatus) {
+        if (!isComplete) {
             throw new IllegalValueException("");
         } else {
-            completeStatus = false;
+            isComplete = false;
         }
     }
 

@@ -40,7 +40,7 @@ public interface Model {
     void addTask(Task... tasks) throws UniqueTaskList.DuplicateTaskException;
     
     //@@author A0140007B
-	/** Insert the newTask into the given position */
+	/** Inserts the newTask into the given position */
 	void insertTask(int index, Task newTask) throws TaskNotFoundException;
 
     //@@author A0148145E
@@ -49,7 +49,7 @@ public interface Model {
     void replaceTask(Task oldTask, Task newTask) throws TaskNotFoundException, DuplicateTaskException;
     
     //@@author A0148145E
-    /** Replace the tags of the given task. 
+    /** Replaces the tags of the given task. 
      * @throws TaskNotFoundException */
     void tagTask(Task oldTask, UniqueTagList tagList) throws TaskNotFoundException;
     //@@author

@@ -23,34 +23,25 @@ public class UnmarkCommandTest extends TaskSchedulerGuiTest {
     public void unmark() {
         
         //unmark without index given
-        commandBox.runCommand("unmark");
-        assertResultMessage(Messages.MESSAGE_PREV_TASK_NOT_FOUND);
+        unmark_noIndex_messageNoTaskFound();
         
-        //mark the first in the list
         TestTask[] currentList = td.getTypicalTasks();
-        int targetIndex = 1;
-        assertMarkSuccess(targetIndex, currentList);
         
-        //mark the last in the list
-        targetIndex = currentList.length;
-        assertMarkSuccess(targetIndex, currentList);
-        
-        //mark the middle in the list
-        targetIndex = currentList.length/2;
-        assertMarkSuccess(targetIndex, currentList);
+        //initialise with some marked tasks
+        runMarkCommand(1, currentList.length, currentList.length/2);
+        currentList = td.getTypicalTasks();
         
         //unmark the first in the list
-        currentList = td.getTypicalTasks();
-        targetIndex = 1;
-        assertUnMarkSuccess(targetIndex, currentList);
+        int targetIndex = 1;
+        assertUnmarkSuccess(targetIndex, currentList);
         
         //unmark the last in the list
         targetIndex = currentList.length;
-        assertUnMarkSuccess(targetIndex, currentList);
+        assertUnmarkSuccess(targetIndex, currentList);
         
         //unmark the middle in the list
         targetIndex = currentList.length/2;
-        assertUnMarkSuccess(targetIndex, currentList);
+        assertUnmarkSuccess(targetIndex, currentList);
         
         //invalid index - unmark
         commandBox.runCommand("unmark " + currentList.length + 1);
@@ -68,22 +59,15 @@ public class UnmarkCommandTest extends TaskSchedulerGuiTest {
 
     }
 
-    /**
-     * Runs the mark command to mark the task at specified index as completed and confirms the result is correct.
-     * @param targetIndexOneIndexed e.g. to mark the first task in the list, 1 should be given as the target index.
-     * @param currentList A copy of the current list of tasks (before deletion).
-     */
-    public void assertMarkSuccess(int targetIndexOneIndexed, final TestTask[] currentList) {
-        
-        TestTask taskToMark = currentList[targetIndexOneIndexed-1]; //-1 because array uses zero indexing
-        
-        commandBox.runCommand("mark " + targetIndexOneIndexed);
-        
-        //confirm the task card is now marked completed.
-        assertTrue(taskListPanel.navigateToTask(targetIndexOneIndexed - 1).getPaintFromShape().equals(TaskCard.COMPLETED_INDICATION));
-        assertFalse(taskListPanel.navigateToTask(targetIndexOneIndexed - 1).getPaintFromShape().equals(TaskCard.OVERDUE_INDICATION));
-        //confirm the result message is correct
-        assertResultMessage(String.format(MarkCommand.MESSAGE_MARK_TASK_SUCCESS, taskToMark));
+    private void unmark_noIndex_messageNoTaskFound() {
+        commandBox.runCommand("unmark");
+        assertResultMessage(Messages.MESSAGE_PREV_TASK_NOT_FOUND);
+    }
+    
+    public void runMarkCommand(int... indices) {
+        for (int index : indices) {
+            commandBox.runCommand("mark " + index);
+        }
     }
 
     /**
@@ -91,7 +75,7 @@ public class UnmarkCommandTest extends TaskSchedulerGuiTest {
      * @param targetIndexOneIndexed e.g. to unmark the first task in the list, 1 should be given as the target index.
      * @param currentList A copy of the current list of tasks (before deletion).S
      */
-    public void assertUnMarkSuccess(int targetIndexOneIndexed, final TestTask[] currentList) {
+    public void assertUnmarkSuccess(int targetIndexOneIndexed, final TestTask[] currentList) {
         
         TestTask taskToUnMark = currentList[targetIndexOneIndexed-1]; //-1 because array uses zero indexing
         

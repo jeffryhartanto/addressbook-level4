@@ -21,57 +21,90 @@ public class UndoCommandTest extends TaskSchedulerGuiTest {
 
 		//clear mutate command history
         TestTask[] currentList = td.getTypicalTasks();
-        ReadOnlyTask task = td.event;
-        String commandKey;
         
         //undo add command
-        commandKey = "add";
-        commandBox.runCommand(td.event.getAddCommand());
-        assertUndoSuccess(commandKey,currentList,task);
+        undo_add_success(currentList, td.event);
         
         //undo delete command
-        commandKey = "delete";
-        task = taskListPanel.getTask(0);
-        commandBox.runCommand(commandKey + " 1");
-        assertUndoSuccess(commandKey,currentList,task);
+        undo_delete_success(currentList);
 
         //undo replace command
-        commandKey = "replace";
-        task = taskListPanel.getTask(1);
-        commandBox.runCommand(commandKey + " 2 " + td.ida.getTaskString());
-        assertUndoSuccess(commandKey,currentList,td.ida);
+        undo_replace_success(currentList);
         
         //undo edit command
-        commandKey = "edit";
-        task = taskListPanel.getTask(1);
-        commandBox.runCommand(commandKey + " 2 " + td.event.getTaskString());
-        assertUndoSuccess(commandKey,currentList,td.event);
+        undo_edit_success(currentList);
 
         //undo mark command
-        commandKey = "mark";
-        task = taskListPanel.getTask(4);
-        commandBox.runCommand(commandKey + " 5");
-        assertUndoSuccess(commandKey,currentList,task);
+        undo_mark_success(currentList);
         
         //undo unmark command
+        undo_unmark_success(currentList);
+        
+        //undo multiple mixed commands
+        undo_multipleCommand_success(currentList);
+        
+        //undo without any remaining previous command
+		undo_noPreviousCommand_fail();
+		
+        undo_multipleDelete_success(currentList);
+
+        undo_clear_success(currentList);
+    }
+
+    private void undo_unmark_success(TestTask[] currentList) {
+        ReadOnlyTask task;
+        String commandKey;
         commandBox.runCommand("mark 5");
         commandKey = "unmark";
         task = taskListPanel.getTask(4);
         commandBox.runCommand(commandKey + " 5");
         assertUndoSuccess(commandKey,currentList,task);
-        
-        //undo multiple mixed commands
-        assertUndoMixedCommandsSuccess(currentList);
-        
-        //undo without any remaining previous command
-		assertUndoFailure();
-		
-        assertUndoMultipleDeleteSuccess(currentList);
-
-        assertUndoClearSuccess(currentList);
     }
 
-    private void assertUndoMixedCommandsSuccess(TestTask[] currentList) {
+    private void undo_mark_success(TestTask[] currentList) {
+        ReadOnlyTask task;
+        String commandKey;
+        commandKey = "mark";
+        task = taskListPanel.getTask(4);
+        commandBox.runCommand(commandKey + " 5");
+        assertUndoSuccess(commandKey,currentList,task);
+    }
+
+    private void undo_edit_success(TestTask[] currentList) {
+        ReadOnlyTask task;
+        String commandKey;
+        commandKey = "edit";
+        task = taskListPanel.getTask(1);
+        commandBox.runCommand(commandKey + " 2 " + td.event.getTaskString());
+        assertUndoSuccess(commandKey,currentList,td.event);
+    }
+
+    private void undo_replace_success(TestTask[] currentList) {
+        ReadOnlyTask task;
+        String commandKey;
+        commandKey = "replace";
+        task = taskListPanel.getTask(1);
+        commandBox.runCommand(commandKey + " 2 " + td.ida.getTaskString());
+        assertUndoSuccess(commandKey,currentList,td.ida);
+    }
+
+    private void undo_delete_success(TestTask[] currentList) {
+        ReadOnlyTask task;
+        String commandKey;
+        commandKey = "delete";
+        task = taskListPanel.getTask(0);
+        commandBox.runCommand(commandKey + " 1");
+        assertUndoSuccess(commandKey,currentList,task);
+    }
+
+    private void undo_add_success(TestTask[] currentList, TestTask task) {
+        String commandKey;
+        commandKey = "add";
+        commandBox.runCommand(task.getAddCommand());
+        assertUndoSuccess(commandKey,currentList,task);
+    }
+
+    private void undo_multipleCommand_success(TestTask[] currentList) {
         commandBox.runCommand("replace " + 2 + " " + td.ida.getTaskString());
         commandBox.runCommand("mark 5");
         commandBox.runCommand("mark 3");
@@ -83,12 +116,12 @@ public class UndoCommandTest extends TaskSchedulerGuiTest {
         assertTrue(taskListPanel.isListMatching(currentList));
     }
 
-    private void assertUndoFailure() {
+    private void undo_noPreviousCommand_fail() {
         commandBox.runCommand(UndoCommand.COMMAND_WORD);
 		assertResultMessage(UndoCommand.MESSAGE_FAILURE);
     }
 
-    private void assertUndoMultipleDeleteSuccess(TestTask[] currentList) {
+    private void undo_multipleDelete_success(TestTask[] currentList) {
         for (int i = 0; i < 4; i++) {
             commandBox.runCommand("delete 5");
         }
@@ -99,7 +132,7 @@ public class UndoCommandTest extends TaskSchedulerGuiTest {
         assertTrue(taskListPanel.isListMatching(currentList));
     }
 
-    private void assertUndoClearSuccess(TestTask[] currentList) {
+    private void undo_clear_success(TestTask[] currentList) {
         commandBox.runCommand(ClearCommand.COMMAND_WORD);
         assertResultMessage(ClearCommand.MESSAGE_SUCCESS);
         commandBox.runCommand(UndoCommand.COMMAND_WORD);
