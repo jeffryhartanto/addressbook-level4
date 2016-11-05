@@ -3,8 +3,8 @@
 # User Guide
 
 * [Getting Started](#getting-started)
-* [Features](#features)
 * [UI Quick Guide](#ui-quick-guide)
+* [Features](#features)
  * [Help](#getting-help--help)
  * [Add](#how-to-add-a-task--add)
  * [List](#how-to-list-tasks--list)
@@ -50,6 +50,20 @@
 
 [[Return to Top]](#user-guide)
 
+## UI Quick Guide
+
+<img src="images/ui-taglist.png" width="300"><br>
+<img src="images/ui-pendinglist.png" width="300"><br>
+<img src="images/ui-statistics.png" width="300"><br>
+<img src="images/ui-tasklist.png" width="300"><br>
+<img src="images/ui-commandbox.png" width="300"><br>
+<img src="images/ui-resultdisplay.png" width="300"><br>
+<img src="images/ui-status.png" width="300"><br>
+
+[[Return to Top]](#user-guide)
+
+---
+
 ## Features
 
 > Command Format
@@ -57,16 +71,6 @@
 * Items in `SQUARE_BRACKETS` are optional.<br>
 * Items in `...` after them can have multiple instances.<br>
 * Parameters can be in any order.<br>
-
-[[Return to Top]](#user-guide)
-
----
-
-## UI Quick Guide
-
-<img src="images/ui-taglist.png" width="300">	<img src="images/ui-pendinglist.png" width="300">	<img src="images/ui-statistics.png" width="300"><br>	
-<img src="images/ui-tasklist.png" width="300">	<img src="images/ui-commandbox.png" width="300">	<img src="images/ui-resultdisplay.png" width="300"><br>
-<img src="images/ui-status.png" width="300"><br>
 
 [[Return to Top]](#user-guide)
 
