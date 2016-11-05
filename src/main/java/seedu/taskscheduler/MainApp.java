@@ -22,10 +22,8 @@ import seedu.taskscheduler.storage.StorageManager;
 import seedu.taskscheduler.ui.Ui;
 import seedu.taskscheduler.ui.UiManager;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Logger;
@@ -209,23 +207,6 @@ public class MainApp extends Application {
     }
     
     public void restart() {
-        final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
-        final File currentJar = new File("MustDoList.jar");
-
-        if(!currentJar.getName().endsWith(".jar"))
-          return;
-
-        final ArrayList<String> command = new ArrayList<String>();
-        command.add(javaBin);
-        command.add("-jar");
-        command.add(currentJar.getPath());
-
-        final ProcessBuilder builder = new ProcessBuilder(command);
-        try {
-            builder.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         logger.info("============================ [ Restarting Task Scheduler ] =============================");
         System.exit(0);
     }
