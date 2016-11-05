@@ -3,6 +3,7 @@
 # User Guide
 
 * [Getting Started](#getting-started)
+* [UI Quick Guide](#ui-quick-guide)
 * [Features](#features)
  * [Help](#getting-help--help)
  * [Add](#how-to-add-a-task--add)
@@ -48,6 +49,20 @@
 6. Refer to the [Features](#features) section below for details of each command.<br>
 
 [[Return to Top]](#user-guide)
+
+## UI Quick Guide
+
+<img src="images/ui-taglist.png" width="300"><br>
+<img src="images/ui-pendinglist.png" width="300"><br>
+<img src="images/ui-statistics.png" width="300"><br>
+<img src="images/ui-tasklist.png" width="300"><br>
+<img src="images/ui-commandbox.png" width="300"><br>
+<img src="images/ui-resultdisplay.png" width="300"><br>
+<img src="images/ui-status.png" width="300"><br>
+
+[[Return to Top]](#user-guide)
+
+---
 
 ## Features
 
