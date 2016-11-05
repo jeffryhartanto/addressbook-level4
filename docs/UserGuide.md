@@ -59,12 +59,18 @@
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### Getting help : `help`
 The `help` command provides the user guide to guide the user through the application.
 
 Help format: `help`
 
 > Help is also shown if you click on help on the menu bar.
+
+[[Return to Top]](#user-guide)
+
+---
  
 #### How to add a task : `add`
 The `Add` command allows you to create a floating task, task or an event into the MustDoList.<br>
@@ -89,12 +95,16 @@ Examples:<br>
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to list tasks : `list`
 The `list` command allows you to show a list of all the tasks that are present in the MustDoList.<br>
 
 Format: `list`
 
 [[Return to Top]](#user-guide)
+
+---
 
 #### How to find a task : `find`
 The `find` command allows you to find existing tasks in the MustDoList by keywords.<br>
@@ -118,6 +128,8 @@ Examples:<br>
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to delete a task : `delete`
 The `delete` command allows you to delete any existing task from the MustDoList by index. <br>
 
@@ -133,12 +145,16 @@ Examples:<br>
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to clear all entries : `clear`
 The `clear` command allows you to clear all entries present in the MustDoList.<br>
 
 Clear format: `clear`  
 
 [[Return to Top]](#user-guide)
+
+---
 
 #### How to edit a task : `edit`
 The `edit` command allows you to edit a specific task's parameter from the MustDoList by the task's index.<br>
@@ -163,6 +179,8 @@ where `HH` refers to hours and `MM` refers to minutes.<br>
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to replace a task : `replace`
 The `replace` command allows you to replace the entire task's parameter from the MustDoList by task's index.<br>
 
@@ -186,12 +204,16 @@ where `HH` refers to hours and `MM` refers to minutes.<br>
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to undo a task : `undo`
 The `undo` command allows you to undo the previous entered commands into the MustdoList.<br>
 
 Undo format: `undo`
 
 [[Return to Top]](#user-guide)
+
+---
 
 #### How to mark a task : `mark`
 The `mark` command allows you to mark a completed task by the task's index.<br>
@@ -211,6 +233,8 @@ Examples:<br>
   
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to unmark a task : `ummark`
 The `unmark` command allows you to unmark a task by the task's index.<br>
 
@@ -228,6 +252,8 @@ Examples:<br>
   Unmarks the 1st task in the results of the `find` command as completed. 
   
 [[Return to Top]](#user-guide)
+
+---
 
 #### How to recur a task : `recur`
 The `recur` command allows you to recur a task for a specific numbers of days.<br>
@@ -249,6 +275,8 @@ Examples:<br>
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to set a storage path : `setpath`
 The `setpath` command allows you to save your file to your desire set path.<br>
 
@@ -266,6 +294,8 @@ Examples:<br>
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to select a task : `select`
 The `select` command allows you to display any existing task's command from the MustDoList by index. <br>
 
@@ -280,6 +310,8 @@ Examples:<br>
   Select the 2nd task in the MustDoList to display the command.
   
 [[Return to Top]](#user-guide)
+
+---
 
 #### How to tag a task : `tag`
 The `tag` command allows you to tag any existing task with tags. <br>
@@ -297,6 +329,8 @@ Examples:<br>
   
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to exit the program : `exit`
 The `exit` command allows you to exits the program.<br>
 
@@ -304,10 +338,14 @@ Exit format: `exit`
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to redo a task
 The <kbd>Up</kbd> <kbd>Down</kbd> allows you to select and display previous typed command in the command box.<br>
 
 [[Return to Top]](#user-guide)
+
+---
 
 #### How to identify overdue and completed task
 Overdue and completed tasks can be identified by the color codes.<br>
@@ -320,11 +358,15 @@ Completed Task refers to task that are marked as "completed".
 
 [[Return to Top]](#user-guide)
 
+---
+
 #### How to save the data 
 MustDoList data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.
 
 [[Return to Top]](#user-guide)
+
+---
 
 ## FAQ
 
@@ -332,7 +374,9 @@ There is no need to save manually.
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous MustDoList.
    
 [[Return to Top]](#user-guide)
-    
+   
+---
+ 
 ## Command Summary
 
 * Help: `help`
