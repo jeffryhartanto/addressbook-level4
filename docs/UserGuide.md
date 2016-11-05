@@ -316,15 +316,17 @@ Examples:<br>
 #### How to tag a task : `tag`
 The `tag` command allows you to tag any existing task with tags. <br>
 
-Tag format: **`tag`**`INDEX`
+Tag format: **`tag`**`INDEX TAG_NAME...`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
 > Index are optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
-  **`tag`**`2`**`school`<br>
+  **`tag`**`2 school`<br>
   Tag the 2nd task in the MustDoList with the tag [school]
+  **`tag`**`1 school project priority`<br>
+  Tag the 1st task in the MustDoList with the tags [school], [project], [priority]
   
   
 [[Return to Top]](#user-guide)
@@ -424,7 +426,7 @@ e.g. **`setpath`**`taskData`
 e.g. **`select`**`1`
 
 * Tag: **`tag`**`[INDEX] TAG_NAME...`<br>
-e.g. **`select`**`1`
+e.g. **`tag`**`1`
 
 * Exit: `exit`
 
