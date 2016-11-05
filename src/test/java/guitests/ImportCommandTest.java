@@ -11,7 +11,7 @@ import seedu.taskscheduler.logic.commands.ImportCommand;
 public class ImportCommandTest extends TaskSchedulerGuiTest {
 
     @Test
-    public void setPath() {
+    public void importFilePath() {
         
         // Checking for invalid importing filepath before executing import command
         String importingPath = "datatest/testing";
