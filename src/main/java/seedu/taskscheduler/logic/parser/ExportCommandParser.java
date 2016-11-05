@@ -24,10 +24,10 @@ public class ExportCommandParser extends CommandParser {
 
     @Override
     public Command prepareCommand(String args) {
-        Matcher matcher = SETPATH_DATA_ARGS_FORMAT.matcher(args);
+        Matcher matcher = SETEXPORT_DATA_ARGS_FORMAT.matcher(args);
 
         if (matcher.matches()) {
-            String path = matcher.group("name").trim().replaceAll("/$","") +".xml";
+            String path = matcher.group("name").trim().replaceAll("/$","");
             return new ExportCommand(path); 
         }
         else {   

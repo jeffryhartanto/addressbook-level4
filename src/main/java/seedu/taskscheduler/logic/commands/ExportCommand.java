@@ -1,13 +1,16 @@
 package seedu.taskscheduler.logic.commands;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import java.io.OutputStream;
+import java.nio.file.Files;
 
 import seedu.taskscheduler.commons.core.Messages;
+import seedu.taskscheduler.commons.util.FileUtil;
 
 //@@author A0138696L
 /**
@@ -52,9 +55,14 @@ public static final String COMMAND_WORD = "export";
     private void exportData() throws IOException {
         InputStream is = null;
         OutputStream os = null;
+        
+        File file = new File(PathLink);
+        FileUtil.createIfMissing(file);
+        
         try {
             is = new FileInputStream(CommandHistory.readPreviousStorageFilePath());
-            os = new FileOutputStream(PathLink);
+            os = new FileOutputStream(file);
+
             byte[] buffer = new byte[1024];
             int length;
             while ((length = is.read(buffer)) > 0) {
