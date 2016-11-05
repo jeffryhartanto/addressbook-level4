@@ -18,6 +18,7 @@
  * [Recur](#how-to-recur-a-task--recur)
  * [Setpath](#how-to-set-a-storage-path--setpath)
  * [Select](#how-to-select-a-task--select)
+ * [Tag](#how-to-tag-a-task--tag)
  * [Exit](#how-to-exit-the-program--exit)
  * [Redo](#how-to-redo-a-task)
  * [Identify task](#how-to-identify-overdue-and-completed-task)
@@ -253,7 +254,7 @@ Examples:<br>
  #### How to tag a task : `tag`
 The `tag` command allows you to tag any existing task with tags. <br>
 
-Select format: **`tag`**`INDEX`
+Tag format: **`tag`**`INDEX`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
 > Index are optional provided that there is previous modified task.<br>
