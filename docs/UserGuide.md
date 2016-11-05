@@ -52,10 +52,13 @@
 
 ## UI Quick Guide
 
-<img src="images/ui-taglist.png" width="400">	<img src="images/ui-pendinglist.png" width="400"><br>
-<img src="images/ui-statistics.png" width="400">	<img src="images/ui-tasklist.png" width="400"><br>
-<img src="images/ui-commandbox.png" width="400">	<img src="images/ui-resultdisplay.png" width="400"><br>
-<img src="images/ui-status.png" width="400"><br>
+<img src="images/ui-taglist.png" width="600"><br>
+<img src="images/ui-pendinglist.png" width="600"><br>
+<img src="images/ui-statistics.png" width="600"><br>
+<img src="images/ui-tasklist.png" width="600"><br>
+<img src="images/ui-commandbox.png" width="600"><br>
+<img src="images/ui-resultdisplay.png" width="600"><br>
+<img src="images/ui-status.png" width="600"><br>
 
 [[Return to Top]](#user-guide)
 
