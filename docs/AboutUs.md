@@ -35,7 +35,7 @@ Role: Project Manager <br>
 * Aspects/tools in charge of: Testing, Documentation
 * Features implemented:
 	* [undo](https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-undo-a-task--undo)
-	* [up down arrow](https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-redo-a-task)
+	* [Reuse Previous Entered Commands](https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-reuse-all-previous-entered-commands)
 	* [select](https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-select-a-task)
 * Code written: [[functional code](../collated/main/A0140007B.md) ][[test code](../collated/test/A0140007B.md)][[docs](../collated/docs/A0140007B.md)][[unused code](../collated/main/A0140007Bunused.md)]
 * Other major contributions:
