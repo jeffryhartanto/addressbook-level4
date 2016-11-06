@@ -35,12 +35,13 @@ public class TaskDateTime {
 
     public void setDate(long l) { 
         Date newDate = new Date(l);
+        System.out.println(newDate);
         checkIfTimeIsSpecified(newDate);
         this.date = newDate; 
     }
 
     private void checkIfTimeIsSpecified(Date other) {
-        if (!DateFormatter.convertDateToFullTimeString(date)
+        if (enShowTime || !DateFormatter.convertDateToFullTimeString(date)
                 .equals(DateFormatter.convertDateToFullTimeString(other))) {
             enShowTime = true;
         } else {
