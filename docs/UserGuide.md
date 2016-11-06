@@ -299,7 +299,7 @@ The `setpath` command allows you to save your file to your desire set path.<br>
 
 Set path format: **`setpath`**`FILENAME`<br>
 
-> The FILENAME in the command format refers to the path that you wants to save your file to.<br>
+> The FILENAME in the command format refers to the path that you want to save your file to.<br>
 
 Examples:<br>
 * **`setpath`**`taskData`<br>
@@ -384,7 +384,7 @@ The `export` command allows you to export the MustDoList's data to your desire p
 
 Export format: **`export`**`FILENAME`<br>
 
-> The FILENAME in the command format refers to the path that you wants to export your file to.<br>
+> The FILENAME in the command format refers to the path that you want to export your file to.<br>
 
 Examples:<br>
 * **`export`**`taskData.xml`<br>
@@ -403,7 +403,7 @@ The `import` command allows you to import MustDoList's data from your specific d
 
 Set path format: **`import`**`FILENAME`<br>
 
-> The FILENAME in the command format refers to the path that you wants to save your file to.<br>
+> The FILENAME in the command format refers to the path that you want to save your file to.<br>
 
 Examples:<br>
 * **`import`**`taskData.xml`<br>
