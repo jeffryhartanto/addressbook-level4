@@ -183,7 +183,7 @@ public class MainApp extends Application {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         this.stop();
     }
-    
+
     //@@author A0138696L
     @Subscribe
     public void handleChangeFilePathRequestEvent(FilePathChangedEvent event) {
@@ -207,14 +207,14 @@ public class MainApp extends Application {
         }
         restart();
     }
-    
+
     public void restart() {
         final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
         final File currentJar = new File("MustDoList.jar");
 
-        if(!currentJar.getName().endsWith(".jar"))
-          return;
-
+        if (!currentJar.getName().endsWith(".jar")) {
+            return;
+        }
         final ArrayList<String> command = new ArrayList<String>();
         command.add(javaBin);
         command.add("-jar");
@@ -226,7 +226,7 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         logger.info("============================ [ Restarting Task Scheduler ] =============================");
         try {
             storage.saveUserPrefs(userPrefs);
