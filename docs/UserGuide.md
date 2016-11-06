@@ -302,12 +302,12 @@ Set path format: **`setpath`**`FILENAME`<br>
 > The FILENAME in the command format refers to the path that you wants to save your file to.<br>
 
 Examples:<br>
-* **`setpath`**`taskData`<br>
-  Filename taskData will be created at default location data/taskData.<br>
-* **`setpath`**`backup/taskData`<br>
-  Filename taskData will be created at location data/backup/taskData.<br>
-* **`setpath`**`c:/user/<name>/desktop/taskData`<br>
-  Filename taskData will be created at user desktop.<br>
+* **`setpath`**`taskData.xml`<br>
+  Filename taskData.xml will be created at default location data/taskData.xml.<br>
+* **`setpath`**`backup/taskData.xml`<br>
+  Filename taskData.xml will be created at location data/backup/taskData.xml.<br>
+* **`setpath`**`c:/user/<name>/desktop/taskData.xml`<br>
+  Filename taskData.xml will be created at user desktop.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -475,7 +475,7 @@ e.g. **`ummark`**`1`
 e.g. **`recur`**`every 2 days until 19-Oct-2016`
 
 * Setpath: **`setpath`**`FILENAME`<br>
-e.g. **`setpath`**`taskData`
+e.g. **`setpath`**`taskData.xml`
 
 * Select: **`select`**`INDEX`<br>
 e.g. **`select`**`1`
