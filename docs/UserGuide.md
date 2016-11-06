@@ -90,7 +90,7 @@ Help format: `help`
 ---
  
 #### How to add a task : `add`
-The `Add` command allows you to create a floating task, task or an event into the MustDoList.<br>
+The `add` command allows you to create a floating task, task or an event into the MustDoList.<br>
 
 Floating task format: **`add`**`FLOATING TASK_NAME`<br>
 Deadline task format: **`add`**`TASK NAME by END_TIME END_DATE`<br>
