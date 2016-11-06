@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<taskscheduler>
+    <tasks>
+        <name>EE2021 Lecture</name>
+        <startDateTime>19-Oct-2016, Wed 12:00 PM</startDateTime>
+        <endDateTime>19-Oct-2016, Wed 02:00 PM</endDateTime>
+        <address>E3</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>MA1506 lecture</name>
+        <startDateTime>20-Oct-2016, Thu 12:00 PM</startDateTime>
+        <endDateTime>20-Oct-2016, Thu 02:00 PM</endDateTime>
+        <address>LT6</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>CS2103 Project</name>
+        <startDateTime>21-Oct-2016, Fri 09:00 AM</startDateTime>
+        <endDateTime>21-Oct-2016, Fri 10:00 AM</endDateTime>
+        <address>COM1-B103</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>PC1222 Lecture</name>
+        <startDateTime>21-Oct-2016, Fri 12:00 PM</startDateTime>
+        <endDateTime>21-Oct-2016, Fri 02:00 PM</endDateTime>
+        <address>S17</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>GEH1027 lecture</name>
+        <startDateTime>21-Oct-2016, Fri 04:00 PM</startDateTime>
+        <endDateTime>21-Oct-2016, Fri 06:00 PM</endDateTime>
+        <address>LT27</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>V0.5rc dogfooding</name>
+        <startDateTime>21-Oct-2016, Fri</startDateTime>
+        <endDateTime>04-Nov-2016, Fri</endDateTime>
+        <address>anywhere</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>Project</tagged>
+        <tagged>CS2103</tagged>
+    </tasks>
+    <tasks>
+        <name>EE2021 Lecture</name>
+        <startDateTime>26-Oct-2016, Wed 12:00 PM</startDateTime>
+        <endDateTime>26-Oct-2016, Wed 02:00 PM</endDateTime>
+        <address>E3</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>CS2103 Project meeting</name>
+        <startDateTime>27-Oct-2016, Thu 08:00 AM</startDateTime>
+        <endDateTime>27-Oct-2016, Thu 11:00 PM</endDateTime>
+        <address>COM1 level 2</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>Project</tagged>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>MA1506 lecture</name>
+        <startDateTime>27-Oct-2016, Thu 12:00 PM</startDateTime>
+        <endDateTime>27-Oct-2016, Thu 02:00 PM</endDateTime>
+        <address>LT6</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>PC1222 Lab</name>
+        <startDateTime>27-Oct-2016, Thu 02:00 PM</startDateTime>
+        <endDateTime>27-Oct-2016, Thu 05:00 PM</endDateTime>
+        <address>S12</address>
+        <type>EVENT</type>
+        <status>true</status>
+        <tagged>School</tagged>
+        <tagged>Lab</tagged>
+    </tasks>
+    <tasks>
+        <name>CS2103 Project</name>
+        <startDateTime>28-Oct-2016, Fri 09:00 AM</startDateTime>
+        <endDateTime>28-Oct-2016, Fri 10:00 AM</endDateTime>
+        <address>COM1-B103</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>Project</tagged>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>PC1222 Lecture</name>
+        <startDateTime>28-Oct-2016, Fri 12:00 PM</startDateTime>
+        <endDateTime>28-Oct-2016, Fri 02:00 PM</endDateTime>
+        <address>S17</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>GEH1027 lecture</name>
+        <startDateTime>28-Oct-2016, Fri 04:00 PM</startDateTime>
+        <endDateTime>28-Oct-2016, Fri 06:00 PM</endDateTime>
+        <address>LT27</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>Supper with junwen</name>
+        <startDateTime></startDateTime>
+        <endDateTime>28-Oct-2016, Fri 11:59 PM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Friends</tagged>
+    </tasks>
+    <tasks>
+        <name>Mastering Physics submission</name>
+        <startDateTime></startDateTime>
+        <endDateTime>30-Oct-2016, Sun 11:59 PM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Assignment</tagged>
+    </tasks>
+    <tasks>
+        <name>Pay utility bills</name>
+        <startDateTime></startDateTime>
+        <endDateTime>31-Oct-2016, Mon</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Urgent</tagged>
+        <tagged>Home</tagged>
+    </tasks>
+    <tasks>
+        <name>Meeting woohian</name>
+        <startDateTime></startDateTime>
+        <endDateTime>01-Nov-2016, Tue 08:00 AM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Friends</tagged>
+    </tasks>
+    <tasks>
+        <name>EE2021 Lecture</name>
+        <startDateTime>02-Nov-2016, Wed 12:00 PM</startDateTime>
+        <endDateTime>02-Nov-2016, Wed 02:00 PM</endDateTime>
+        <address>E3</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>MA1506 lecture</name>
+        <startDateTime>03-Nov-2016, Thu 12:00 PM</startDateTime>
+        <endDateTime>03-Nov-2016, Thu 02:00 PM</endDateTime>
+        <address>LT6</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>MA1505 Group study</name>
+        <startDateTime>04-Nov-2016, Fri 08:00 AM</startDateTime>
+        <endDateTime>04-Nov-2016, Fri 03:00 PM</endDateTime>
+        <address></address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>CS2103 Project</name>
+        <startDateTime>04-Nov-2016, Fri 09:00 AM</startDateTime>
+        <endDateTime>04-Nov-2016, Fri 10:00 AM</endDateTime>
+        <address>COM1-B103</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>Project</tagged>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>PC1222 Lecture</name>
+        <startDateTime>04-Nov-2016, Fri 12:00 PM</startDateTime>
+        <endDateTime>04-Nov-2016, Fri 02:00 PM</endDateTime>
+        <address>S17</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>GEH1027 lecture</name>
+        <startDateTime>04-Nov-2016, Fri 04:00 PM</startDateTime>
+        <endDateTime>04-Nov-2016, Fri 06:00 PM</endDateTime>
+        <address>LT27</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>GEH1027 term paper submission</name>
+        <startDateTime></startDateTime>
+        <endDateTime>04-Nov-2016, Fri</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>PC1222 Test 2</name>
+        <startDateTime>08-Nov-2016, Tue 08:00 AM</startDateTime>
+        <endDateTime>08-Nov-2016, Tue 09:00 AM</endDateTime>
+        <address>NUS Lt27</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+        <tagged>Test</tagged>
+    </tasks>
+    <tasks>
+        <name>GEH1027 Test 2</name>
+        <startDateTime>08-Nov-2016, Tue 04:00 PM</startDateTime>
+        <endDateTime>08-Nov-2016, Tue 06:00 PM</endDateTime>
+        <address>NUS MPSH</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+        <tagged>Test</tagged>
+    </tasks>
+    <tasks>
+        <name>EE2021 Lecture</name>
+        <startDateTime>09-Nov-2016, Wed 12:00 PM</startDateTime>
+        <endDateTime>09-Nov-2016, Wed 02:00 PM</endDateTime>
+        <address>E3</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>MA1506 lecture</name>
+        <startDateTime>10-Nov-2016, Thu 12:00 PM</startDateTime>
+        <endDateTime>10-Nov-2016, Thu 02:00 PM</endDateTime>
+        <address>LT6</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>MA1506 lecture</name>
+        <startDateTime>17-Nov-2016, Thu 12:00 PM</startDateTime>
+        <endDateTime>17-Nov-2016, Thu 02:00 PM</endDateTime>
+        <address>LT6</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>Do CS2103 Revision</name>
+        <startDateTime></startDateTime>
+        <endDateTime>19-Nov-2016, Sat 08:00 PM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>School</tagged>
+        <tagged>Revision</tagged>
+    </tasks>
+    <tasks>
+        <name>Plan holiday</name>
+        <startDateTime></startDateTime>
+        <endDateTime>21-Nov-2016, Mon 07:00 PM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Holiday</tagged>
+    </tasks>
+    <tasks>
+        <name>Social Gathering</name>
+        <startDateTime>25-Nov-2016, Fri 07:00 PM</startDateTime>
+        <endDateTime>25-Nov-2016, Fri 11:00 PM</endDateTime>
+        <address>CFG1010</address>
+        <type>EVENT</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>Fly out of sg</name>
+        <startDateTime></startDateTime>
+        <endDateTime>29-Nov-2016, Tue 05:00 PM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Holiday</tagged>
+    </tasks>
+    <tasks>
+        <name>Mother Birthday</name>
+        <startDateTime></startDateTime>
+        <endDateTime>29-Dec-2016, Thu 07:00 PM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Birthday</tagged>
+    </tasks>
+    <tasks>
+        <name>Take BMI</name>
+        <startDateTime></startDateTime>
+        <endDateTime>31-Dec-2016, Sat 08:00 AM</endDateTime>
+        <address></address>
+        <type>DEADLINE</type>
+        <status>false</status>
+        <tagged>Fitness</tagged>
+    </tasks>
+    <tasks>
+        <name>buy green pen</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Personal</tagged>
+    </tasks>
+    <tasks>
+        <name>buy tissue</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Study for CS2103 Exam</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Exam</tagged>
+    </tasks>
+    <tasks>
+        <name>Return library book</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>Exam revision</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Exam</tagged>
+    </tasks>
+    <tasks>
+        <name>Weddings Gift for Adrian</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Repair watch</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Repair Surface Pro Keyboard</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Priority</tagged>
+    </tasks>
+    <tasks>
+        <name>go take driving license</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Goal</tagged>
+    </tasks>
+    <tasks>
+        <name>Prepare for IPPT</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Fitness</tagged>
+    </tasks>
+    <tasks>
+        <name>Find Prof Tan</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>School</tagged>
+    </tasks>
+    <tasks>
+        <name>Grocery shopping</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Personal</tagged>
+    </tasks>
+    <tasks>
+        <name>Do laundry</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Home</tagged>
+    </tasks>
+    <tasks>
+        <name>Buy christmas presents online</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Christmas</tagged>
+    </tasks>
+    <tasks>
+        <name>Help mom with spring cleaning</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+        <tagged>Family</tagged>
+    </tasks>
+    <tags>
+        <tagName>Christmas</tagName>
+    </tags>
+    <tags>
+        <tagName>Home</tagName>
+    </tags>
+    <tags>
+        <tagName>School</tagName>
+    </tags>
+    <tags>
+        <tagName>Project</tagName>
+    </tags>
+    <tags>
+        <tagName>CS2103</tagName>
+    </tags>
+    <tags>
+        <tagName>Lab</tagName>
+    </tags>
+    <tags>
+        <tagName>Friends</tagName>
+    </tags>
+    <tags>
+        <tagName>Assignment</tagName>
+    </tags>
+    <tags>
+        <tagName>Test</tagName>
+    </tags>
+    <tags>
+        <tagName>Revision</tagName>
+    </tags>
+    <tags>
+        <tagName>Holiday</tagName>
+    </tags>
+    <tags>
+        <tagName>Birthday</tagName>
+    </tags>
+    <tags>
+        <tagName>Fitness</tagName>
+    </tags>
+    <tags>
+        <tagName>Personal</tagName>
+    </tags>
+    <tags>
+        <tagName>Exam</tagName>
+    </tags>
+    <tags>
+        <tagName>Priority</tagName>
+    </tags>
+    <tags>
+        <tagName>Goal</tagName>
+    </tags>
+    <tags>
+        <tagName>Family</tagName>
+    </tags>
+    <tags>
+        <tagName>Urgent</tagName>
+    </tags>
+    <tagsCounter>
+        <entry>
+            <key>
+                <tagName>Christmas</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Urgent</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Personal</tagName>
+            </key>
+            <value>5</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Friends</tagName>
+            </key>
+            <value>2</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Priority</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Birthday</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Lab</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>CS2103</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Assignment</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Project</tagName>
+            </key>
+            <value>4</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>School</tagName>
+            </key>
+            <value>28</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Goal</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Friend</tagName>
+            </key>
+            <value>0</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Revision</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>school</tagName>
+            </key>
+            <value>0</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Test</tagName>
+            </key>
+            <value>2</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Holiday</tagName>
+            </key>
+            <value>2</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Family</tagName>
+            </key>
+            <value>1</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Home</tagName>
+            </key>
+            <value>2</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Exam</tagName>
+            </key>
+            <value>2</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Fitness</tagName>
+            </key>
+            <value>2</value>
+        </entry>
+    </tagsCounter>
+</taskscheduler>
