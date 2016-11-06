@@ -3,6 +3,7 @@
 # User Guide
 
 * [Getting Started](#getting-started)
+* [UI Quick Guide](#ui-quick-guide)
 * [Features](#features)
  * [Help](#getting-help--help)
  * [Add](#how-to-add-a-task--add)
@@ -35,7 +36,7 @@
 1. Download the latest `MustDoList.jar` from the 'releases' tab.
 2. Copy the file to the folder you want to use as the home folder for your MustDoList.
 3. Double-click the file to start the app. The GUI should appear in a few seconds. 
-   > <img src="images/Mock UI.png" width="600">
+   > <img src="images/Ui.png" width="600">
 
 4. Type the command in the command box and press <kbd>Enter</kbd> to execute it. <br>
    e.g. typing **`help`** and pressing <kbd>Enter</kbd> will open the help window. 
@@ -48,6 +49,20 @@
 6. Refer to the [Features](#features) section below for details of each command.<br>
 
 [[Return to Top]](#user-guide)
+
+## UI Quick Guide
+
+<img src="images/ui-taglist.png" width="600"><br>
+<img src="images/ui-pendinglist.png" width="600"><br>
+<img src="images/ui-statistics.png" width="600"><br>
+<img src="images/ui-tasklist.png" width="600"><br>
+<img src="images/ui-commandbox.png" width="600"><br>
+<img src="images/ui-resultdisplay.png" width="600"><br>
+<img src="images/ui-status.png" width="600"><br>
+
+[[Return to Top]](#user-guide)
+
+---
 
 ## Features
 
@@ -316,15 +331,17 @@ Examples:<br>
 #### How to tag a task : `tag`
 The `tag` command allows you to tag any existing task with tags. <br>
 
-Tag format: **`tag`**`INDEX`
+Tag format: **`tag`**`INDEX TAG_NAME...`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
 > Index are optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
-  **`tag`**`2`**`school`<br>
+  **`tag`**`2 school`<br>
   Tag the 2nd task in the MustDoList with the tag [school]
+  **`tag`**`1 school project priority`<br>
+  Tag the 1st task in the MustDoList with the tags [school], [project], [priority]
   
   
 [[Return to Top]](#user-guide)
@@ -424,7 +441,7 @@ e.g. **`setpath`**`taskData`
 e.g. **`select`**`1`
 
 * Tag: **`tag`**`[INDEX] TAG_NAME...`<br>
-e.g. **`select`**`1`
+e.g. **`tag`**`1 project priority`
 
 * Exit: `exit`
 
