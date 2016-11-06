@@ -213,7 +213,8 @@ public class MainApp extends Application {
         final File currentJar = new File("MustDoList.jar");
 
         if (!currentJar.getName().endsWith(".jar")) {
-            assert false:"Missing MustDoList.jar, Please Check.";
+            //MustDoList.jar should not be missing
+            assert false:"Severe Error: Missing MustDoList.jar";
             return;
         }
         final ArrayList<String> command = new ArrayList<String>();
