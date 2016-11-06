@@ -21,11 +21,11 @@ public class ImportCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Import file to Task Scheduler. "
             + "Parameters: <filename>\n"
             + "Example: " + COMMAND_WORD
-            + " TaskSchedulerData\n";
+            + " TaskSchedulerData.xml\n";
     public static final String MESSAGE_USAGE_INVALID = COMMAND_WORD + ": valid file to Task Scheduler. "
             + "Parameters: <filename>\n"
             + "Example: " + COMMAND_WORD
-            + " TaskSchedulerData\n";
+            + " TaskSchedulerData.xml\n";
 
     public static final String MESSAGE_SUCCESS = "File path changed: %s";
     public static final String MESSAGE_UNSUCCESS = "File not found: ";

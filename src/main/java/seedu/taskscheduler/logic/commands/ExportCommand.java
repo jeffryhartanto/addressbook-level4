@@ -23,7 +23,7 @@ public static final String COMMAND_WORD = "export";
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Exporting data of Task Scheduler to user specified location. "
             + "Parameters: <filename>\n"
             + "Example: " + COMMAND_WORD
-            + " TaskSchedulerData\n";
+            + " TaskSchedulerData.xml\n";
 
     public static final String MESSAGE_SUCCESS = "Successfully Exported data to: %s";
     public static final String MESSAGE_UNSUCCESS = "Unsuccessfully in exporting data to: %s";
