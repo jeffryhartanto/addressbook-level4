@@ -1,8 +1,6 @@
 package seedu.taskscheduler.logic.commands;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
 
 import seedu.taskscheduler.commons.core.EventsCenter;
 import seedu.taskscheduler.commons.core.Messages;

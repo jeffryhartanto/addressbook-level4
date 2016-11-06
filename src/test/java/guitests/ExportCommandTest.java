@@ -17,7 +17,7 @@ public class ExportCommandTest extends TaskSchedulerGuiTest {
     @Test
     public void exportFilePath() {
         
-//        // check for exported file
+        // check for exported file
         String exportingPath = "datatest/testing.xml";
         String exportedFile = null;
         commandBox.runCommand("export " + exportingPath);
