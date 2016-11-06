@@ -90,7 +90,7 @@ Help format: `help`
 ---
  
 #### How to add a task : `add`
-The `Add` command allows you to create a floating task, task or an event into the MustDoList.<br>
+The `add` command allows you to create a floating task, task or an event into the MustDoList.<br>
 
 Floating task format: **`add`**`FLOATING TASK_NAME`<br>
 Deadline task format: **`add`**`TASK NAME by END_TIME END_DATE`<br>
@@ -117,7 +117,7 @@ Examples:<br>
 #### How to list tasks : `list`
 The `list` command allows you to show a list of all the tasks that are present in the MustDoList.<br>
 
-Format: `list`
+List format: `list`
 
 [[Return to Top]](#user-guide)
 
@@ -153,7 +153,7 @@ The `delete` command allows you to delete any existing task from the MustDoList 
 Delete format: **`delete`**`[INDEX]`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -192,7 +192,7 @@ where `DD` refers to the day, `MMM` refers to the first 3 letters of the month a
 > Time Format: HH:MM am/pm<br>
 where `HH` refers to hours and `MM` refers to minutes.<br> 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -217,7 +217,7 @@ where `DD` refers to the day, `MMM` refers to the first 3 letters of the month a
 > Time Format: HH:MM am/pm<br>
 where `HH` refers to hours and `MM` refers to minutes.<br> 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -238,7 +238,7 @@ The `mark` command allows you to mark a completed task by the task's index.<br>
 Mark format: **`mark`**`[INDEX]`
 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -252,13 +252,13 @@ Examples:<br>
 
 ---
 
-#### How to unmark a task : `ummark`
+#### How to unmark a task : `unmark`
 The `unmark` command allows you to unmark a task by the task's index.<br>
 
 Unmark format: **`unmark`**`[INDEX]`
 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -279,7 +279,7 @@ Recur index format: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 
 > The INTERVAL in the command format refers to the number of days you want to recur.<br> 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 > The command format requires the following date format.<br>
 > Date Format: DD-MMM-YYYY<br>
 where `DD` refers to the day, `MMM` refers to the first 3 letters of the month and `YYYY` refers to the year.<br>
@@ -299,7 +299,7 @@ The `setpath` command allows you to save your file to your desire set path.<br>
 
 Set path format: **`setpath`**`FILENAME`<br>
 
-> The FILENAME in the command format refers to the path that you wants to save your file to.<br>
+> The FILENAME in the command format refers to the path that you want to save your file to.<br>
 
 Examples:<br>
 * **`setpath`**`taskData.xml`<br>
@@ -319,7 +319,7 @@ The `select` command allows you to display any existing task's command from the 
 Select format: **`select`**`INDEX`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -333,10 +333,10 @@ Examples:<br>
 #### How to tag a task : `tag`
 The `tag` command allows you to tag any existing task with tags. <br>
 
-Tag format: **`tag`**`INDEX TAG_NAME...`
+Tag format: **`tag`**`[INDEX] TAG_NAME...`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -384,15 +384,15 @@ The `export` command allows you to export the MustDoList's data to your desire p
 
 Export format: **`export`**`FILENAME`<br>
 
-> The FILENAME in the command format refers to the path that you wants to export your file to.<br>
+> The FILENAME in the command format refers to the path that you want to export your file to.<br>
 
 Examples:<br>
 * **`export`**`taskData.xml`<br>
-  Filename taskData will be exported to default location data/taskData.<br>
+  Filename taskData.xml will be exported to default location data/taskData.xml.<br>
 * **`export`**`backup/taskData.xml`<br>
-  Filename taskData will be exported to location data/backup/taskData.<br>
+  Filename taskData.xml will be exported to location data/backup/taskData.xml.<br>
 * **`export`**`c:/user/<name>/desktop/taskData.xml`<br>
-  Filename taskData will be exported to user desktop.<br>
+  Filename taskData.xml will be exported to user desktop.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -403,15 +403,15 @@ The `import` command allows you to import MustDoList's data from your specific d
 
 Set path format: **`import`**`FILENAME`<br>
 
-> The FILENAME in the command format refers to the path that you wants to save your file to.<br>
+> The FILENAME in the command format refers to the path that you want to save your file to.<br>
 
 Examples:<br>
 * **`import`**`taskData.xml`<br>
-  Filename taskData will be imported at default location data/taskData.<br>
+  Filename taskData.xml will be imported at default location data/taskData.xml.<br>
 * **`import`**`backup/taskData.xml`<br>
-  Filename taskData will be imported at location data/backup/taskData.<br>
+  Filename taskData.xml will be imported at location data/backup/taskData.xml.<br>
 * **`import`**`c:/user/<name>/desktop/taskData.xml`<br>
-  Filename taskData will be imported at user desktop.<br>
+  Filename taskData.xml will be imported at user desktop.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -429,7 +429,10 @@ There is no need to save manually.
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous MustDoList.
-   
+
+**Q**: Why does result display shows old task details?
+**A**: As new task details are highlighted and display in the task list panel itself, user can easily make the comparison between old task details (in the result display) and new task details (task list panel).
+
 [[Return to Top]](#user-guide)
    
 ---
@@ -469,7 +472,7 @@ e.g. **`replace`**`2 new task name from 8am 10-Oct-2016 to 9am 10-Oct-2016 at NU
 e.g. **`mark`**`1`
 
 * Unmark: **`unmark`**`[INDEX]`<br>
-e.g. **`ummark`**`1`
+e.g. **`unmark`**`1`
 
 * Recur: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 e.g. **`recur`**`every 2 days until 19-Oct-2016`
