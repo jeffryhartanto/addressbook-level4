@@ -16,6 +16,7 @@ import seedu.taskscheduler.commons.util.ConfigUtil;
 import seedu.taskscheduler.commons.util.StringUtil;
 import seedu.taskscheduler.logic.Logic;
 import seedu.taskscheduler.logic.LogicManager;
+import seedu.taskscheduler.logic.commands.CommandResult;
 import seedu.taskscheduler.model.*;
 import seedu.taskscheduler.storage.Storage;
 import seedu.taskscheduler.storage.StorageManager;
@@ -213,6 +214,7 @@ public class MainApp extends Application {
         final File currentJar = new File("MustDoList.jar");
 
         if (!currentJar.getName().endsWith(".jar")) {
+            assert false:"message";
             return;
         }
         final ArrayList<String> command = new ArrayList<String>();
