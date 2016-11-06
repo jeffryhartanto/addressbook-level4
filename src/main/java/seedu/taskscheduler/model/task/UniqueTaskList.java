@@ -1,7 +1,10 @@
 package seedu.taskscheduler.model.task;
 
+import java.util.Iterator;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 import seedu.taskscheduler.commons.core.EventsCenter;
 import seedu.taskscheduler.commons.events.ui.JumpToListRequestEvent;
 import seedu.taskscheduler.commons.exceptions.DuplicateDataException;
@@ -10,11 +13,6 @@ import seedu.taskscheduler.commons.util.CollectionUtil;
 import seedu.taskscheduler.model.tag.UniqueTagList;
 import seedu.taskscheduler.model.tag.UniqueTagList.DuplicateTagException;
 import seedu.taskscheduler.model.task.ReadOnlyTask.TaskType;
-import seedu.taskscheduler.ui.PriorityListPanel;
-
-import java.util.*;
-import java.util.logging.Logger;
-
 /**
  * A list of tasks that enforces uniqueness between its elements and does not allow nulls.
  *
