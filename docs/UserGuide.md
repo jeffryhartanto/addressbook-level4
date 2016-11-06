@@ -21,7 +21,7 @@
  * [Select](#how-to-select-a-task--select)
  * [Tag](#how-to-tag-a-task--tag)
  * [Exit](#how-to-exit-the-program--exit)
- * [Reuse Previous Entered Commands](#How-to-reuse-all-previous-entered-commands)
+ * [Reuse Previous Entered Commands](#how-to-reuse-all-previous-entered-commands)
  * [Identify task](#how-to-identify-overdue-and-completed-task)
  * [Export](#how-to-export-data--export)
  * [Import](#how-to-import-data--import)
