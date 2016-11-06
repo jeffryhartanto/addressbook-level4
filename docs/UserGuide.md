@@ -21,7 +21,7 @@
  * [Select](#how-to-select-a-task--select)
  * [Tag](#how-to-tag-a-task--tag)
  * [Exit](#how-to-exit-the-program--exit)
- * [Redo](#how-to-redo-a-task)
+ * [Reuse Previous Entered Commands](#How-to-reuse-all-previous-entered-commands)
  * [Identify task](#how-to-identify-overdue-and-completed-task)
  * [Export](#how-to-export-data--export)
  * [Import](#how-to-import-data--import)
@@ -359,7 +359,7 @@ Exit format: `exit`
 
 ---
 
-#### How to redo a task
+#### How to reuse all previous entered commands
 The <kbd>Up</kbd> <kbd>Down</kbd> allows you to select and display previous typed command in the command box.<br>
 
 [[Return to Top]](#user-guide)
