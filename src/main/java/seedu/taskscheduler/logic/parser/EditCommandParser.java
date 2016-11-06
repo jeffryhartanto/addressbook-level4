@@ -22,7 +22,7 @@ public class EditCommandParser extends CommandParser {
             return new EditCommand(args);   
         } else {
             int index = Integer.parseInt(indexMatcher.group("index"));
-            assert index >= Command.EMPTY_INDEX;
+            assert index >= Command.MINIMA_INDEX;
             String newArgs = indexMatcher.group("arguments").trim();
             return new EditCommand(index, newArgs);
         }

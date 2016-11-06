@@ -19,6 +19,8 @@ public abstract class Command {
     
     protected Model model;
 
+    public static final int MINIMA_INDEX = 0;
+    
     public static final int EMPTY_INDEX = -1;
     
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the task scheduler";
