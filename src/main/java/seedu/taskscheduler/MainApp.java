@@ -16,7 +16,6 @@ import seedu.taskscheduler.commons.util.ConfigUtil;
 import seedu.taskscheduler.commons.util.StringUtil;
 import seedu.taskscheduler.logic.Logic;
 import seedu.taskscheduler.logic.LogicManager;
-import seedu.taskscheduler.logic.commands.CommandResult;
 import seedu.taskscheduler.model.*;
 import seedu.taskscheduler.storage.Storage;
 import seedu.taskscheduler.storage.StorageManager;
