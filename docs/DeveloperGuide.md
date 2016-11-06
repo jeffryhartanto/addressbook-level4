@@ -317,6 +317,7 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | create floating tasks | tasks can be created without specific times
 `* * *` | user | exit the task list | close the task list 
 `* *` | user | use up arrow or down arrow to reuse previous command(s) | revert the previous command
+`* *` | user | tags the task | group the tasks into categories
 `* *` | user | indicate overdue tasks with color code (red) | easily to track overdue task
 `* *` | user | indicate a completed task with color code (green) | easily to track done task  
 `* *` | user | make a task recurring | duplicate a task for specific number of days  
