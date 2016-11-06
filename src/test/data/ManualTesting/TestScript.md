@@ -90,6 +90,7 @@ means all data should return to the state before the previous command is execute
 [[Return to Top]](#manual-testing)
 
 ### Adding tasks
+
 <p>
 <b>Command</b> : add SoC Event from 9 am to 12 pm at COM1-Level 2 <br>
 <b>Show</b> : <br>
@@ -153,52 +154,56 @@ browse for new phone<br>
 <b>Command</b> : find event <br>
 <b>Show</b> : <br>
 Pending list and Task list will show the tasks matching the description <br>
-Statistics update - should show 9 Completed, 16 Pending. Overdue is dependant on the date of testing<br>
+Statistics update - should show 9 Completed, 16 Pending. Overdue is dependant on the date of testing <br>
 <b>Result</b> : <br>
 25 tasks listed! <br>
 </p>
 
-Command : 
-`undo`
-Result : 
-- Goes back to original
-Show :
-`Listed all tasks`
+<p>
+<b>Command</b> : undo <br>
+<b>Result</b> : Goes back to original <br>
+<b>Show</b> : <br>
+Listed all tasks <br>
+</p>
 
-Command : 
-`find MA1506`
-Show :
-- Pending list and Task list will show the tasks matching the description
-- Statistics update - should show 2 Completed, 3 Pending. Overdue is dependant on the date of testing
-Result : 
-`5 tasks listed!` 
+<p>
+<b>Command</b> : find MA1506 <br>
+<b>Show</b> : <br>
+Pending list and Task list will show the tasks matching the description <br>
+Statistics update - should show 2 Completed, 3 Pending. Overdue is dependant on the date of testing <br>
+<b>Result</b> : <br>
+5 tasks listed! <br>
+</p>
 
-Command : 
-`undo`
-Show :
-> Goes back to original
-Result : 
-`Listed all tasks`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original<br>
+<b>Result</b> : <br> 
+Listed all tasks <br>
+</p>
 
-Command : 
-`find floating`
-Show :
-- Pending list and Task list will show the tasks matching the description
-- Statistics update - should show 0 Completed, 15 Pending, 0 Overdue
-Result : 
-`15 tasks listed!`
+<p>
+<b>Command</b> : find floating <br>
+<b>Show</b> : <br>
+Pending list and Task list will show the tasks matching the description <br>
+Statistics update - should show 0 Completed, 15 Pending, 0 Overdue <br>
+<b>Result</b> : <br>
+15 tasks listed!<br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
 #### List tasks
 
-Command : 
-`list`
-Show :
-- Pending list and Task list will show all the tasks
-- Statistics update - should show 9 Completed, 41 Pending. Overdue is dependant on the date of testing
-Result :
-`Listed all tasks` 
+<p>
+<b>Command</b> : list <br>
+<b>Show</b> : <br>
+Pending list and Task list will show all the tasks <br>
+Statistics update - should show 9 Completed, 41 Pending. Overdue is dependant on the date of testing <br>
+<b>Result</b> : <br>
+Listed all tasks <br> 
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -206,41 +211,45 @@ Result :
 
 #### Delete tasks
 
-Command : 
-`delete 1`
-Show : 
-- Completed task count decrease by 1
-- No. 1 Task removed from Task list
-Result :
-`Deleted Task: EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3`
+<p>
+<b>Command</b> : delete 1 <br>
+<b>Show</b> : <br> 
+Completed task count decrease by 1 <br>
+No. 1 Task removed from Task list <br>
+<b>Result</b> : <br>
+Deleted Task: EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3<br>
+</p>
 
-Command : 
-`undo`
-Show :
-- Goes back to original
-- Highlights the No. 1 Task
-Result : 
-`Revert delete command: 
-EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+Highlights the No. 1 Task <br>
+<b>Result</b> : <br>
+Revert delete command: <br>
+EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3 <br>
+</p>
 
-Command : 
-`delete 6`
-Show :
-- Pending task count decrease by 1
-- No. 6 Task removed from Task & Pending list
-- CS2103 tag removed from Tag list
-Result : 
-`Deleted Task: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere`
+<p>
+<b>Command</b> : delete 6 <br>
+<b>Show</b> : <br>
+Pending task count decrease by 1 <br>
+No. 6 Task removed from Task and Pending list <br>
+CS2103 tag removed from Tag list <br>
+<b>Result</b> : <br> 
+Deleted Task: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere <br>
+</p>
 
-Command : 
-`undo`
-Show :
-- CS2103 tag added back to tag list
-- Deleted task added back to Task & Pending list
-- Highlights the No. 6 Task
-Result : 
-`Revert delete command: 
-V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+CS2103 tag added back to tag list <br>
+Deleted task added back to Task and Pending list <br>
+Highlights the No. 6 Task <br>
+<b>Result</b> : <br> 
+Revert delete command:<br> 
+V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere` <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -248,91 +257,105 @@ V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere`
 
 #### Clear tasks
 
-Command : 
-`clear`
-Show :
-- Completed, Pending, Overdue task count goes to 0
-- All tasks removed from Task & Pending list
-- All tags removed from Tag list
-Result : 
-`Task scheduler has been cleared!` 
+<p>
+<b>Command</b> : clear <br>
+<b>Show</b> : <br>
+Completed, Pending, Overdue task count goes to 0 <br>
+All tasks removed from Task & Pending list <br>
+All tags removed from Tag list <br>
+<b>Result</b> : <br> 
+Task scheduler has been cleared! <br> 
+</p>
 
-Command : 
-`undo`
-Show :
-- Goes back to original
-Result : 
-`Revert clear command: 
-EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3
-...
-...
-...`
-All the tasks that was deleted
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+<b>Result</b> : <br> 
+Revert clear command: <br> 
+EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3 <br>
+... <br>
+... <br>
+... <br>
+All the tasks that was deleted <br>
+</p>
+
+[[Return to Top]](#manual-testing)
 
 ---
 
 #### Edit tasks
 
-Command : 
-`edit 6 V0.5 dogfooding by 7 Nov at everywhere`
-Show :
-- Highlights the editted task in task list
-- Task's name changes to V0.5 dogfooding
-- Task's due date changes to 07-Nov-2016, Mon
-- Task's address changes to everywhere
-Result : 
-`Task editted: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere` 
-- Display the task details before edit for comparison
+<p>
+<b>Command</b> : edit 6 V0.5 dogfooding by 7 Nov at everywhere <br>
+<b>Show</b> : <br>
+Highlights the editted task in task list <br>
+Task's name changes to V0.5 dogfooding <br>
+Task's due date changes to 07-Nov-2016, Mon <br>
+Task's address changes to everywhere <br>
+<b>Result</b> : <br>
+Task editted: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere <br>
+Display the task details before edit for comparison <br>
+</p>
 
-Command : 
-`undo`
-Show :
-- Goes back to original
-- Highlights the No.6 task
-Result : 
-`Revert edit command: 
-V0.5 dogfooding 21-Oct-2016, Fri 07-Nov-2016, Mon everywhere`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+Highlights the No.6 task <br>
+<b>Result</b> : <br> 
+Revert edit command: <br>
+V0.5 dogfooding 21-Oct-2016, Fri 07-Nov-2016, Mon everywhere <br>
+</p>
 
-Command : 
-`edit at everywhere`
-Show :
-- Highlights the No.6 task
-- No.6 task's location changes to everywhere
-Result : 
-`Task editted: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere` 
-- Display the task details before edit for comparison
+<p>
+<b>Command</b> : edit at everywhere <br>
+<b>Show</b> : <br>
+Highlights the No.6 task <br>
+No.6 task's location changes to everywhere <br>
+<b>Result</b> : <br> 
+Task editted: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere <br> 
+Display the task details before edit for comparison <br>
+</p>
 
-Command : 
-`undo`
-Show :
-- Goes back to original
-- Highlights the No.6 task
-Result : 
-`Revert edit command: 
-V0.5 dogfooding 21-Oct-2016, Fri 07-Nov-2016, Mon everywhere`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+Highlights the No.6 task <br>
+<b>Result</b> : <br>
+Revert edit command: <br> 
+V0.5 dogfooding 21-Oct-2016, Fri 07-Nov-2016, Mon everywhere <br>
+</p>
+
+[[Return to Top]](#manual-testing)
+
+---
 
 #### Replace tasks 
 
-Command : 
-`replace 1 EE2021 Exam on 29-Nov 9 am`
-Show :
-- Highlights the new task
-- New task only contains name and due date
-- Adds the new task to pending list
-- Pending task count increase by 1
-- Completed task count decrease by 1
-Result : 
-`Task replaced: EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3` 
-- Display the task details before replace for comparison
+<p>
+<b>Command</b> : replace 1 EE2021 Exam on 29-Nov 9 am <br>
+<b>Show</b> : <br>
+Highlights the new task <br>
+New task only contains name and due date <br>
+Adds the new task to pending list <br>
+Pending task count increase by 1 <br>
+Completed task count decrease by 1 <br>
+<b>Result</b> : <br> 
+Task replaced: EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3 <br> 
+Display the task details before replace for comparison <br>
+</p>
 
-Command : 
-`undo`
-Show :
-- Goes back to original
-- Highlights the No. 1 Task
-Result : 
-`Revert replace command: 
-EE2021 Exam  29-Nov-2016, Tue 09:00 AM`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+Highlights the No. 1 Task <br>
+<b>Result</b> : <br>
+Revert replace command: <br> 
+EE2021 Exam  29-Nov-2016, Tue 09:00 AM <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -340,33 +363,36 @@ EE2021 Exam  29-Nov-2016, Tue 09:00 AM`
 
 #### Mark tasks
 
-> Command : 
-`mark 6`
-Show :
-- Highlights the No. 6 task
-- Star changes from Red to Green (Overdue to Completed)
-- Removes the task from pending list
-- Pending task count decrease by 1
-- Overdue task count decrease by 1
-- Completed task count increase by 1
-Result : 
-`Completed Task: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere` 
+<p>
+<b>Command</b> : mark 6 <br>
+<b>Show</b> : <br>
+Highlights the No. 6 task <br>
+Star changes from Red to Green (Overdue to Completed) <br>
+Removes the task from pending list <br>
+Pending task count decrease by 1 <br>
+Overdue task count decrease by 1 <br>
+Completed task count increase by 1 <br>
+<b>Result</b> : <br>
+Completed Task: V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere <br>
+</p>
 
-Command : 
-`undo`
-Show :
-- Goes back to original
-- Highlights the No. 6 Task
-Result : 
-`Revert mark command: 
-V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+Highlights the No. 6 Task <br>
+<b>Result</b> : <br> 
+Revert mark command: <br> 
+V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere <br>
+</p>
 
-Command : 
-`mark 1`
-Show :
-- Nothing happens
-Result : 
-`This task is already completed.`
+<p>
+<b>Command</b> : mark 1 <br>
+<b>Show</b> : <br>
+Nothing happens <br>
+<b>Result</b> : <br>
+This task is already completed. <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -374,33 +400,36 @@ Result :
 
 #### Unmark tasks
 
-Command : 
-`unmark 3`
-Show :
-- Highlights the No. 3 task
-- Star changes from Green to Red (Completed to Overdue)
-- Adds the task to pending list
-- Pending task count increase by 1
-- Overdue task count increase by 1
-- Completed task count decrease by 1
-Result : 
-`Un-Completed Task: CS2103 Project 21-Oct-2016, Fri 09:00 AM 21-Oct-2016, Fri 10:00 AM COM1-B103` 
+<p>
+<b>Command</b> : unmark 3 <br>
+<b>Show</b> : <br>
+Highlights the No. 3 task <br>
+Star changes from Green to Red (Completed to Overdue) <br>
+Adds the task to pending list <br>
+Pending task count increase by 1 <br>
+Overdue task count increase by 1 <br>
+Completed task count decrease by 1 <br>
+<b>Result</b> : <br> 
+Un-Completed Task: CS2103 Project 21-Oct-2016, Fri 09:00 AM 21-Oct-2016, Fri 10:00 AM COM1-B103 <br>
+</p>
 
-Command : 
-`undo`
-Show :
-- Goes back to original
-- Highlights the No. 3 Task
-Result : 
-`Revert unmark command: 
-CS2103 Project 21-Oct-2016, Fri 09:00 AM 21-Oct-2016, Fri 10:00 AM COM1-B103`
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+Highlights the No. 3 Task <br>
+<b>Result</b> : <br>
+Revert unmark command: <br> 
+CS2103 Project 21-Oct-2016, Fri 09:00 AM 21-Oct-2016, Fri 10:00 AM COM1-B103 <br>
+</p>
 
-Command : 
-`unmark 1`
-Show :
-- Nothing happens
-Result : 
-`This task is not completed.`
+<p>
+<b>Command</b> : unmark 1 <br>
+<b>Show</b> : <br>
+Nothing happens <br>
+<b>Result</b> : <br> 
+This task is not completed. <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
