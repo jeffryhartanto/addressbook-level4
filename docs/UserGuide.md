@@ -333,7 +333,7 @@ Examples:<br>
 #### How to tag a task : `tag`
 The `tag` command allows you to tag any existing task with tags. <br>
 
-Tag format: **`tag`**`INDEX TAG_NAME...`
+Tag format: **`tag`**`[INDEX] TAG_NAME...`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
 > Index is optional provided that there is previous modified task.<br>
