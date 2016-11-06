@@ -213,7 +213,8 @@ public class MainApp extends Application {
         final File currentJar = new File("MustDoList.jar");
 
         if (!currentJar.getName().endsWith(".jar")) {
-            assert false:"Missing MustDoList.jar, Please Check.";
+            //MustDoList.jar should not be missing
+            assert false:"Severe Error: Missing MustDoList.jar";
             return;
         }
         final ArrayList<String> command = new ArrayList<String>();
@@ -229,11 +230,13 @@ public class MainApp extends Application {
         }
 
         logger.info("============================ [ Restarting Task Scheduler ] =============================");
+        ui.stop();
         try {
             storage.saveUserPrefs(userPrefs);
         } catch (IOException e) {
             logger.severe("Failed to save preferences " + StringUtil.getDetails(e));
         }
+        Platform.exit();
         System.exit(0);
     }
     //@@author
