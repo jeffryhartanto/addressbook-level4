@@ -35,7 +35,6 @@ public class TaskDateTime {
 
     public void setDate(long l) { 
         Date newDate = new Date(l);
-        System.out.println(newDate);
         checkIfTimeIsSpecified(newDate);
         this.date = newDate; 
     }
