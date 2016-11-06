@@ -429,7 +429,10 @@ There is no need to save manually.
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous MustDoList.
-   
+
+**Q**: Why does result display shows old task details?
+**A**: As new task details are highlighted and display in the task list panel itself, user can easily make the comparison between old task details (in the result display) and new task details (task list panel).
+
 [[Return to Top]](#user-guide)
    
 ---
