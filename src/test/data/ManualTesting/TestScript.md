@@ -434,8 +434,58 @@ This task is not completed. <br>
 [[Return to Top]](#manual-testing)
 
 ---
-
 #### Recur tasks
+
+<p>
+<b>Command</b> : add weekly community service from 1st december at 2pm to 1st december at 4pm at community hub <br>
+<b>Show</b> : <br>
+Highlights the task added in task list <br>
+Pending task count increase by 1<br>
+<b>Result</b> : <br>
+New task added: weekly community service 01-Dec-2016, Thu 02:00 PM 01-Dec-2016, Thu 04:00 PM community hub <br>
+</p>
+
+<p>
+<b>Command</b> : recur every 1 week until 3 weeks from 1st december <br>
+<b>Show</b> : <br>
+Highlights the last recur task added in task list <br>
+Pending task count increase by 3<br>
+<b>Result</b> : <br>
+Recur task added: <br>
+weekly community service 08-Dec-2016, Thu 02:00 PM 08-Dec-2016, Thu 04:00 PM community hub <br>
+weekly community service 15-Dec-2016, Thu 02:00 PM 15-Dec-2016, Thu 04:00 PM community hub <br>
+weekly community service 22-Dec-2016, Thu 02:00 PM 22-Dec-2016, Thu 04:00 PM community hub <br>
+</p>
+
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+<b>Result</b> : <br>
+Revert recur command: <br>
+weekly community service 08-Dec-2016, Thu 02:00 PM 08-Dec-2016, Thu 04:00 PM community hub <br>
+weekly community service 15-Dec-2016, Thu 02:00 PM 15-Dec-2016, Thu 04:00 PM community hub <br>
+weekly community service 22-Dec-2016, Thu 02:00 PM 22-Dec-2016, Thu 04:00 PM community hub <br>
+</p>
+
+<p>
+<b>Command</b> : recur 34 every 2 week until 3 weeks from 1st december <br>
+<b>Show</b> : <br>
+Highlights the last recur task added in task list <br>
+Pending task count increase by 1<br>
+<b>Result</b> : <br>
+Recur task added: <br>
+weekly community service 15-Dec-2016, Thu 02:00 PM 15-Dec-2016, Thu 04:00 PM community hub <br>
+</p>
+
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+<b>Result</b> : <br>
+Revert recur command: <br>
+weekly community service 15-Dec-2016, Thu 02:00 PM 15-Dec-2016, Thu 04:00 PM community hub <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -443,6 +493,23 @@ This task is not completed. <br>
 
 #### Select tasks
   
+<p>
+<b>Command</b> : select 1 <br>
+<b>Show</b> : <br>
+Highlights the No.1 task in task list <br>
+"add EE2021 Lecture from 19-Oct-2016, Wed 12:00 PM to 19-Oct-2016, Wed 02:00 PM at E3" appears in command box <br>
+<b>Result</b> : <br>
+Selected Task: 1 <br>
+</p>
+
+<p>
+<b>Command</b> : select 50 <br>
+<b>Show</b> : <br>
+Highlights the No.50 task in task list <br>
+"add Buy christmas presents online" appears in command box <br>
+<b>Result</b> : <br>
+Selected Task: 50 <br>
+</p>
 [[Return to Top]](#manual-testing)
 
 ---
@@ -454,17 +521,135 @@ This task is not completed. <br>
 
 
 #### Tag tasks
-  
-  
+
+<p>
+<b>Command</b> : tag 50 Christmas Online <br>
+<b>Show</b> : <br>
+Highlights the No.50 task in task list <br>
+Task 50 now have additional "Online" tag <br>
+"Online" tag added to tag list <br>
+<b>Result</b> : <br>
+Tags: Buy christmas presents online <br>
+</p>
+
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Goes back to original <br>
+Highlights the No.50 task in task list <br>
+<b>Result</b> : <br>
+Revert tag command: <br>
+Buy christmas presents online <br>
+</p>
 [[Return to Top]](#manual-testing)
 
 ---
 
-#### How to exit the program : `exit`
-The `exit` command allows you to exits the program.<br>
+#### Help window
 
-Exit format: `exit` 
+<p>
+<b>Command</b> : <kbd>Ctrl</kbd> + <kbd>F1</kbd> <br>
+<b>Show</b> : <br>
+Help window opens <br>
+Shows online user guide (requires internet connection) <br>
+<b>Result</b> : <br>
+Opened help window. <br>
+</p>
 
+<p>
+<b>Command</b> : help <br>
+<b>Show</b> : <br>
+Help window opens <br>
+Shows online user guide (requires internet connection) <br>
+<b>Result</b> : <br>
+Opened help window. <br>
+</p>
+[[Return to Top]](#manual-testing)
+
+#### Command Box
+
+<p>
+<b>Command</b> : <kbd>Ctrl</kbd> + <kbd>4</kbd> <br>
+<b>Show</b> : <br>
+Focus command box <br>
+</p>
+
+<p>
+<b>Command</b> : <kbd>Up</kbd> <br>
+<b>Show</b> : <br>
+Command Box shows previous entered commands <br>
+</p>
+
+<p>
+<b>Command</b> : <kbd>Down</kbd> <br>
+<b>Show</b> : <br>
+Command Box shows next entered commands <br>
+</p>
+
+[[Return to Top]](#manual-testing)
+
+#### Tag List
+
+<p>
+<b>Command</b> : <kbd>Ctrl</kbd> + <kbd>1</kbd> <br>
+<b>Show</b> : <br>
+Focus tag list <br>
+</p>
+
+<p>
+<b>Command</b> : <kbd>Down</kbd> <br>
+<b>Show</b> : <br>
+Highlights the next tag <br>
+Pending and Task list shows only task with the highlighted tag <br>
+</p>
+
+<p>
+<b>Command</b> : <kbd>Up</kbd> <br>
+<b>Show</b> : <br>
+Highlights the previous tag <br>
+Pending and Task list shows only task with the highlighted tag <br>
+</p>
+
+
+[[Return to Top]](#manual-testing)
+
+#### Pending List
+
+<p>
+<b>Command</b> : <kbd>Ctrl</kbd> + <kbd>2</kbd> <br>
+<b>Show</b> : <br>
+Focus pending list <br>
+</p>
+
+<p>
+<b>Command</b> : <kbd>Up</kbd> / <kbd>Down</kbd> <br>
+<b>Show</b> : <br>
+Scrolling through the pending list <br>
+</p>
+
+#### Task List
+
+<p>
+<b>Command</b> : <kbd>Ctrl</kbd> + <kbd>3</kbd> <br>
+<b>Show</b> : <br>
+Focus task list <br>
+</p>
+
+<p>
+<b>Command</b> : <kbd>Up</kbd> / <kbd>Down</kbd> <br>
+<b>Show</b> : <br>
+Scrolling through the task list <br>
+</p>
+
+[[Return to Top]](#manual-testing)
+
+#### Exit the program 
+
+<p>
+<b>Command</b> : exit <br>
+<b>Show</b> : <br>
+Application close <br>
+</p>
 [[Return to Top]](#manual-testing)
 
 ---
