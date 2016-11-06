@@ -22,15 +22,14 @@ public class ExportCommandTest extends TaskSchedulerGuiTest {
         String exportedFile = null;
         commandBox.runCommand("export " + exportingPath);
         File file = new File(exportingPath);
-        System.out.println(file.getAbsolutePath());
         if (FileUtil.isFileExists(file)) {
-            System.out.println("testing");
             exportedFile = exportingPath;
         }
         assertEquals(exportingPath, exportedFile);
         
         // check for invalid file path
         exportingPath = "datatest/testing_123.xml";
+        commandBox.runCommand("export " + exportingPath);
         assertResultMessage(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ExportCommand.MESSAGE_USAGE));
     }
 }
