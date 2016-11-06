@@ -252,7 +252,7 @@ Examples:<br>
 
 ---
 
-#### How to unmark a task : `ummark`
+#### How to unmark a task : `unmark`
 The `unmark` command allows you to unmark a task by the task's index.<br>
 
 Unmark format: **`unmark`**`[INDEX]`
@@ -388,11 +388,11 @@ Export format: **`export`**`FILENAME`<br>
 
 Examples:<br>
 * **`export`**`taskData.xml`<br>
-  Filename taskData will be exported to default location data/taskData.<br>
+  Filename taskData.xml will be exported to default location data/taskData.xml.<br>
 * **`export`**`backup/taskData.xml`<br>
-  Filename taskData will be exported to location data/backup/taskData.<br>
+  Filename taskData.xml will be exported to location data/backup/taskData.xml.<br>
 * **`export`**`c:/user/<name>/desktop/taskData.xml`<br>
-  Filename taskData will be exported to user desktop.<br>
+  Filename taskData.xml will be exported to user desktop.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -407,11 +407,11 @@ Set path format: **`import`**`FILENAME`<br>
 
 Examples:<br>
 * **`import`**`taskData.xml`<br>
-  Filename taskData will be imported at default location data/taskData.<br>
+  Filename taskData.xml will be imported at default location data/taskData.xml.<br>
 * **`import`**`backup/taskData.xml`<br>
-  Filename taskData will be imported at location data/backup/taskData.<br>
+  Filename taskData.xml will be imported at location data/backup/taskData.xml.<br>
 * **`import`**`c:/user/<name>/desktop/taskData.xml`<br>
-  Filename taskData will be imported at user desktop.<br>
+  Filename taskData.xml will be imported at user desktop.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -469,7 +469,7 @@ e.g. **`replace`**`2 new task name from 8am 10-Oct-2016 to 9am 10-Oct-2016 at NU
 e.g. **`mark`**`1`
 
 * Unmark: **`unmark`**`[INDEX]`<br>
-e.g. **`ummark`**`1`
+e.g. **`unmark`**`1`
 
 * Recur: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 e.g. **`recur`**`every 2 days until 19-Oct-2016`
