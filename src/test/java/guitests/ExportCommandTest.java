@@ -28,7 +28,7 @@ public class ExportCommandTest extends TaskSchedulerGuiTest {
         assertEquals(exportingPath, exportedFile);
         
         // check for invalid file path
-        exportingPath = "datatest/testing_123.xml";
+        exportingPath = "datatest/testing@123.xml";
         commandBox.runCommand("export " + exportingPath);
         assertResultMessage(String.format(MESSAGE_INVALID_COMMAND_FORMAT, ExportCommand.MESSAGE_USAGE));
     }

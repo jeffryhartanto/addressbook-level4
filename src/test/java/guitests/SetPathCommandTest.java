@@ -24,7 +24,7 @@ public class SetPathCommandTest extends TaskSchedulerGuiTest {
         Config origConfig = initConfig("ConfigTest.json");
         String exceptedInitialFilePath = origConfig.getTaskSchedulerFilePath();
         
-        String setPath = "data/testing123";
+        String setPath = "data/testing123.xml";
         commandBox.runCommand("setpath " + setPath);
         commandBox.runCommand("setpath " + setPath + "456");
         commandBox.runCommand("undo");
@@ -33,30 +33,30 @@ public class SetPathCommandTest extends TaskSchedulerGuiTest {
         assertEquals(exceptedInitialFilePath.toString(), currFilePath);
         
         // Checking for the existence of User specified filename or path.
-        String newPath = "testtaskscheduler";
+        String newPath = "testtaskscheduler.xml";
         commandBox.runCommand("setpath " + newPath);
         File expected = new File(newPath);
         assertEquals(expected.toString(), newPath);
-        assertResultMessage(String.format(SetpathCommand.MESSAGE_SUCCESS, newPath + ".xml"));
+        assertResultMessage(String.format(SetpathCommand.MESSAGE_SUCCESS, newPath));
         
         // Checking for the consistency of setting, repeatedly, of setpath <filename> in ConfigTest.json.
         origConfig = initConfig("ConfigTest.json");
-        String origPath = origConfig.getTaskSchedulerFilePath().replace(".xml","");
-        String newPath2 = "taskscheduler";
+        String origPath = origConfig.getTaskSchedulerFilePath();
+        String newPath2 = "taskscheduler.xml";
         
         commandBox.runCommand("setpath " + newPath2);
-        assertResultMessage(String.format(SetpathCommand.MESSAGE_SUCCESS, newPath2 + ".xml"));
+        assertResultMessage(String.format(SetpathCommand.MESSAGE_SUCCESS, newPath2));
         
         origConfig = initConfig("ConfigTest.json");
         String compareString = origConfig.getTaskSchedulerFilePath();
-        assertEquals(newPath2, compareString.substring(0,compareString.length()-4));
+        assertEquals(newPath2, compareString);
         
         commandBox.runCommand("setpath " + origPath);
-        assertResultMessage(String.format(SetpathCommand.MESSAGE_SUCCESS, origPath + ".xml"));
+        assertResultMessage(String.format(SetpathCommand.MESSAGE_SUCCESS, origPath));
         
         origConfig = initConfig("ConfigTest.json");
         String compareString2 = origConfig.getTaskSchedulerFilePath();
-        assertEquals(origPath, compareString2.substring(0,compareString2.length()-4));
+        assertEquals(origPath, compareString2);
         
     }
     
