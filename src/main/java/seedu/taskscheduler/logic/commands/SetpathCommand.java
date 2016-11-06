@@ -1,10 +1,15 @@
 package seedu.taskscheduler.logic.commands;
 
+import java.io.File;
+
 import seedu.taskscheduler.commons.core.EventsCenter;
 import seedu.taskscheduler.commons.events.storage.FilePathChangedEvent;
 
 //@@author A0138696L
 
+/**
+ * Set the working path of the Task Scheduler.
+ */
 public class SetpathCommand extends Command {
 
     public static final String COMMAND_WORD = "setpath";
@@ -24,6 +29,7 @@ public class SetpathCommand extends Command {
 
     @Override
     public CommandResult execute() {
+        removePrvFile();
         CommandHistory.setPreviousStorageFilePath(savedPathLink);
         EventsCenter.getInstance().post(new FilePathChangedEvent(savedPathLink));
         CommandHistory.addExecutedCommand(this);
@@ -32,14 +38,18 @@ public class SetpathCommand extends Command {
 
     @Override
     public CommandResult revert() {
-        // Discard similar pathlink on the top of the stack
+        removePrvFile();
         if (savedPathLink == CommandHistory.readPreviousStorageFilePath()) {
             CommandHistory.getPreviousStorageFilePath();
         }
         savedPathLink = CommandHistory.getPreviousStorageFilePath();
-        System.out.println(savedPathLink);
         EventsCenter.getInstance().post(new FilePathChangedEvent(savedPathLink));
         CommandHistory.addRevertedCommand(this);
         return new CommandResult(String.format(MESSAGE_SUCCESS, savedPathLink));
     } 
+    
+    private void removePrvFile() {
+        File file = new File(CommandHistory.readPreviousStorageFilePath());
+        file.delete();
+    }
 }
