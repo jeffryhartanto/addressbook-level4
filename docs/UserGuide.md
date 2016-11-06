@@ -117,7 +117,7 @@ Examples:<br>
 #### How to list tasks : `list`
 The `list` command allows you to show a list of all the tasks that are present in the MustDoList.<br>
 
-Format: `list`
+List format: `list`
 
 [[Return to Top]](#user-guide)
 
