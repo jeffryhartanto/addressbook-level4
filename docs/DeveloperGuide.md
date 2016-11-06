@@ -44,6 +44,16 @@
   > * Depending on your connection speed and server load, it can even take up to 30 minutes for the set up to finish
       (This is because Gradle downloads library files from servers during the project set up process)
 
+## Activity Diagram
+
+<img src="images/activity diagram.png" width="600"><br>
+The **_Activity Diagram_** given above explains the flow of the activity present in the App.
+
+## Object Oriented Domain Model
+
+<img src="images/oodm.png" width="600"><br>
+The **_Object Oriented Domain Model_** given above explains the static design of the App from a prototypical perspective.
+
 ## Design
 
 <img src="images/Architecture.png" width="600"><br>
@@ -315,6 +325,8 @@ Priority | As a ... | I want to ... | So that I can...
 `* *` | user | make a task recurring | duplicate a task for specific number of days  
 `* *` | user | have a ui that display useful information | manage my task list easily
 `* *` | user | sort my task by date/time | see the task that needs to be done first
+`* *` | user | export data | make a copy elsewhere
+`* *` | user | import data | load my data
 `*` | user | select a task | display and refer to the task's command 
 `*` | user | unmark a task | unmark the task that is accidentally marked as completed
 
@@ -563,6 +575,36 @@ Use case ends
 
 > 3a1. MustDoList shows an error message <br>
   Use case resumes at step 2
+  
+#### Use case 15: Export task's data
+
+**MSS**
+
+1. User requests to export data
+2. MustDoList will export current data to desire path <br>
+Use case ends.
+
+**Extensions**
+
+1a. The export task request has invalid format
+
+> 1a1. MustDoList shows an error message <br>
+  Use case resumes at step 1
+  
+#### Use case 16: Import task's data
+
+**MSS**
+
+1. User requests to import data
+2. MustDoList will import data from specific path <br>
+Use case ends.
+
+**Extensions**
+
+1a. The import task request has invalid format
+
+> 1a1. MustDoList shows an error message <br>
+  Use case resumes at step 1
 
 ## Appendix C : Non Functional Requirements
 
@@ -616,5 +658,3 @@ Use case ends
 * Offline version is available for viewing only
 * Cannot categorize calendar events based on event type.
 * User cannot operate primarily using keyboard
-
-
