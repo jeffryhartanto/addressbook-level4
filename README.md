@@ -19,10 +19,15 @@
 
 #### Acknowledgements
 
+Our project team would like to thank Professor Damith C. Rajapakse and all the teaching assistants, also the developers and contributors of AddressBook-Level4 who provided us with the opportunity to learn from them and provide us with marvelous code foundation for us to refractor for our project.
+
 * Some parts of this sample application were inspired by the excellent 
   [Java FX tutorial](http://code.makery.ch/library/javafx-8-tutorial/) by *Marco Jakob*. 
 
 * This is an application that has been refractored from addressbook-level4 application forked from nus-cs2103-AY1617S1.
 (https://github.com/nus-cs2103-AY1617S1/addressbook-level4)
+
+* This is an application uses the PrettyTime library for date parsing
+(www.ocpsoft.org/prettytime/)
 
 #### Licence : [MIT](LICENSE)
