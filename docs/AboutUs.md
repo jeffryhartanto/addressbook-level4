@@ -54,6 +54,8 @@ Role: Editor <br>
 	* [find](https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-find-a-task--find)
 	* [setpath](https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-set-a-storage-path--setpath)
 	* [Unmark] (https://github.com/CS2103AUG2016-F09-C2/main/blob/master/docs/UserGuide.md#how-to-unmark-a-task--ummark)
+	* [Export] (https://github.com/CS2103AUG2016-F09-C2/main/blob/updateUserGuide/docs/UserGuide.md#how-to-export-data--export)
+	* [Import] (https://github.com/CS2103AUG2016-F09-C2/main/blob/updateUserGuide/docs/UserGuide.md#how-to-import-data--import)
 * Code written: [[functional code](../collated/main/A0138696L.md)][[test code](../collated/test/A0138696L.md)][[docs](../collated/docs/A0138696L.md)]
 * Other major contributions:
 	* Ensure that code is running as expected 
