@@ -17,6 +17,9 @@
  * [Select tasks](#select-tasks)
  * [Undo commands](#undo-commands)
  * [Tag tasks](#tag-tasks)
+ * [Import data](#import-data)
+ * [Export data](#export-data)
+ * [Shift data location](#shift-data-location)
  * [Help window](#help-window)
  * [Command Box](#command-box)
  * [Tag List](#tag-list)
@@ -34,7 +37,7 @@
 1. Download the latest `MustDoList.jar` from the [Releases](https://github.com/CS2103AUG2016-F09-C2/main/releases) 
    & SampleData.xml from [Here](https://raw.githubusercontent.com/CS2103AUG2016-F09-C2/main/test-script/src/test/data/ManualTesting/SampleData.xml)
 
-2. Save the files to the folder you want to use as the home folder for your MustDoList.
+2. Save both files to the same folder you want to use as the home folder for your MustDoList.
 
 3. Double-click the MustDoList.jar to start the app. The GUI should appear in a few seconds. 
    > <img src="images/Ui.png" width="600">
@@ -44,8 +47,8 @@
    If you need help understanding our UI, checkout our [UI Quick Guide](#ui-quick-guide)
    
 5. To import the SampleData.xml, type "import FILE_LOCATION"
-   e.g. `import C:\V0.5\data\SampleData.xml`
-   e.g. `import data/SampleData.xml`
+   e.g. `import SampleData.xml` if in same location as .jar file
+   e.g. `import C:\V0.5\data\SampleData.xml` else specify the file location
    
 [[Return to Top]](#manual-testing)
 
@@ -131,6 +134,7 @@ submit CS2103 manual scripted testing  07-Nov-2016, Mon 11:59 PM<br>
 <b>Command</b> : add browse for new phone <br>
 <b>Show</b> : <br>
 Highlights the task added in task list <br>
+Pending task count increase by 1<br>
 <b>Result</b> : <br>
 New task added: browse for new phone<br>
 </p>
@@ -214,8 +218,8 @@ Listed all tasks <br>
 <p>
 <b>Command</b> : delete 1 <br>
 <b>Show</b> : <br> 
-Completed task count decrease by 1 <br>
 No. 1 Task removed from Task list <br>
+Completed task count decrease by 1 <br>
 <b>Result</b> : <br>
 Deleted Task: EE2021 Lecture 19-Oct-2016, Wed 12:00 PM 19-Oct-2016, Wed 02:00 PM E3<br>
 </p>
@@ -261,7 +265,7 @@ V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere` <br>
 <b>Command</b> : clear <br>
 <b>Show</b> : <br>
 Completed, Pending, Overdue task count goes to 0 <br>
-All tasks removed from Task & Pending list <br>
+All tasks removed from Task and Pending list <br>
 All tags removed from Tag list <br>
 <b>Result</b> : <br> 
 Task scheduler has been cleared! <br> 
@@ -516,7 +520,16 @@ Selected Task: 50 <br>
 
 ### Undo commands
 
-Tested along with other commands
+Success Tested along with other commands
+
+No previous command scenario
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Nothing happens <br>
+<b>Result</b> : <br>
+There is no previous command to undo! <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -542,6 +555,73 @@ Highlights the No.50 task in task list <br>
 <b>Result</b> : <br>
 Revert tag command: <br>
 Buy christmas presents online <br>
+</p>
+[[Return to Top]](#manual-testing)
+
+---
+
+### Import data
+
+Success Tested during setting up
+
+File not found scenario
+<p>
+<b>Command</b> : import sample.xml <br>
+<b>Show</b> : <br>
+Nothing happens <br>
+<b>Result</b> : <br>
+File not found: sample.xml  <br>
+import: valid file to Task Scheduler. Parameters: &lt;filename&gt; <br>
+Example: import TaskSchedulerData <br>
+</p>
+
+[[Return to Top]](#manual-testing)
+
+---
+
+### Export data
+
+<p>
+<b>Command</b> : export new file.xml <br>
+<b>Show</b> : <br>
+new file.xml created in the same directory as jar file <br>
+new file.xml contains all data <br>
+<b>Result</b> : <br>
+Successfully Exported data to: new file.xml <br>
+</p>
+
+<p>
+<b>Command</b> : export C:\Dropbox\share file.xml <br>
+<b>Show</b> : <br>
+share file.xml created in the C:\Dropbox folder <br>
+share file.xml contains all data <br>
+<b>Result</b> : <br>
+Successfully Exported data to: C:\Dropbox\share file.xml <br>
+</p>
+[[Return to Top]](#manual-testing)
+
+---
+
+### Shift data location
+
+<p>
+<b>Command</b> : setpath C:\Dropbox\new share file.xml <br>
+<b>Show</b> : <br>
+Rename and shift the data file to C:\Dropbox folder <br>
+System now use the new share file.xml as default data file <br>
+<br>
+<b>Result</b> : <br>
+File path changed: C:\Dropbox\new share file.xml <br>
+</p>
+
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Rename and shift the data file back to old location <br>
+Goes back to original <br>
+<br>
+<b>Result</b> : <br>
+File path changed: C:\Dropbox\new share file.xml <br>
 </p>
 [[Return to Top]](#manual-testing)
 
@@ -591,6 +671,8 @@ Command Box shows next entered commands <br>
 </p>
 
 [[Return to Top]](#manual-testing)
+
+---
 
 ### Tag List
 
