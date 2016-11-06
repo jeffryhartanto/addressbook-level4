@@ -553,7 +553,29 @@ Use case ends.
 > 3a1. MustDoList shows an error message <br>
   Use case resumes at step 3  
 
-#### Use case 14: Unmark task
+#### Use case 14: Tag task
+
+**MSS**
+
+1.  User requests to list tasks
+2.	MustDoList shows a list of tasks
+3.	User requests to tag the index of a specific task in the list
+4.	MustDoList tag the selected task with given tag name(s) in the list 
+Use case ends.
+
+**Extensions**
+
+2a. The list is empty
+>   Use case ends
+3a. The given index is invalid
+>   3a1. MustDoList shows an error message <br>
+    Use case resumes at step 3
+
+3b. The given tag name has invalid format
+>   3b1. MustDoList shows an error message <br>
+    Use case resumes at step 3
+
+#### Use case 15: Unmark task
 
 **MSS**
 
@@ -573,7 +595,7 @@ Use case ends
 > 3a1. MustDoList shows an error message <br>
   Use case resumes at step 2
   
-#### Use case 15: Export task's data
+#### Use case 16: Export task's data
 
 **MSS**
 
@@ -588,7 +610,7 @@ Use case ends.
 > 1a1. MustDoList shows an error message <br>
   Use case resumes at step 1
   
-#### Use case 16: Import task's data
+#### Use case 17: Import task's data
 
 **MSS**
 
