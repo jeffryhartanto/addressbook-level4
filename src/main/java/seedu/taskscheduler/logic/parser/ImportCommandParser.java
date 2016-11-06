@@ -24,7 +24,7 @@ public class ImportCommandParser extends CommandParser {
     
     @Override
     public Command prepareCommand(String args) {
-        Matcher matcher = SETEXPORTIMPORT_DATA_ARGS_FORMAT.matcher(args);
+        Matcher matcher = PATH_DATA_ARGS_FORMAT.matcher(args);
 
         if (matcher.matches()) {
             String path = matcher.group("name").trim().replaceAll("/$","");

@@ -24,10 +24,13 @@ public class SetpathCommandParser extends CommandParser {
 
     @Override
     public Command prepareCommand(String args) {
-        Matcher matcher = SETPATH_DATA_ARGS_FORMAT.matcher(args);
+        Matcher matcher = PATH_DATA_ARGS_FORMAT.matcher(args);
 
         if (matcher.matches()) {
-            String path = matcher.group("name").trim().replaceAll("/$","").replaceAll("\\\\$", "") + ".xml";
+            String path = matcher.group("name").trim().replaceAll("/$","").replaceAll("\\\\$", "");
+            if (!path.endsWith(".xml")) {
+                path = path + ".xml";
+            }
             return new SetpathCommand(path); 
         }
         else {   

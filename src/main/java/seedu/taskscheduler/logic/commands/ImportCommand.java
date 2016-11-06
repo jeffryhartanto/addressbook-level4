@@ -1,11 +1,14 @@
 package seedu.taskscheduler.logic.commands;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import seedu.taskscheduler.commons.core.EventsCenter;
 import seedu.taskscheduler.commons.core.Messages;
 import seedu.taskscheduler.commons.events.storage.ImportFilePathEvent;
+import seedu.taskscheduler.commons.exceptions.DataConversionException;
 import seedu.taskscheduler.commons.util.FileUtil;
+import seedu.taskscheduler.storage.XmlFileStorage;
 
 //@@author A0138696L
 
@@ -36,6 +39,11 @@ public class ImportCommand extends Command {
     @Override
     public CommandResult execute() {
         if (FileUtil.isFileExists(new File(filePath)) && filePath.endsWith(".xml")) {
+            try {
+                XmlFileStorage.loadDataFromSaveFile(new File(filePath));
+            } catch (FileNotFoundException | DataConversionException e) {
+                return new CommandResult(MESSAGE_UNSUCCESS + filePath + "\n" + MESSAGE_USAGE_INVALID); 
+            }
             EventsCenter.getInstance().post(new ImportFilePathEvent(filePath));
             return new CommandResult(String.format(MESSAGE_SUCCESS, filePath));
             
