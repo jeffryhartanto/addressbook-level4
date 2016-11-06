@@ -38,7 +38,6 @@ public class ImportCommand extends Command {
     @Override
     public CommandResult execute() {
         if (FileUtil.isFileExists(new File(filePath)) && filePath.endsWith(".xml")) {
-            restartapp();
             EventsCenter.getInstance().post(new ImportFilePathEvent(filePath));
             return new CommandResult(String.format(MESSAGE_SUCCESS, filePath));
             
@@ -52,24 +51,4 @@ public class ImportCommand extends Command {
         assert false : Messages.MESSAGE_PROGRAM_ERROR;
         return null;
     } 
-    
-    private void restartapp() {
-        final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
-        final File currentJar = new File("MustDoList.jar");
-
-        if(!currentJar.getName().endsWith(".jar"))
-          return;
-
-        final ArrayList<String> command = new ArrayList<String>();
-        command.add(javaBin);
-        command.add("-jar");
-        command.add(currentJar.getPath());
-
-        final ProcessBuilder builder = new ProcessBuilder(command);
-        try {
-            builder.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

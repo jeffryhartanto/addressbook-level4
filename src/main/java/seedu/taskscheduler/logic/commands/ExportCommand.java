@@ -62,11 +62,12 @@ public static final String COMMAND_WORD = "export";
         InputStream is = null;
         OutputStream os = null;
         
+        FileUtil.createIfMissing(file);
+        
         try {
             is = new FileInputStream(CommandHistory.readPreviousStorageFilePath());
             os = new FileOutputStream(file);
 
-            FileUtil.createIfMissing(file);
             byte[] buffer = new byte[1024];
             int length;
             while ((length = is.read(buffer)) > 0) {
