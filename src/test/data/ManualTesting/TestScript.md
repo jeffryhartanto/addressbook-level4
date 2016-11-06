@@ -520,7 +520,16 @@ Selected Task: 50 <br>
 
 ### Undo commands
 
-Tested along with other commands
+Success Tested along with other commands
+
+No previous command scenario
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Nothing happens <br>
+<b>Result</b> : <br>
+There is no previous command to undo! <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -553,7 +562,18 @@ Buy christmas presents online <br>
 
 ### Import data
 
-Tested during setting up
+Success Tested during setting up
+
+File not found scenario
+<p>
+<b>Command</b> : import sample.xml <br>
+<b>Show</b> : <br>
+Nothing happens <br>
+<b>Result</b> : <br>
+File not found: sample.xml  <br>
+import: valid file to Task Scheduler. Parameters: &lt;filename&gt; <br>
+Example: import TaskSchedulerData <br>
+</p>
 
 [[Return to Top]](#manual-testing)
 
@@ -587,14 +607,22 @@ Successfully Exported data to: C:\Dropbox\share file.xml <br>
 <p>
 <b>Command</b> : setpath C:\Dropbox\new share file.xml <br>
 <b>Show</b> : <br>
-new share file.xml created in the C:\Dropbox folder <br>
-new share file.xml contains all data <br>
+Rename and shift the data file to C:\Dropbox folder <br>
 System now use the new share file.xml as default data file <br>
 <br>
 <b>Result</b> : <br>
 File path changed: C:\Dropbox\new share file.xml <br>
 </p>
 
+<p>
+<b>Command</b> : undo <br>
+<b>Show</b> : <br>
+Rename and shift the data file back to old location <br>
+Goes back to original <br>
+<br>
+<b>Result</b> : <br>
+File path changed: C:\Dropbox\new share file.xml <br>
+</p>
 [[Return to Top]](#manual-testing)
 
 ---
@@ -643,6 +671,8 @@ Command Box shows next entered commands <br>
 </p>
 
 [[Return to Top]](#manual-testing)
+
+---
 
 ### Tag List
 
