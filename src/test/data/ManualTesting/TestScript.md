@@ -5,26 +5,24 @@
 * [Setting Up](#setting-up)
 * [UI Quick Guide](#ui-quick-guide)
 * [Get Started](#get-started)
- * [Help](#getting-help--help)
- * [Add](#how-to-add-a-task--add)
- * [List](#how-to-list-tasks--list)
- * [Find](#how-to-find-a-task--find)
- * [Delete](#how-to-delete-a-task--delete)
- * [Clear](#how-to-clear-all-entries--clear)
- * [Edit](#how-to-edit-a-task--edit)
- * [Replace](#how-to-replace-a-task--replace)
- * [Undo](#how-to-undo-a-task--undo)
- * [Mark](#how-to-mark-a-task--mark)
- * [Unmark](#how-to-unmark-a-task--ummark)
- * [Recur](#how-to-recur-a-task--recur)
- * [Setpath](#how-to-set-a-storage-path--setpath)
- * [Select](#how-to-select-a-task--select)
- * [Tag](#how-to-tag-a-task--tag)
- * [Exit](#how-to-exit-the-program--exit)
- * [Redo](#how-to-redo-a-task)
- * [Identify task](#how-to-identify-overdue-and-completed-task)
- * [Save](#how-to-save-the-data)
-* [FAQ](#faq)
+ * [Adding tasks](#adding-tasks)
+ * [Find tasks](#find-tasks)
+ * [Delete tasks](#delete-tasks)
+ * [Clear tasks](#clear-tasks)
+ * [Edit tasks](#edit-tasks)
+ * [Replace tasks](#replace-tasks)
+ * [Mark tasks](#mark-tasks)
+ * [Unmark tasks](#unmark-tasks)
+ * [Recur tasks](#recur-tasks)
+ * [Select tasks](#select-tasks)
+ * [Undo commands](#undo-commands)
+ * [Tag tasks](#tag-tasks)
+ * [Help window](#help-window)
+ * [Command Box](#command-box)
+ * [Tag List](#tag-list)
+ * [Pending List](#pending-list)
+ * [Task List](#task-list)
+ * [Exit the program](#exit-the-program)
 * [Command Summary](#command-summary)
 
 ## Setting Up
@@ -89,6 +87,8 @@ means all data should return to the state before the previous command is execute
 
 [[Return to Top]](#manual-testing)
 
+---
+
 ### Adding tasks
 
 <p>
@@ -148,7 +148,7 @@ browse for new phone<br>
 
 ---
 
-#### Find tasks
+### Find tasks
 
 <p>
 <b>Command</b> : find event <br>
@@ -209,7 +209,7 @@ Listed all tasks <br>
 
 ---
 
-#### Delete tasks
+### Delete tasks
 
 <p>
 <b>Command</b> : delete 1 <br>
@@ -255,7 +255,7 @@ V0.5rc dogfooding 21-Oct-2016, Fri 04-Nov-2016, Fri anywhere` <br>
 
 ---
 
-#### Clear tasks
+### Clear tasks
 
 <p>
 <b>Command</b> : clear <br>
@@ -284,7 +284,7 @@ All the tasks that was deleted <br>
 
 ---
 
-#### Edit tasks
+### Edit tasks
 
 <p>
 <b>Command</b> : edit 6 V0.5 dogfooding by 7 Nov at everywhere <br>
@@ -332,7 +332,7 @@ V0.5 dogfooding 21-Oct-2016, Fri 07-Nov-2016, Mon everywhere <br>
 
 ---
 
-#### Replace tasks 
+### Replace tasks 
 
 <p>
 <b>Command</b> : replace 1 EE2021 Exam on 29-Nov 9 am <br>
@@ -361,7 +361,7 @@ EE2021 Exam  29-Nov-2016, Tue 09:00 AM <br>
 
 ---
 
-#### Mark tasks
+### Mark tasks
 
 <p>
 <b>Command</b> : mark 6 <br>
@@ -398,7 +398,7 @@ This task is already completed. <br>
 
 ---
 
-#### Unmark tasks
+### Unmark tasks
 
 <p>
 <b>Command</b> : unmark 3 <br>
@@ -434,7 +434,7 @@ This task is not completed. <br>
 [[Return to Top]](#manual-testing)
 
 ---
-#### Recur tasks
+### Recur tasks
 
 <p>
 <b>Command</b> : add weekly community service from 1st december at 2pm to 1st december at 4pm at community hub <br>
@@ -491,7 +491,7 @@ weekly community service 15-Dec-2016, Thu 02:00 PM 15-Dec-2016, Thu 04:00 PM com
 
 ---
 
-#### Select tasks
+### Select tasks
   
 <p>
 <b>Command</b> : select 1 <br>
@@ -514,13 +514,15 @@ Selected Task: 50 <br>
 
 ---
 
-#### Undo commands
+### Undo commands
+
+Tested along with other commands
+
 [[Return to Top]](#manual-testing)
 
 ---
 
-
-#### Tag tasks
+### Tag tasks
 
 <p>
 <b>Command</b> : tag 50 Christmas Online <br>
@@ -545,7 +547,7 @@ Buy christmas presents online <br>
 
 ---
 
-#### Help window
+### Help window
 
 <p>
 <b>Command</b> : <kbd>Ctrl</kbd> + <kbd>F1</kbd> <br>
@@ -566,7 +568,9 @@ Opened help window. <br>
 </p>
 [[Return to Top]](#manual-testing)
 
-#### Command Box
+---
+
+### Command Box
 
 <p>
 <b>Command</b> : <kbd>Ctrl</kbd> + <kbd>4</kbd> <br>
@@ -588,7 +592,7 @@ Command Box shows next entered commands <br>
 
 [[Return to Top]](#manual-testing)
 
-#### Tag List
+### Tag List
 
 <p>
 <b>Command</b> : <kbd>Ctrl</kbd> + <kbd>1</kbd> <br>
@@ -613,7 +617,9 @@ Pending and Task list shows only task with the highlighted tag <br>
 
 [[Return to Top]](#manual-testing)
 
-#### Pending List
+---
+
+### Pending List
 
 <p>
 <b>Command</b> : <kbd>Ctrl</kbd> + <kbd>2</kbd> <br>
@@ -627,7 +633,9 @@ Focus pending list <br>
 Scrolling through the pending list <br>
 </p>
 
-#### Task List
+---
+
+### Task List
 
 <p>
 <b>Command</b> : <kbd>Ctrl</kbd> + <kbd>3</kbd> <br>
@@ -643,7 +651,9 @@ Scrolling through the task list <br>
 
 [[Return to Top]](#manual-testing)
 
-#### Exit the program 
+---
+
+### Exit the program 
 
 <p>
 <b>Command</b> : exit <br>
@@ -652,15 +662,6 @@ Application close <br>
 </p>
 [[Return to Top]](#manual-testing)
 
----
-
-## FAQ
-
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous MustDoList.
-   
-[[Return to Top]](#manual-testing)
-   
 ---
  
 ## Command Summary
