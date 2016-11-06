@@ -303,11 +303,11 @@ Set path format: **`setpath`**`FILENAME`<br>
 
 Examples:<br>
 * **`setpath`**`taskData.xml`<br>
-  Filename taskData will be created at default location data/taskData.<br>
+  Filename taskData.xml will be created at default location data/taskData.xml.<br>
 * **`setpath`**`backup/taskData.xml`<br>
-  Filename taskData will be created at location data/backup/taskData.<br>
+  Filename taskData.xml will be created at location data/backup/taskData.xml.<br>
 * **`setpath`**`c:/user/<name>/desktop/taskData.xml`<br>
-  Filename taskData will be created at user desktop.<br>
+  Filename taskData.xml will be created at user desktop.<br>
 
 [[Return to Top]](#user-guide)
 
