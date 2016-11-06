@@ -11,7 +11,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import seedu.taskscheduler.commons.core.LogsCenter;
-import seedu.taskscheduler.commons.events.ui.TaskPanelSelectionChangedEvent;
 import seedu.taskscheduler.model.task.ReadOnlyTask;
 
 import java.util.logging.Logger;
@@ -19,7 +18,7 @@ import java.util.logging.Logger;
 //@@author A0148145E
 
 /**
- * Panel containing the list of tasks.
+ * Panel containing the list of priority tasks.
  */
 public class PriorityListPanel extends UiPart {
     private final Logger logger = LogsCenter.getLogger(PriorityListPanel.class);
@@ -79,8 +78,7 @@ public class PriorityListPanel extends UiPart {
     private void setEventHandlerForSelectionChangeEvent() {
         priorityListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                logger.fine("Selection in person list panel changed to : '" + newValue + "'");
-                raise(new TaskPanelSelectionChangedEvent(newValue));
+                logger.fine("Selection in priority list panel changed to : '" + newValue + "'");
             }
         });
     }

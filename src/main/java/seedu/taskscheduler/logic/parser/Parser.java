@@ -1,12 +1,14 @@
 package seedu.taskscheduler.logic.parser;
 
-
 import static seedu.taskscheduler.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static seedu.taskscheduler.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import seedu.taskscheduler.commons.core.LogsCenter;
 import seedu.taskscheduler.logic.commands.Command;
 import seedu.taskscheduler.logic.commands.HelpCommand;
 import seedu.taskscheduler.logic.commands.IncorrectCommand;
@@ -22,6 +24,9 @@ public class Parser {
     private static final Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
 
     //@@author A0148145E
+    protected final Logger logger = LogsCenter.getLogger(Parser.class);
+    
+    private final String PARSER_FAIL_MESSAGE = "Parser does not recognise this command : %1$s";
     /**
      * Parses user input into command for execution.
      *
@@ -47,6 +52,7 @@ public class Parser {
             return commandParser.prepareCommand(arguments.trim());
             
         } catch (Exception e) {
+            logger.log(Level.INFO, String.format(PARSER_FAIL_MESSAGE, commandWord));
             return new IncorrectCommand(MESSAGE_UNKNOWN_COMMAND);
         } 
 

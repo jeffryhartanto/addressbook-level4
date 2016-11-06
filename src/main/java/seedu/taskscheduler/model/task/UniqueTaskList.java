@@ -10,8 +10,10 @@ import seedu.taskscheduler.commons.util.CollectionUtil;
 import seedu.taskscheduler.model.tag.UniqueTagList;
 import seedu.taskscheduler.model.tag.UniqueTagList.DuplicateTagException;
 import seedu.taskscheduler.model.task.ReadOnlyTask.TaskType;
+import seedu.taskscheduler.ui.PriorityListPanel;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * A list of tasks that enforces uniqueness between its elements and does not allow nulls.
@@ -23,6 +25,7 @@ import java.util.*;
  */
 public class UniqueTaskList implements Iterable<Task> {
 
+    public static final int FIRST_INDEX = 0;
     /**
      * Signals that an operation would have violated the 'no duplicates' property of the list.
      */
@@ -79,7 +82,7 @@ public class UniqueTaskList implements Iterable<Task> {
      */
     private int indexToInsertInSortedOrder(Task toAdd) {
         if (toAdd.getType() != TaskType.FLOATING) {
-            for (int i = 0; i < internalList.size(); i++) {
+            for (int i = FIRST_INDEX; i < internalList.size(); i++) {
                 if (toAdd.isBefore(internalList.get(i))) {
                     return i;
                 }
@@ -101,7 +104,7 @@ public class UniqueTaskList implements Iterable<Task> {
             throw new DuplicateTaskException();
         }
         int index = internalList.indexOf(oldTask);
-        if (index < 0) {
+        if (index < FIRST_INDEX) {
             throw new TaskNotFoundException();
         }
         internalList.remove(index);
@@ -120,7 +123,7 @@ public class UniqueTaskList implements Iterable<Task> {
     public void mark(Task toMark) throws TaskNotFoundException, IllegalValueException{
         assert toMark != null;
         int index = internalList.indexOf(toMark);
-        if (index < 0) {
+        if (index < FIRST_INDEX) {
             throw new TaskNotFoundException();
         }
         toMark.markComplete();
@@ -139,7 +142,7 @@ public class UniqueTaskList implements Iterable<Task> {
     public void unmark(Task toMark) throws TaskNotFoundException, IllegalValueException {
         assert toMark != null;
         int index = internalList.indexOf(toMark);
-        if (index < 0) {
+        if (index < FIRST_INDEX) {
             throw new TaskNotFoundException();
         }
         toMark.unmarkComplete();
@@ -156,7 +159,7 @@ public class UniqueTaskList implements Iterable<Task> {
     public void tagTask(Task task, UniqueTagList tagList) throws TaskNotFoundException {
         assert task != null;
         int index = internalList.indexOf(task);
-        if (index < 0) {
+        if (index < FIRST_INDEX) {
             throw new TaskNotFoundException();
         }
         task.setTags(tagList);
@@ -173,7 +176,7 @@ public class UniqueTaskList implements Iterable<Task> {
      */
     public void insert(int index, Task newTask) throws TaskNotFoundException {
         assert newTask != null;
-        assert index > 0;
+        assert index > FIRST_INDEX;
         internalList.add(index-1, newTask);
     }
     //@@author
