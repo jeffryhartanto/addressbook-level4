@@ -293,9 +293,7 @@ Here are the steps to create a new release.
 ## Managing Dependencies
 
 A project often depends on third party libraries. For example, Task Scheduler depends on the 
-[Jackson library](http://wiki.fasterxml.com/JacksonHome) for XML parsing. Managing these _dependencies_
-can be automated using Gradle. For example, Gradle can download the dependencies automatically, which
-is better than these alternatives.<br>
+[Jackson library](http://wiki.fasterxml.com/JacksonHome) for XML parsing and [PrettyTime library](http://www.ocpsoft.org/prettytime/) for date parsing. Managing these _dependencies_ can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
 a. Include those libraries in the repo (this bloats the repo size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)<br>
 
