@@ -15,7 +15,7 @@
 * [Learning Outcomes](docs/LearningOutcomes.md) 
 * [About Us](docs/AboutUs.md)
 * [Contact Us](docs/ContactUs.md)
-
+* [Test Script](src/test/data/ManualTesting/TestScript.md)
 
 #### Acknowledgements
 
