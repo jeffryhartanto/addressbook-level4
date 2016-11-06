@@ -153,7 +153,7 @@ The `delete` command allows you to delete any existing task from the MustDoList 
 Delete format: **`delete`**`[INDEX]`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -192,7 +192,7 @@ where `DD` refers to the day, `MMM` refers to the first 3 letters of the month a
 > Time Format: HH:MM am/pm<br>
 where `HH` refers to hours and `MM` refers to minutes.<br> 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -217,7 +217,7 @@ where `DD` refers to the day, `MMM` refers to the first 3 letters of the month a
 > Time Format: HH:MM am/pm<br>
 where `HH` refers to hours and `MM` refers to minutes.<br> 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 [[Return to Top]](#user-guide)
 
@@ -238,7 +238,7 @@ The `mark` command allows you to mark a completed task by the task's index.<br>
 Mark format: **`mark`**`[INDEX]`
 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -258,7 +258,7 @@ The `unmark` command allows you to unmark a task by the task's index.<br>
 Unmark format: **`unmark`**`[INDEX]`
 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -279,7 +279,7 @@ Recur index format: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 
 > The INTERVAL in the command format refers to the number of days you want to recur.<br> 
 > The INDEX in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 > The command format requires the following date format.<br>
 > Date Format: DD-MMM-YYYY<br>
 where `DD` refers to the day, `MMM` refers to the first 3 letters of the month and `YYYY` refers to the year.<br>
@@ -319,7 +319,7 @@ The `select` command allows you to display any existing task's command from the 
 Select format: **`select`**`INDEX`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
@@ -336,7 +336,7 @@ The `tag` command allows you to tag any existing task with tags. <br>
 Tag format: **`tag`**`INDEX TAG_NAME...`
 
 > The Index in the command format refers to the index number shown in the most recent listing.<br>
-> Index are optional provided that there is previous modified task.<br>
+> Index is optional provided that there is previous modified task.<br>
 
 Examples:<br>
 * `list`<br>
