@@ -66,7 +66,7 @@ Given below is a quick overview of each component.
 
 [**`Commons`**](#common-classes) represents a collection of classes used by multiple other components.
 Two of those classes play an important role at the architecture level.
-* `EventsCentre` : This class (written using [Google's Event Bus library](https://github.com/google/guava/wiki/EventBusExplained))
+* `EventsCenter` : This class (written using [Google's Event Bus library](https://github.com/google/guava/wiki/EventBusExplained))
   is used to by components to communicate with other components using events (i.e. a form of _Event Driven_ design)
 * `LogsCenter` : Used by many classes to write log messages to the App's log files.
 
@@ -150,8 +150,7 @@ The sections below give more details of each component.
 
 **API** : [`Ui.java`](../src/main/java/seedu/taskscheduler/ui/Ui.java)
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `TaskListPanel`,
-`StatusBarFooter` etc. All these, including the `MainWindow` inherits from the abstract `UiPart` class
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `TagListPanel`, `PriorityListPanel`, `TaskListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow` inherits from the abstract `UiPart` class
 and they can be loaded using the `UiPartLoader`.
 
 The `UI` component uses JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files
@@ -173,7 +172,8 @@ The `UI` component,
 1. `Logic` uses the `Parser` class to parse the user command.
 2. This results in a `Command` object which is executed by the `LogicManager`.
 3. The command execution can affect the `Model` (e.g. adding a task) and/or raise events.
-4. The result of the command execution is encapsulated as a `CommandResult` object which is passed back to the `UI`
+4. The execution of the command is recorded in `CommandHistory` class, which contains multiple instances of Command objects which can be recalled for undo.
+5. The result of the command execution is encapsulated as a `CommandResult` object which is passed back to the `UII`
 
 ### Model component
 
@@ -287,15 +287,13 @@ Here are the steps to create a new release.
  
  1. Generate a JAR file [using Gradle](UsingGradle.md#creating-the-jar-file).
  2. Tag the repo with the version number. e.g. `v0.1`
- 2. [Crete a new release using GitHub](https://help.github.com/articles/creating-releases/) 
+ 2. [Create a new release using GitHub](https://help.github.com/articles/creating-releases/) 
     and upload the JAR file your created.
    
 ## Managing Dependencies
 
 A project often depends on third party libraries. For example, Task Scheduler depends on the 
-[Jackson library](http://wiki.fasterxml.com/JacksonHome) for XML parsing. Managing these _dependencies_
-can be automated using Gradle. For example, Gradle can download the dependencies automatically, which
-is better than these alternatives.<br>
+[Jackson library](http://wiki.fasterxml.com/JacksonHome) for XML parsing and [PrettyTime library](http://www.ocpsoft.org/prettytime/) for date parsing. Managing these _dependencies_ can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
 a. Include those libraries in the repo (this bloats the repo size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)<br>
 
@@ -309,7 +307,7 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | add a new task | create a new task 
 `* * *` | user | list all tasks | see all the tasks
 `* * *` | user | find a task by specific parameters | locate details of tasks without having to go through the entire task list
-`* * *` | user | set the data file path | save the data to where i want 
+`* * *` | user | set the data file path | change the working directory to where i want 
 `* * *` | user | delete a task | remove entries that I no longer need
 `* * *` | user | clear all tasks | start a fresh task list 
 `* * *` | user | edit a task | edit details without re-entry
@@ -317,9 +315,9 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | mark a task as complete | manage my task list easily
 `* * *` | user | have flexibility in the command format | type a few natural variations of the command format 
 `* * *` | user | create floating tasks | tasks can be created without specific times
-`* * *` | user | change the default storage path | sync the cloud services to access data from multiple computers
 `* * *` | user | exit the task list | close the task list 
 `* *` | user | use up arrow or down arrow to reuse previous command(s) | revert the previous command
+`* *` | user | tags the task | group the tasks into categories
 `* *` | user | indicate overdue tasks with color code (red) | easily to track overdue task
 `* *` | user | indicate a completed task with color code (green) | easily to track done task  
 `* *` | user | make a task recurring | duplicate a task for specific number of days  
@@ -556,7 +554,29 @@ Use case ends.
 > 3a1. MustDoList shows an error message <br>
   Use case resumes at step 3  
 
-#### Use case 14: Unmark task
+#### Use case 14: Tag task
+
+**MSS**
+
+1.  User requests to list tasks
+2.	MustDoList shows a list of tasks
+3.	User requests to tag the index of a specific task in the list
+4.	MustDoList tag the selected task with given tag name(s) in the list 
+Use case ends.
+
+**Extensions**
+
+2a. The list is empty
+>   Use case ends
+3a. The given index is invalid
+>   3a1. MustDoList shows an error message <br>
+    Use case resumes at step 3
+
+3b. The given tag name has invalid format
+>   3b1. MustDoList shows an error message <br>
+    Use case resumes at step 3
+
+#### Use case 15: Unmark task
 
 **MSS**
 
@@ -576,7 +596,7 @@ Use case ends
 > 3a1. MustDoList shows an error message <br>
   Use case resumes at step 2
   
-#### Use case 15: Export task's data
+#### Use case 16: Export task's data
 
 **MSS**
 
@@ -591,7 +611,7 @@ Use case ends.
 > 1a1. MustDoList shows an error message <br>
   Use case resumes at step 1
   
-#### Use case 16: Import task's data
+#### Use case 17: Import task's data
 
 **MSS**
 
