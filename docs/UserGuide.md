@@ -23,6 +23,8 @@
  * [Exit](#how-to-exit-the-program--exit)
  * [Redo](#how-to-redo-a-task)
  * [Identify task](#how-to-identify-overdue-and-completed-task)
+ * [Export](#how-to-export-data--export)
+ * [Import](#how-to-import-data--import)
  * [Save](#how-to-save-the-data)
 * [FAQ](#faq)
 * [Command Summary](#command-summary)
@@ -52,13 +54,13 @@
 
 ## UI Quick Guide
 
-<img src="images/ui-taglist.png" width="600"><br>
-<img src="images/ui-pendinglist.png" width="600"><br>
-<img src="images/ui-statistics.png" width="600"><br>
-<img src="images/ui-tasklist.png" width="600"><br>
-<img src="images/ui-commandbox.png" width="600"><br>
-<img src="images/ui-resultdisplay.png" width="600"><br>
-<img src="images/ui-status.png" width="600"><br>
+<img src="images/ui-taglist.png" width="400"><br>
+<img src="images/ui-pendinglist.png" width="400"><br>
+<img src="images/ui-statistics.png" width="400"><br>
+<img src="images/ui-tasklist.png" width="400"><br>
+<img src="images/ui-commandbox.png" width="400"><br>
+<img src="images/ui-resultdisplay.png" width="400"><br>
+<img src="images/ui-status.png" width="400"><br>
 
 [[Return to Top]](#user-guide)
 
@@ -377,6 +379,44 @@ Completed Task refers to task that are marked as "completed".
 
 ---
 
+#### How to export data : `export`
+The `export` command allows you to export the MustDoList's data to your desire path.<br>
+
+Export format: **`export`**`FILENAME`<br>
+
+> The FILENAME in the command format refers to the path that you wants to export your file to.<br>
+
+Examples:<br>
+* **`export`**`taskData.xml`<br>
+  Filename taskData will be exported to default location data/taskData.<br>
+* **`export`**`backup/taskData.xml`<br>
+  Filename taskData will be exported to location data/backup/taskData.<br>
+* **`export`**`c:/user/<name>/desktop/taskData.xml`<br>
+  Filename taskData will be exported to user desktop.<br>
+
+[[Return to Top]](#user-guide)
+
+---
+
+#### How to import data : `import`
+The `import` command allows you to import MustDoList's data from your specific data's path.<br>
+
+Set path format: **`import`**`FILENAME`<br>
+
+> The FILENAME in the command format refers to the path that you wants to save your file to.<br>
+
+Examples:<br>
+* **`import`**`taskData.xml`<br>
+  Filename taskData will be imported at default location data/taskData.<br>
+* **`import`**`backup/taskData.xml`<br>
+  Filename taskData will be imported at location data/backup/taskData.<br>
+* **`import`**`c:/user/<name>/desktop/taskData.xml`<br>
+  Filename taskData will be imported at user desktop.<br>
+
+[[Return to Top]](#user-guide)
+
+---
+
 #### How to save the data 
 MustDoList data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.
@@ -434,7 +474,7 @@ e.g. **`ummark`**`1`
 * Recur: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 e.g. **`recur`**`every 2 days until 19-Oct-2016`
 
-* SetPath: **`setpath`**`FILENAME`<br>
+* Setpath: **`setpath`**`FILENAME`<br>
 e.g. **`setpath`**`taskData`
 
 * Select: **`select`**`INDEX`<br>
@@ -442,6 +482,12 @@ e.g. **`select`**`1`
 
 * Tag: **`tag`**`[INDEX] TAG_NAME...`<br>
 e.g. **`tag`**`1 project priority`
+
+* Export: **`export`**`FILENAME`<br>
+e.g. **`export`**`taskData.xml`
+
+* Import: **`import`**`FILENAME`<br>
+e.g. **`import`**`taskData.xml`
 
 * Exit: `exit`
 
