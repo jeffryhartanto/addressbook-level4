@@ -46,7 +46,7 @@
 
 ## Activity Diagram
 
-<img src="images/activity digram.png" width="600"><br>
+<img src="images/activity diagram.png" width="600"><br>
 The **_Activity Diagram_** given above explains the flow of the activity present in the App.
 
 ## Object Oriented Domain Model
