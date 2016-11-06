@@ -745,7 +745,7 @@ Application close <br>
 [[Return to Top]](#manual-testing)
 
 ---
- 
+
 ## Command Summary
 
 * Help: `help`
@@ -786,7 +786,7 @@ e.g. **`ummark`**`1`
 * Recur: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 e.g. **`recur`**`every 2 days until 19-Oct-2016`
 
-* SetPath: **`setpath`**`FILENAME`<br>
+* Setpath: **`setpath`**`FILENAME`<br>
 e.g. **`setpath`**`taskData`
 
 * Select: **`select`**`INDEX`<br>
@@ -794,6 +794,12 @@ e.g. **`select`**`1`
 
 * Tag: **`tag`**`[INDEX] TAG_NAME...`<br>
 e.g. **`tag`**`1 project priority`
+
+* Export: **`export`**`FILENAME`<br>
+e.g. **`export`**`taskData.xml`
+
+* Import: **`import`**`FILENAME`<br>
+e.g. **`import`**`taskData.xml`
 
 * Exit: `exit`
 
