@@ -309,7 +309,7 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | add a new task | create a new task 
 `* * *` | user | list all tasks | see all the tasks
 `* * *` | user | find a task by specific parameters | locate details of tasks without having to go through the entire task list
-`* * *` | user | set the data file path | save the data to where i want 
+`* * *` | user | set the data file path | change the working directory to where i want 
 `* * *` | user | delete a task | remove entries that I no longer need
 `* * *` | user | clear all tasks | start a fresh task list 
 `* * *` | user | edit a task | edit details without re-entry
@@ -317,7 +317,6 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | mark a task as complete | manage my task list easily
 `* * *` | user | have flexibility in the command format | type a few natural variations of the command format 
 `* * *` | user | create floating tasks | tasks can be created without specific times
-`* * *` | user | change the default storage path | sync the cloud services to access data from multiple computers
 `* * *` | user | exit the task list | close the task list 
 `* *` | user | use up arrow or down arrow to reuse previous command(s) | revert the previous command
 `* *` | user | indicate overdue tasks with color code (red) | easily to track overdue task
