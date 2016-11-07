@@ -13,8 +13,8 @@ public class ImportCommandTest extends TaskSchedulerGuiTest {
     @Test
     public void importFilePath() {
         
-        // Checking for invalid file data
-        String importingPath = "datatest/testing.xml";
+        // Checking for non-existence file
+        String importingPath = "datatest/testing123123.xml";
         commandBox.runCommand("import " + importingPath);
         assertResultMessage(ImportCommand.MESSAGE_UNSUCCESS + importingPath + "\n" + ImportCommand.MESSAGE_USAGE_INVALID);
         
