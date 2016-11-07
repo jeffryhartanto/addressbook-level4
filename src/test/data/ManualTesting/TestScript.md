@@ -52,7 +52,10 @@
    
 6. The application will then restart, loaded with the SampleData.xml  <br>
    and using SampleData.xml file as default storage.
-   
+
+7. If error occur when importing, you can still run the SampleData.xml by renaming it to 
+   taskscheduler.xml and putting it in a subfolder "data".  
+
 [[Return to Top]](#manual-testing)
 
 ## UI Quick Guide
