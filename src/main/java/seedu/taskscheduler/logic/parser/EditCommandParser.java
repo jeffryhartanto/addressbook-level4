@@ -19,10 +19,10 @@ public class EditCommandParser extends CommandParser {
         final Matcher indexMatcher = INDEX_COMMAND_FORMAT.matcher(args);
 
         if (!indexMatcher.matches()) {
-            return new EditCommand(args);
+            return new EditCommand(args);   
         } else {
             int index = Integer.parseInt(indexMatcher.group("index"));
-            assert index >= 0;
+            assert index >= Command.MINIMA_INDEX;
             String newArgs = indexMatcher.group("arguments").trim();
             return new EditCommand(index, newArgs);
         }

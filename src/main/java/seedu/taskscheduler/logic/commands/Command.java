@@ -1,6 +1,10 @@
 package seedu.taskscheduler.logic.commands;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import seedu.taskscheduler.commons.core.EventsCenter;
+import seedu.taskscheduler.commons.core.LogsCenter;
 import seedu.taskscheduler.commons.core.Messages;
 import seedu.taskscheduler.commons.core.UnmodifiableObservableList;
 import seedu.taskscheduler.commons.events.ui.IncorrectCommandAttemptedEvent;
@@ -15,11 +19,15 @@ public abstract class Command {
     
     protected Model model;
 
+    public static final int MINIMA_INDEX = 0;
+    
     public static final int EMPTY_INDEX = -1;
     
     public static final String MESSAGE_DUPLICATE_TASK = "This task already exists in the task scheduler";
 
     public static final String MESSAGE_REVERT_COMMAND = "Revert %s command: %s";
+
+    protected final Logger logger = LogsCenter.getLogger(Command.class);
     /**
      * Constructs a feedback message to summarise an operation that displayed a listing of tasks.
      *
@@ -62,7 +70,8 @@ public abstract class Command {
     protected void indicateAttemptToExecuteIncorrectCommand() {
         EventsCenter.getInstance().post(new IncorrectCommandAttemptedEvent(this));
     }
-    
+
+    //@@author A0148145E
     /**
      * Gets the task from list or last modified task
      * @param targetIndex
@@ -72,14 +81,16 @@ public abstract class Command {
     protected ReadOnlyTask getTaskFromIndexOrLastModified(int targetIndex) 
             throws TaskNotFoundException {
         ReadOnlyTask task;
-        if (targetIndex == -1) {
+        if (targetIndex == EMPTY_INDEX) {
             task = CommandHistory.getModifiedTask();
+            logger.log(Level.INFO, "[Get last modified task] : " + task.getAsText());
         }
         else {
             UnmodifiableObservableList<ReadOnlyTask> lastShownList = model.getFilteredTaskList();
             try { 
                 task = lastShownList.get(targetIndex - 1);
             } catch (IndexOutOfBoundsException iobe){ 
+                logger.log(Level.INFO, iobe.getMessage());
                 throw new TaskNotFoundException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
             }
         } 

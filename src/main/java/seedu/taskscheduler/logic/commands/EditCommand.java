@@ -2,6 +2,8 @@ package seedu.taskscheduler.logic.commands;
 
 import static seedu.taskscheduler.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
+import java.util.logging.Level;
+
 import seedu.taskscheduler.commons.core.Messages;
 import seedu.taskscheduler.commons.exceptions.IllegalValueException;
 import seedu.taskscheduler.commons.util.CollectionUtil;
@@ -62,6 +64,7 @@ public class EditCommand extends Command {
             oldTask = (Task)getTaskFromIndexOrLastModified(targetIndex);
             extractParamsFromArgs();
             if (CollectionUtil.isAllNull(name, startDate, endDate, address)) {
+                logger.log(Level.INFO, "[Edit] all null params: " + args);
                 return new CommandResult(String.format(MESSAGE_INVALID_COMMAND_FORMAT, MESSAGE_USAGE));
             } 
             newTask = assignParamsToTask(oldTask);

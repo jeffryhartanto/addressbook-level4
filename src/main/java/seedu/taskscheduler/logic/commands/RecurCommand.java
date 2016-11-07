@@ -1,5 +1,7 @@
 package seedu.taskscheduler.logic.commands;
 
+import java.util.logging.Level;
+
 import org.ocpsoft.prettytime.nlp.PrettyTimeParser;
 import org.ocpsoft.prettytime.nlp.parse.DateGroup;
 
@@ -67,8 +69,10 @@ public class RecurCommand extends Command {
         } catch (UniqueTaskList.DuplicateTaskException dte) {
             return new CommandResult(MESSAGE_DUPLICATE_TASK);
         } catch (IndexOutOfBoundsException ioobe) {
+            logger.log(Level.WARNING, "[Recur]" + ioobe.getMessage());
             return new CommandResult(MESSAGE_FAILURE);
         } catch (NullPointerException npe) {
+            logger.log(Level.WARNING, "[Recur]" + npe.getMessage());
             return new CommandResult(MESSAGE_INVALID_TASK_FOR_RECUR);
         } catch (TaskNotFoundException tnfe) {
             return new CommandResult(tnfe.getMessage());

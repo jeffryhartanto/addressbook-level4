@@ -61,6 +61,14 @@
         <type>FLOATING</type>
         <status>false</status>
     </tasks>
+    <tasks>
+        <name>something</name>
+        <startDateTime></startDateTime>
+        <endDateTime></endDateTime>
+        <address></address>
+        <type>FLOATING</type>
+        <status>false</status>
+    </tasks>
     <tags>
         <tagName>Deadline</tagName>
     </tags>
@@ -70,15 +78,15 @@
     <tagsCounter>
         <entry>
             <key>
-                <tagName>Deadline</tagName>
-            </key>
-            <value>1</value>
-        </entry>
-        <entry>
-            <key>
                 <tagName>Event</tagName>
             </key>
             <value>4</value>
+        </entry>
+        <entry>
+            <key>
+                <tagName>Deadline</tagName>
+            </key>
+            <value>1</value>
         </entry>
     </tagsCounter>
 </taskscheduler>
