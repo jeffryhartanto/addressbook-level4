@@ -10,7 +10,7 @@ import seedu.taskscheduler.model.task.UniqueTaskList.TaskNotFoundException;
 /**
  * Unmarks a task in task scheduler as uncompleted.
  */
-public class UnmarkCommand extends Command{
+public class UnmarkCommand extends Command {
     
     public static final String COMMAND_WORD = "unmark";
 
