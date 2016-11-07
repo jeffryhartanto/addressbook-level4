@@ -50,6 +50,9 @@
    e.g. `import SampleData.xml` if in same location as .jar file
    e.g. `import C:\V0.5\data\SampleData.xml` else specify the file location
    
+6. The application will then restart, loaded with the SampleData.xml  <br>
+   and using SampleData.xml file as default storage.
+   
 [[Return to Top]](#manual-testing)
 
 ## UI Quick Guide
@@ -781,13 +784,13 @@ e.g. **`replace`**`2 new task name from 8am 10-Oct-2016 to 9am 10-Oct-2016 at NU
 e.g. **`mark`**`1`
 
 * Unmark: **`unmark`**`[INDEX]`<br>
-e.g. **`ummark`**`1`
+e.g. **`unmark`**`1`
 
 * Recur: **`recur`**`[INDEX] every INTERVAL until END_DATE`<br>
 e.g. **`recur`**`every 2 days until 19-Oct-2016`
 
 * Setpath: **`setpath`**`FILENAME`<br>
-e.g. **`setpath`**`taskData`
+e.g. **`setpath`**`taskData.xml`
 
 * Select: **`select`**`INDEX`<br>
 e.g. **`select`**`1`
