@@ -25,9 +25,11 @@ import seedu.taskscheduler.ui.UiManager;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Optional;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -211,7 +213,14 @@ public class MainApp extends Application {
     public void restart() {
         final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
         final File currentJar = new File("MustDoList.jar");
-
+        String filePath;
+        try {
+            filePath = MainApp.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath().substring(1);
+        } catch (URISyntaxException e1) {
+            assert false:"Severe Error: Unable to restart";
+            return;
+        }
+        logger.log(Level.INFO, "[Restart]" + filePath);
         if (!currentJar.getName().endsWith(".jar")) {
             //MustDoList.jar should not be missing
             assert false:"Severe Error: Missing MustDoList.jar";
@@ -220,7 +229,7 @@ public class MainApp extends Application {
         final ArrayList<String> command = new ArrayList<String>();
         command.add(javaBin);
         command.add("-jar");
-        command.add(currentJar.getPath());
+        command.add(filePath);
 
         final ProcessBuilder builder = new ProcessBuilder(command);
         try {
