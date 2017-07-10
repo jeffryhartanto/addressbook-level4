@@ -2,10 +2,6 @@
 ifdef::env-github,env-browser[:relfileprefix: docs/]
 ifdef::env-github,env-browser[:outfilesuffix: .adoc]
 
-[![Build Status](https://travis-ci.org/jeffryhartanto/addressbook-level4.svg?branch=master)](https://travis-ci.org/jeffryhartanto/addressbook-level4)
-[![Coverage Status](https://coveralls.io/repos/github/jeffryhartanto/addressbook-level4/badge.svg?branch=master)](https://coveralls.io/github/jeffryhartanto/addressbook-level4?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9c35a19bfa8248f0bda3e771de4e7794)](https://www.codacy.com/app/jeffryhartanto/addressbook-level4?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jeffryhartanto/addressbook-level4&amp;utm_campaign=Badge_Grade)
-
 https://travis-ci.org/jeffryhartanto/addressbook-level4[image:https://travis-ci.org/jeffryhartanto/addressbook-level4.svg?branch=master[Build Status]]
 https://coveralls.io/github/jeffryhartanto/addressbook-level4?branch=master[image:https://coveralls.io/repos/github/jeffryhartanto/addressbook-level4/badge.svg?branch=master[Coverage Status]]
 https://www.codacy.com/app/jeffryhartanto/addressbook-level4?utm_source=github.com&utm_medium=referral&utm_content=jeffryhartanto/addressbook-level4&utm_campaign=Badge_Grade[image:https://api.codacy.com/project/badge/Grade/9c35a19bfa8248f0bda3e771de4e7794[Codacy Badge]]
